@@ -18,7 +18,7 @@ namespace Interface
         void Delete();
         void First();
         void Last();
-        void Load();
+        Task LoadAsync( );
         void New();
         void Next();
         void Previous();

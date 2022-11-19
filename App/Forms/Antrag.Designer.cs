@@ -65,6 +65,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridViewParkingApplication = new System.Windows.Forms.DataGridView();
+            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ParkplatzantragsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KfzKennzeichen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EntfernungKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,10 +76,21 @@
             this.Mitfahrgelegenheit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Moeglichkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Antragsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Antragszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genehmigt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parkplatzantragsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kfzKennzeichenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entfernungKmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.besonderefallDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grundDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mitfahrgelegenheitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moeglichkeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.antragsdatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.antragszeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genehmigtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fahrzeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.schuelerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.schuelerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -465,8 +478,21 @@
             this.Mitfahrgelegenheit,
             this.Moeglichkeit,
             this.Antragsdatum,
+            this.Antragszeit,
             this.Genehmigt,
-            this.schuelerIdDataGridViewTextBoxColumn});
+            this.parkplatzantragsIdDataGridViewTextBoxColumn,
+            this.kfzKennzeichenDataGridViewTextBoxColumn,
+            this.entfernungKmDataGridViewTextBoxColumn,
+            this.besonderefallDataGridViewTextBoxColumn,
+            this.grundDataGridViewTextBoxColumn,
+            this.mitfahrgelegenheitDataGridViewTextBoxColumn,
+            this.moeglichkeitDataGridViewTextBoxColumn,
+            this.antragsdatumDataGridViewTextBoxColumn,
+            this.antragszeitDataGridViewTextBoxColumn,
+            this.genehmigtDataGridViewTextBoxColumn,
+            this.fahrzeitDataGridViewTextBoxColumn,
+            this.schuelerIdDataGridViewTextBoxColumn,
+            this.schuelerDataGridViewTextBoxColumn});
             this.dataGridViewParkingApplication.DataSource = this.parkplatzantragBindingSource;
             this.dataGridViewParkingApplication.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridViewParkingApplication.Location = new System.Drawing.Point(3, 46);
@@ -474,6 +500,15 @@
             this.dataGridViewParkingApplication.RowTemplate.Height = 25;
             this.dataGridViewParkingApplication.Size = new System.Drawing.Size(605, 403);
             this.dataGridViewParkingApplication.TabIndex = 0;
+            // 
+            // parkplatzantragBindingSource
+            // 
+            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ParkplatzantragsId
             // 
@@ -538,12 +573,96 @@
             this.Antragsdatum.Name = "Antragsdatum";
             this.Antragsdatum.Width = 108;
             // 
+            // Antragszeit
+            // 
+            this.Antragszeit.DataPropertyName = "Antragszeit";
+            this.Antragszeit.HeaderText = "Antragszeit";
+            this.Antragszeit.Name = "Antragszeit";
+            this.Antragszeit.Width = 91;
+            // 
             // Genehmigt
             // 
             this.Genehmigt.DataPropertyName = "Genehmigt";
             this.Genehmigt.HeaderText = "Genehmigt";
             this.Genehmigt.Name = "Genehmigt";
             this.Genehmigt.Width = 91;
+            // 
+            // parkplatzantragsIdDataGridViewTextBoxColumn
+            // 
+            this.parkplatzantragsIdDataGridViewTextBoxColumn.DataPropertyName = "ParkplatzantragsId";
+            this.parkplatzantragsIdDataGridViewTextBoxColumn.HeaderText = "ParkplatzantragsId";
+            this.parkplatzantragsIdDataGridViewTextBoxColumn.Name = "parkplatzantragsIdDataGridViewTextBoxColumn";
+            this.parkplatzantragsIdDataGridViewTextBoxColumn.Width = 129;
+            // 
+            // kfzKennzeichenDataGridViewTextBoxColumn
+            // 
+            this.kfzKennzeichenDataGridViewTextBoxColumn.DataPropertyName = "KfzKennzeichen";
+            this.kfzKennzeichenDataGridViewTextBoxColumn.HeaderText = "KfzKennzeichen";
+            this.kfzKennzeichenDataGridViewTextBoxColumn.Name = "kfzKennzeichenDataGridViewTextBoxColumn";
+            this.kfzKennzeichenDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // entfernungKmDataGridViewTextBoxColumn
+            // 
+            this.entfernungKmDataGridViewTextBoxColumn.DataPropertyName = "EntfernungKm";
+            this.entfernungKmDataGridViewTextBoxColumn.HeaderText = "EntfernungKm";
+            this.entfernungKmDataGridViewTextBoxColumn.Name = "entfernungKmDataGridViewTextBoxColumn";
+            this.entfernungKmDataGridViewTextBoxColumn.Width = 109;
+            // 
+            // besonderefallDataGridViewTextBoxColumn
+            // 
+            this.besonderefallDataGridViewTextBoxColumn.DataPropertyName = "Besonderefall";
+            this.besonderefallDataGridViewTextBoxColumn.HeaderText = "Besonderefall";
+            this.besonderefallDataGridViewTextBoxColumn.Name = "besonderefallDataGridViewTextBoxColumn";
+            this.besonderefallDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // grundDataGridViewTextBoxColumn
+            // 
+            this.grundDataGridViewTextBoxColumn.DataPropertyName = "Grund";
+            this.grundDataGridViewTextBoxColumn.HeaderText = "Grund";
+            this.grundDataGridViewTextBoxColumn.Name = "grundDataGridViewTextBoxColumn";
+            this.grundDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // mitfahrgelegenheitDataGridViewTextBoxColumn
+            // 
+            this.mitfahrgelegenheitDataGridViewTextBoxColumn.DataPropertyName = "Mitfahrgelegenheit";
+            this.mitfahrgelegenheitDataGridViewTextBoxColumn.HeaderText = "Mitfahrgelegenheit";
+            this.mitfahrgelegenheitDataGridViewTextBoxColumn.Name = "mitfahrgelegenheitDataGridViewTextBoxColumn";
+            this.mitfahrgelegenheitDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // moeglichkeitDataGridViewTextBoxColumn
+            // 
+            this.moeglichkeitDataGridViewTextBoxColumn.DataPropertyName = "Moeglichkeit";
+            this.moeglichkeitDataGridViewTextBoxColumn.HeaderText = "Moeglichkeit";
+            this.moeglichkeitDataGridViewTextBoxColumn.Name = "moeglichkeitDataGridViewTextBoxColumn";
+            this.moeglichkeitDataGridViewTextBoxColumn.Width = 101;
+            // 
+            // antragsdatumDataGridViewTextBoxColumn
+            // 
+            this.antragsdatumDataGridViewTextBoxColumn.DataPropertyName = "Antragsdatum";
+            this.antragsdatumDataGridViewTextBoxColumn.HeaderText = "Antragsdatum";
+            this.antragsdatumDataGridViewTextBoxColumn.Name = "antragsdatumDataGridViewTextBoxColumn";
+            this.antragsdatumDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // antragszeitDataGridViewTextBoxColumn
+            // 
+            this.antragszeitDataGridViewTextBoxColumn.DataPropertyName = "Antragszeit";
+            this.antragszeitDataGridViewTextBoxColumn.HeaderText = "Antragszeit";
+            this.antragszeitDataGridViewTextBoxColumn.Name = "antragszeitDataGridViewTextBoxColumn";
+            this.antragszeitDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // genehmigtDataGridViewTextBoxColumn
+            // 
+            this.genehmigtDataGridViewTextBoxColumn.DataPropertyName = "Genehmigt";
+            this.genehmigtDataGridViewTextBoxColumn.HeaderText = "Genehmigt";
+            this.genehmigtDataGridViewTextBoxColumn.Name = "genehmigtDataGridViewTextBoxColumn";
+            this.genehmigtDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // fahrzeitDataGridViewTextBoxColumn
+            // 
+            this.fahrzeitDataGridViewTextBoxColumn.DataPropertyName = "Fahrzeit";
+            this.fahrzeitDataGridViewTextBoxColumn.HeaderText = "Fahrzeit";
+            this.fahrzeitDataGridViewTextBoxColumn.Name = "fahrzeitDataGridViewTextBoxColumn";
+            this.fahrzeitDataGridViewTextBoxColumn.Width = 73;
             // 
             // schuelerIdDataGridViewTextBoxColumn
             // 
@@ -552,14 +671,12 @@
             this.schuelerIdDataGridViewTextBoxColumn.Name = "schuelerIdDataGridViewTextBoxColumn";
             this.schuelerIdDataGridViewTextBoxColumn.Width = 87;
             // 
-            // parkplatzantragBindingSource
+            // schuelerDataGridViewTextBoxColumn
             // 
-            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.schuelerDataGridViewTextBoxColumn.DataPropertyName = "Schueler";
+            this.schuelerDataGridViewTextBoxColumn.HeaderText = "Schueler";
+            this.schuelerDataGridViewTextBoxColumn.Name = "schuelerDataGridViewTextBoxColumn";
+            this.schuelerDataGridViewTextBoxColumn.Width = 77;
             // 
             // Antrag
             // 
@@ -641,7 +758,20 @@
         private DataGridViewTextBoxColumn Mitfahrgelegenheit;
         private DataGridViewTextBoxColumn Moeglichkeit;
         private DataGridViewTextBoxColumn Antragsdatum;
+        private DataGridViewTextBoxColumn Antragszeit;
         private DataGridViewTextBoxColumn Genehmigt;
+        private DataGridViewTextBoxColumn parkplatzantragsIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn kfzKennzeichenDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn entfernungKmDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn besonderefallDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn grundDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn mitfahrgelegenheitDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn moeglichkeitDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn antragsdatumDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn antragszeitDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn genehmigtDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fahrzeitDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn schuelerIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn schuelerDataGridViewTextBoxColumn;
     }
 }

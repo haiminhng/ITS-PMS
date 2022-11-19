@@ -77,14 +77,15 @@ public partial class ParkplatzverwaltungContext : DbContext
                 .ValueGeneratedNever()
                 .HasColumnName("parkplatzantrags_id");
             entity.Property(e => e.Antragsdatum)
-                .HasColumnType("datetime")
+                .HasColumnType("date")
                 .HasColumnName("antragsdatum");
+            entity.Property(e => e.Antragszeit).HasColumnName("antragszeit");
             entity.Property(e => e.Besonderefall).HasColumnName("besonderefall");
             entity.Property(e => e.EntfernungKm)
                 .HasMaxLength(20)
                 .HasColumnName("entfernung_km");
             entity.Property(e => e.Fahrzeit)
-                .HasMaxLength(20)
+                .HasMaxLength(50)
                 .HasColumnName("fahrzeit");
             entity.Property(e => e.Genehmigt).HasColumnName("genehmigt");
             entity.Property(e => e.Grund)

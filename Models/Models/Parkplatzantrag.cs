@@ -27,5 +27,7 @@ public partial class Parkplatzantrag
 
     public int? SchuelerId { get; set; }
 
+    public TimeSpan? Antragszeit { get; set; }
+
     public virtual Schueler? Schueler { get; set; }
 }

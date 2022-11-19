@@ -26,7 +26,7 @@ namespace App
             _vm.SchuelerBindingSource = schuelerBindingSource;
             _vm.AdresseBindingSource = adressenBindingSource;
 
-            Load += delegate { _vm.Load(); };
+            Load += delegate { _vm.LoadAsync( ); };
 
             //Button Control
             btnNew.Click += delegate { _vm.New(); };
@@ -37,7 +37,6 @@ namespace App
             btnNext.Click += delegate { _vm.Next(); };
             btnLast.Click += delegate { _vm.Last(); };
             dataGridViewParkingApplication.CellClick += delegate { _vm.DataGridClick(); };
-
         }
 
    

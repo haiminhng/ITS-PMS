@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Web.WebView2.WinForms;
 
 namespace Interface
 {
@@ -14,15 +15,14 @@ namespace Interface
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
 
-
+        Task LoadAsync();
         void Delete();
         void First();
         void Last();
-        Task LoadAsync( );
         void New();
         void Next();
         void Previous();
         void Save();
-        void DataGridClick( );
+        void DataGridClick(WebView2 webView);
     }
 }

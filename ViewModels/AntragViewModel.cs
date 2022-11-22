@@ -5,7 +5,8 @@ using Models.Data;
 using Models.Models;
 using Interface;
 using Framework;
-
+using Microsoft.Web.WebView2.WinForms;
+using static System.Net.WebRequestMethods;
 
 namespace ViewModels
 {
@@ -64,7 +65,7 @@ namespace ViewModels
         public void Previous() => AntragBindingSource.MovePrevious();
         public void Next() => AntragBindingSource.MoveNext();
 
-        public void DataGridClick()
+        public void DataGridClick(WebView2 webView)
         {
         BindingList<Schueler> schuelerData = new BindingList<Schueler>();
         BindingList<Adressen> adressenData = new BindingList<Adressen>();
@@ -78,6 +79,22 @@ namespace ViewModels
                     adressenData.Add(schueler.Adressen);
                     SchuelerBindingSource.DataSource = schuelerData;
                     AdresseBindingSource.DataSource = adressenData;
+
+                    //Change Data of WebView
+                    string baseUrl =
+                        "https://www.google.de/maps/dir/" 
+                        + schueler.Adressen.Strasse + " " 
+                        + schueler.Adressen.Hausnr + " ," 
+                        + schueler.Adressen.Plz + " " 
+                        + schueler.Adressen.Ort + " " 
+                        + schueler.Adressen.Land +
+                        "/it.schule,+Breitwiesenstra%C3%9Fe+20-22,+70565+Stuttgart/";
+
+
+                    if (webView != null && webView.CoreWebView2 != null)
+                    {
+                        webView.CoreWebView2.Navigate(baseUrl);
+                    }
                 }
             }
         }
@@ -92,7 +109,7 @@ namespace ViewModels
                 {
                     Schueler schueler = _context.Schuelers.Find(parkplatzantrag.SchuelerId);
 
-                    if (schueler.Adressen != null && schueler.Parkplatzantrag != null)
+                    if (schueler.Adressen != null && schueler.Parkplatzantrag != null && parkplatzantrag.EntfernungKm == null)
                     {
                         parkplatzantrag.EntfernungKm = await _googleService.GetDistance(schueler.Adressen);
                         parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(schueler.Adressen);

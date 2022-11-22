@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,10 +37,11 @@ namespace App
             btnPrevious.Click += delegate { _vm.Previous(); };
             btnNext.Click += delegate { _vm.Next(); };
             btnLast.Click += delegate { _vm.Last(); };
-            dataGridViewParkingApplication.CellClick += delegate { _vm.DataGridClick(); };
+            dataGridViewParkingApplication.CellClick += delegate { _vm.DataGridClick(webView21); };
+
         }
 
-   
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

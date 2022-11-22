@@ -22,7 +22,7 @@ namespace Interface
         void New();
         void Next();
         void Previous();
-        void Save();
+        void Save(WebView2 webView);
         void DataGridClick(WebView2 webView);
     }
 }

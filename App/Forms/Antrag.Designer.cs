@@ -95,9 +95,10 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -117,6 +118,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -452,7 +456,7 @@
             this.webView21.Location = new System.Drawing.Point(3, 19);
             this.webView21.Name = "webView21";
             this.webView21.Size = new System.Drawing.Size(314, 617);
-            this.webView21.Source = new System.Uri("https://google.com", System.UriKind.Absolute);
+            this.webView21.Source = new System.Uri("https://its-stuttgart.de", System.UriKind.Absolute);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
             // 
@@ -704,9 +708,7 @@
             this.panel1.Controls.Add(this.btnNext);
             this.panel1.Controls.Add(this.btnPrevious);
             this.panel1.Controls.Add(this.btnFirst);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnNew);
+            this.panel1.Controls.Add(this.splitContainer3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 687);
             this.panel1.Name = "panel1";
@@ -715,70 +717,91 @@
             // 
             // btnLast
             // 
-            this.btnLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLast.Location = new System.Drawing.Point(881, 8);
+            this.btnLast.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLast.Location = new System.Drawing.Point(756, 0);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(31, 23);
+            this.btnLast.Size = new System.Drawing.Size(42, 42);
             this.btnLast.TabIndex = 6;
             this.btnLast.Text = ">>";
             this.btnLast.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.Location = new System.Drawing.Point(844, 8);
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnNext.Location = new System.Drawing.Point(798, 0);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(31, 23);
+            this.btnNext.Size = new System.Drawing.Size(42, 42);
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrevious.Location = new System.Drawing.Point(807, 8);
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPrevious.Location = new System.Drawing.Point(840, 0);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(31, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(42, 42);
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.Text = "<";
             this.btnPrevious.UseVisualStyleBackColor = true;
             // 
             // btnFirst
             // 
-            this.btnFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFirst.Location = new System.Drawing.Point(770, 8);
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnFirst.Location = new System.Drawing.Point(882, 0);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(31, 23);
+            this.btnFirst.Size = new System.Drawing.Size(42, 42);
             this.btnFirst.TabIndex = 3;
             this.btnFirst.Text = "<<";
             this.btnFirst.UseVisualStyleBackColor = true;
             // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Panel1MinSize = 320;
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.btnSave);
+            this.splitContainer3.Panel2.Controls.Add(this.btnNew);
+            this.splitContainer3.Panel2.Controls.Add(this.btnDelete);
+            this.splitContainer3.Size = new System.Drawing.Size(924, 42);
+            this.splitContainer3.SplitterDistance = 320;
+            this.splitContainer3.TabIndex = 7;
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(401, 8);
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSave.Location = new System.Drawing.Point(150, 0);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(75, 42);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "speichern";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(320, 8);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "löschen";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(239, 8);
+            this.btnNew.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNew.Location = new System.Drawing.Point(75, 0);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.Size = new System.Drawing.Size(75, 42);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "hinzufügen";
             this.btnNew.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDelete.Location = new System.Drawing.Point(0, 0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 42);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "löschen";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // contextMenuStrip1
             // 
@@ -817,6 +840,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -894,5 +920,6 @@
         private DataGridViewTextBoxColumn schuelerDataGridViewTextBoxColumn;
         private GroupBox groupBox1;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private SplitContainer splitContainer3;
     }
 }

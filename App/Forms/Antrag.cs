@@ -31,7 +31,7 @@ namespace App
 
             //Button Control
             btnNew.Click += delegate { _vm.New(); };
-            btnSave.Click += delegate { _vm.Save(); };
+            btnSave.Click += delegate { _vm.Save(webView21); };
             btnDelete.Click += delegate { _vm.Delete(); };
             btnFirst.Click += delegate { _vm.First(); };
             btnPrevious.Click += delegate { _vm.Previous(); };

@@ -44,7 +44,7 @@ namespace ViewModels
 
         }
 
-        public void Save()
+        public void Save(WebView2 webView)
         {
             // wird geprüft ob record gespeichert wird;
             Int32 record;
@@ -57,6 +57,7 @@ namespace ViewModels
             {
                 MessageBox.Show("Fehler");
             }
+            DataGridClick(webView);
         }
 
         public void Delete() => AntragBindingSource.RemoveCurrent();

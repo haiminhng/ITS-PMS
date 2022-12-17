@@ -11,6 +11,7 @@ namespace Interface
 {
     public interface IAntragViewModel
     {
+        public WebView2 webView { get; set; }
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
@@ -22,7 +23,9 @@ namespace Interface
         void New();
         void Next();
         void Previous();
-        void Save(WebView2 webView);
-        void DataGridClick(WebView2 webView);
+        void Save();
+        void DataGridView_CellClick( );
+        void DataGridView_CellFormatting();
+        void DataGridView_CellDoubleClick(IDetailView detail);
     }
 }

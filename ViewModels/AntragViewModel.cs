@@ -6,7 +6,6 @@ using Models.Models;
 using Interface;
 using Framework;
 using Microsoft.Web.WebView2.WinForms;
-using static System.Net.WebRequestMethods;
 
 namespace ViewModels
 {
@@ -18,11 +17,15 @@ namespace ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
+        public WebView2 webView { get; set; }
+        private string _navUrl { get; set; }
+
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
 
-        public async Task LoadAsync( )
+
+        public async Task LoadAsync()
         {
             _context
                 .Parkplatzantrags
@@ -32,7 +35,8 @@ namespace ViewModels
             AntragBindingSource.ResetBindings(false);
             AntragBindingSource.DataSource = _context.Parkplatzantrags.Local.ToBindingList();
             SchuelerBindingSource.DataSource = _context.Schuelers.Local.ToBindingList();
-            AdresseBindingSource.DataSource = _context.Adressens.Local.ToBindingList();            
+            AdresseBindingSource.DataSource = _context.Adressens.Local.ToBindingList();
+            AntragBindingSource.Sort = "ParkplatzantragsId ASC";
             await InitParkPlatzAntragAsync();
 
         }
@@ -44,7 +48,7 @@ namespace ViewModels
 
         }
 
-        public void Save(WebView2 webView)
+        public void Save()
         {
             // wird geprüft ob record gespeichert wird;
             Int32 record;
@@ -52,24 +56,24 @@ namespace ViewModels
             if (record != 0)
             {
                 MessageBox.Show("Erfolgreich gespeichert");
+                NavWebView();
             }
             else
             {
                 MessageBox.Show("Fehler");
             }
-            DataGridClick(webView);
         }
 
         public void Delete() => AntragBindingSource.RemoveCurrent();
-        public void First() => AntragBindingSource.MoveFirst(); 
+        public void First() => AntragBindingSource.MoveFirst();
         public void Last() => AntragBindingSource.MoveLast();
         public void Previous() => AntragBindingSource.MovePrevious();
         public void Next() => AntragBindingSource.MoveNext();
 
-        public void DataGridClick(WebView2 webView)
+        public void DataGridView_CellClick()
         {
-        BindingList<Schueler> schuelerData = new BindingList<Schueler>();
-        BindingList<Adressen> adressenData = new BindingList<Adressen>();
+            BindingList<Schueler> schuelerData = new BindingList<Schueler>();
+            BindingList<Adressen> adressenData = new BindingList<Adressen>();
 
             if (AntragBindingSource.Current is Parkplatzantrag parkplatzantrag)
             {
@@ -82,27 +86,33 @@ namespace ViewModels
                     AdresseBindingSource.DataSource = adressenData;
 
                     //Change Data of WebView
-                    string baseUrl =
-                        "https://www.google.de/maps/dir/" 
-                        + schueler.Adressen.Strasse + " " 
-                        + schueler.Adressen.Hausnr + " ," 
-                        + schueler.Adressen.Plz + " " 
-                        + schueler.Adressen.Ort + " " 
+                    _navUrl =
+                        "https://www.google.de/maps/dir/"
+                        + schueler.Adressen.Strasse + " "
+                        + schueler.Adressen.Hausnr + " ,"
+                        + schueler.Adressen.Plz + " "
+                        + schueler.Adressen.Ort + " "
                         + schueler.Adressen.Land +
                         "/it.schule,+Breitwiesenstra%C3%9Fe+20-22,+70565+Stuttgart/";
+                    NavWebView();
 
-
-                    if (webView != null && webView.CoreWebView2 != null)
-                    {
-                        webView.CoreWebView2.Navigate(baseUrl);
-                    }
                 }
             }
         }
 
+        public void DataGridView_CellFormatting()
+        {
+
+        }
+
+        public void DataGridView_CellDoubleClick(IDetailView detail)
+        {
+            ShowDetail(detail);
+        }
+
         private async Task InitParkPlatzAntragAsync()
         {
-              BindingList<Parkplatzantrag> _parkplatzantrags = new BindingList<Parkplatzantrag>();
+            BindingList<Parkplatzantrag> _parkplatzantrags = new BindingList<Parkplatzantrag>();
             {
                 _parkplatzantrags = _context.Parkplatzantrags.Local.ToBindingList();
 
@@ -117,7 +127,31 @@ namespace ViewModels
                     }
                 }
                 _context.SaveChanges();
+
                 AntragBindingSource.DataSource = _parkplatzantrags;
+            }
+        }
+
+        private void NavWebView()
+        {
+            if (webView != null && webView.CoreWebView2 != null)
+            {
+                webView.CoreWebView2.Navigate(_navUrl);
+            }
+        }
+
+
+        public void ShowDetail(IDetailView detail)
+        {
+            if (detail != null)
+            {
+                /*
+                detail.SchuelerBindingSource.DataSource = SchuelerBindingSource.Current;
+                detail.AdresseBindingSource.DataSource = AdresseBindingSource.Current;
+                detail.AntragBindingSource.DataSource = AntragBindingSource.Current;
+                */
+                detail.ShowModal();
+
             }
         }
     }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Interface;
+﻿using Interface;
 using Models.Models;
 using Models.Models.utilities;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Framework
 {
@@ -46,7 +41,7 @@ namespace Framework
             DistanceResponse dr = JsonConvert.DeserializeObject<DistanceResponse>(responseContent);
             string result = dr.rows[0].elements[0].distance.text;
             return result;
-           
+
         }
 
         public async Task<string> GetDriveTime(Adressen adresse)

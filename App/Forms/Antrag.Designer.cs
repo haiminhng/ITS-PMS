@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.parkplatzbelastungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.belastungrechnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,9 +60,7 @@
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lblFirstname = new System.Windows.Forms.Label();
             this.tbFirstname = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.parkplatzbelastungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.belastungrechnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
@@ -73,19 +76,7 @@
             this.Antragsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Antragszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genehmigt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parkplatzantragsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kfzKennzeichenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entfernungKmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.besonderefallDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grundDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mitfahrgelegenheitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moeglichkeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.antragsdatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.antragszeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genehmigtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fahrzeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.schuelerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.schuelerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,19 +87,22 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.btnEmail = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.groupBoxStudentAddress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).BeginInit();
             this.groupBoxStudentInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -133,14 +127,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBoxStudentAddress);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBoxStudentInfo);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
+            this.splitContainer1.Panel1.Controls.Add(this.tabControl);
             // 
             // splitContainer1.Panel2
             // 
@@ -153,47 +141,98 @@
             this.splitContainer1.SplitterDistance = 280;
             this.splitContainer1.TabIndex = 0;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parkplatzbelastungToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(280, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // parkplatzbelastungToolStripMenuItem
+            // 
+            this.parkplatzbelastungToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.belastungrechnenToolStripMenuItem});
+            this.parkplatzbelastungToolStripMenuItem.Name = "parkplatzbelastungToolStripMenuItem";
+            this.parkplatzbelastungToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
+            this.parkplatzbelastungToolStripMenuItem.Text = "Parkplatzbelastung";
+            // 
+            // belastungrechnenToolStripMenuItem
+            // 
+            this.belastungrechnenToolStripMenuItem.Name = "belastungrechnenToolStripMenuItem";
+            this.belastungrechnenToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.belastungrechnenToolStripMenuItem.Text = "Belastungrechnen";
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Location = new System.Drawing.Point(3, 27);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(281, 702);
+            this.tabControl.TabIndex = 7;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.groupBoxStudentAddress);
+            this.tabPage1.Controls.Add(this.groupBoxStudentInfo);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(273, 674);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Informationen";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(18, 97);
+            this.textBox3.Location = new System.Drawing.Point(14, 62);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(245, 23);
-            this.textBox3.TabIndex = 6;
+            this.textBox3.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 79);
+            this.label4.Location = new System.Drawing.Point(13, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 15);
-            this.label4.TabIndex = 5;
+            this.label4.TabIndex = 19;
             this.label4.Text = "Aktuelle Mietzeitraum";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(181, 49);
+            this.button1.Location = new System.Drawing.Point(177, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 18;
             this.button1.Text = "^";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(125, 49);
+            this.textBox2.Location = new System.Drawing.Point(121, 14);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(50, 23);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 52);
+            this.label3.Location = new System.Drawing.Point(14, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 15);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 16;
             this.label3.Text = "Gesammte Platz";
             // 
             // groupBoxStudentAddress
@@ -206,10 +245,10 @@
             this.groupBoxStudentAddress.Controls.Add(this.tbHnr);
             this.groupBoxStudentAddress.Controls.Add(this.lblStreet);
             this.groupBoxStudentAddress.Controls.Add(this.tbStreet);
-            this.groupBoxStudentAddress.Location = new System.Drawing.Point(9, 305);
+            this.groupBoxStudentAddress.Location = new System.Drawing.Point(1, 393);
             this.groupBoxStudentAddress.Name = "groupBoxStudentAddress";
             this.groupBoxStudentAddress.Size = new System.Drawing.Size(263, 145);
-            this.groupBoxStudentAddress.TabIndex = 0;
+            this.groupBoxStudentAddress.TabIndex = 14;
             this.groupBoxStudentAddress.TabStop = false;
             this.groupBoxStudentAddress.Text = "Adresse";
             // 
@@ -296,10 +335,10 @@
             this.groupBoxStudentInfo.Controls.Add(this.tbLastname);
             this.groupBoxStudentInfo.Controls.Add(this.lblFirstname);
             this.groupBoxStudentInfo.Controls.Add(this.tbFirstname);
-            this.groupBoxStudentInfo.Location = new System.Drawing.Point(9, 153);
+            this.groupBoxStudentInfo.Location = new System.Drawing.Point(-1, 241);
             this.groupBoxStudentInfo.Name = "groupBoxStudentInfo";
-            this.groupBoxStudentInfo.Size = new System.Drawing.Size(263, 146);
-            this.groupBoxStudentInfo.TabIndex = 0;
+            this.groupBoxStudentInfo.Size = new System.Drawing.Size(265, 146);
+            this.groupBoxStudentInfo.TabIndex = 15;
             this.groupBoxStudentInfo.TabStop = false;
             this.groupBoxStudentInfo.Text = "Schueler";
             // 
@@ -323,7 +362,7 @@
             this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Email", true));
             this.tbEmail.Location = new System.Drawing.Point(83, 115);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(171, 23);
+            this.tbEmail.Size = new System.Drawing.Size(173, 23);
             this.tbEmail.TabIndex = 6;
             // 
             // schuelerBindingSource
@@ -350,7 +389,7 @@
             this.tbClass.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "KlassenName", true));
             this.tbClass.Location = new System.Drawing.Point(83, 86);
             this.tbClass.Name = "tbClass";
-            this.tbClass.Size = new System.Drawing.Size(171, 23);
+            this.tbClass.Size = new System.Drawing.Size(173, 23);
             this.tbClass.TabIndex = 4;
             // 
             // lblLastname
@@ -370,7 +409,7 @@
             this.tbLastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Nachname", true));
             this.tbLastname.Location = new System.Drawing.Point(83, 57);
             this.tbLastname.Name = "tbLastname";
-            this.tbLastname.Size = new System.Drawing.Size(171, 23);
+            this.tbLastname.Size = new System.Drawing.Size(173, 23);
             this.tbLastname.TabIndex = 2;
             // 
             // lblFirstname
@@ -390,32 +429,18 @@
             this.tbFirstname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Vorname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.tbFirstname.Location = new System.Drawing.Point(83, 28);
             this.tbFirstname.Name = "tbFirstname";
-            this.tbFirstname.Size = new System.Drawing.Size(171, 23);
+            this.tbFirstname.Size = new System.Drawing.Size(173, 23);
             this.tbFirstname.TabIndex = 0;
             // 
-            // menuStrip1
+            // tabPage3
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.parkplatzbelastungToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(280, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // parkplatzbelastungToolStripMenuItem
-            // 
-            this.parkplatzbelastungToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.belastungrechnenToolStripMenuItem});
-            this.parkplatzbelastungToolStripMenuItem.Name = "parkplatzbelastungToolStripMenuItem";
-            this.parkplatzbelastungToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
-            this.parkplatzbelastungToolStripMenuItem.Text = "Parkplatzbelastung";
-            // 
-            // belastungrechnenToolStripMenuItem
-            // 
-            this.belastungrechnenToolStripMenuItem.Name = "belastungrechnenToolStripMenuItem";
-            this.belastungrechnenToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.belastungrechnenToolStripMenuItem.Text = "Belastungrechnen";
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(273, 674);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Belastung";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // splitContainer2
             // 
@@ -480,19 +505,7 @@
             this.Antragsdatum,
             this.Antragszeit,
             this.Genehmigt,
-            this.parkplatzantragsIdDataGridViewTextBoxColumn,
-            this.kfzKennzeichenDataGridViewTextBoxColumn,
-            this.entfernungKmDataGridViewTextBoxColumn,
-            this.besonderefallDataGridViewTextBoxColumn,
-            this.grundDataGridViewTextBoxColumn,
-            this.mitfahrgelegenheitDataGridViewTextBoxColumn,
-            this.moeglichkeitDataGridViewTextBoxColumn,
-            this.antragsdatumDataGridViewTextBoxColumn,
-            this.antragszeitDataGridViewTextBoxColumn,
-            this.genehmigtDataGridViewTextBoxColumn,
-            this.fahrzeitDataGridViewTextBoxColumn,
-            this.schuelerIdDataGridViewTextBoxColumn,
-            this.schuelerDataGridViewTextBoxColumn});
+            this.schuelerIdDataGridViewTextBoxColumn});
             this.dataGridViewParkingApplication.DataSource = this.parkplatzantragBindingSource;
             this.dataGridViewParkingApplication.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridViewParkingApplication.Location = new System.Drawing.Point(2, 0);
@@ -578,96 +591,12 @@
             this.Genehmigt.Name = "Genehmigt";
             this.Genehmigt.Width = 91;
             // 
-            // parkplatzantragsIdDataGridViewTextBoxColumn
-            // 
-            this.parkplatzantragsIdDataGridViewTextBoxColumn.DataPropertyName = "ParkplatzantragsId";
-            this.parkplatzantragsIdDataGridViewTextBoxColumn.HeaderText = "ParkplatzantragsId";
-            this.parkplatzantragsIdDataGridViewTextBoxColumn.Name = "parkplatzantragsIdDataGridViewTextBoxColumn";
-            this.parkplatzantragsIdDataGridViewTextBoxColumn.Width = 129;
-            // 
-            // kfzKennzeichenDataGridViewTextBoxColumn
-            // 
-            this.kfzKennzeichenDataGridViewTextBoxColumn.DataPropertyName = "KfzKennzeichen";
-            this.kfzKennzeichenDataGridViewTextBoxColumn.HeaderText = "KfzKennzeichen";
-            this.kfzKennzeichenDataGridViewTextBoxColumn.Name = "kfzKennzeichenDataGridViewTextBoxColumn";
-            this.kfzKennzeichenDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // entfernungKmDataGridViewTextBoxColumn
-            // 
-            this.entfernungKmDataGridViewTextBoxColumn.DataPropertyName = "EntfernungKm";
-            this.entfernungKmDataGridViewTextBoxColumn.HeaderText = "EntfernungKm";
-            this.entfernungKmDataGridViewTextBoxColumn.Name = "entfernungKmDataGridViewTextBoxColumn";
-            this.entfernungKmDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // besonderefallDataGridViewTextBoxColumn
-            // 
-            this.besonderefallDataGridViewTextBoxColumn.DataPropertyName = "Besonderefall";
-            this.besonderefallDataGridViewTextBoxColumn.HeaderText = "Besonderefall";
-            this.besonderefallDataGridViewTextBoxColumn.Name = "besonderefallDataGridViewTextBoxColumn";
-            this.besonderefallDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // grundDataGridViewTextBoxColumn
-            // 
-            this.grundDataGridViewTextBoxColumn.DataPropertyName = "Grund";
-            this.grundDataGridViewTextBoxColumn.HeaderText = "Grund";
-            this.grundDataGridViewTextBoxColumn.Name = "grundDataGridViewTextBoxColumn";
-            this.grundDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // mitfahrgelegenheitDataGridViewTextBoxColumn
-            // 
-            this.mitfahrgelegenheitDataGridViewTextBoxColumn.DataPropertyName = "Mitfahrgelegenheit";
-            this.mitfahrgelegenheitDataGridViewTextBoxColumn.HeaderText = "Mitfahrgelegenheit";
-            this.mitfahrgelegenheitDataGridViewTextBoxColumn.Name = "mitfahrgelegenheitDataGridViewTextBoxColumn";
-            this.mitfahrgelegenheitDataGridViewTextBoxColumn.Width = 133;
-            // 
-            // moeglichkeitDataGridViewTextBoxColumn
-            // 
-            this.moeglichkeitDataGridViewTextBoxColumn.DataPropertyName = "Moeglichkeit";
-            this.moeglichkeitDataGridViewTextBoxColumn.HeaderText = "Moeglichkeit";
-            this.moeglichkeitDataGridViewTextBoxColumn.Name = "moeglichkeitDataGridViewTextBoxColumn";
-            this.moeglichkeitDataGridViewTextBoxColumn.Width = 101;
-            // 
-            // antragsdatumDataGridViewTextBoxColumn
-            // 
-            this.antragsdatumDataGridViewTextBoxColumn.DataPropertyName = "Antragsdatum";
-            this.antragsdatumDataGridViewTextBoxColumn.HeaderText = "Antragsdatum";
-            this.antragsdatumDataGridViewTextBoxColumn.Name = "antragsdatumDataGridViewTextBoxColumn";
-            this.antragsdatumDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // antragszeitDataGridViewTextBoxColumn
-            // 
-            this.antragszeitDataGridViewTextBoxColumn.DataPropertyName = "Antragszeit";
-            this.antragszeitDataGridViewTextBoxColumn.HeaderText = "Antragszeit";
-            this.antragszeitDataGridViewTextBoxColumn.Name = "antragszeitDataGridViewTextBoxColumn";
-            this.antragszeitDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // genehmigtDataGridViewTextBoxColumn
-            // 
-            this.genehmigtDataGridViewTextBoxColumn.DataPropertyName = "Genehmigt";
-            this.genehmigtDataGridViewTextBoxColumn.HeaderText = "Genehmigt";
-            this.genehmigtDataGridViewTextBoxColumn.Name = "genehmigtDataGridViewTextBoxColumn";
-            this.genehmigtDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // fahrzeitDataGridViewTextBoxColumn
-            // 
-            this.fahrzeitDataGridViewTextBoxColumn.DataPropertyName = "Fahrzeit";
-            this.fahrzeitDataGridViewTextBoxColumn.HeaderText = "Fahrzeit";
-            this.fahrzeitDataGridViewTextBoxColumn.Name = "fahrzeitDataGridViewTextBoxColumn";
-            this.fahrzeitDataGridViewTextBoxColumn.Width = 73;
-            // 
             // schuelerIdDataGridViewTextBoxColumn
             // 
             this.schuelerIdDataGridViewTextBoxColumn.DataPropertyName = "SchuelerId";
             this.schuelerIdDataGridViewTextBoxColumn.HeaderText = "SchuelerId";
             this.schuelerIdDataGridViewTextBoxColumn.Name = "schuelerIdDataGridViewTextBoxColumn";
             this.schuelerIdDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // schuelerDataGridViewTextBoxColumn
-            // 
-            this.schuelerDataGridViewTextBoxColumn.DataPropertyName = "Schueler";
-            this.schuelerDataGridViewTextBoxColumn.HeaderText = "Schueler";
-            this.schuelerDataGridViewTextBoxColumn.Name = "schuelerDataGridViewTextBoxColumn";
-            this.schuelerDataGridViewTextBoxColumn.Width = 77;
             // 
             // parkplatzantragBindingSource
             // 
@@ -766,42 +695,57 @@
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.btnEmail);
+            this.splitContainer3.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer3.Panel2.Controls.Add(this.btnSave);
             this.splitContainer3.Panel2.Controls.Add(this.btnNew);
-            this.splitContainer3.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer3.Size = new System.Drawing.Size(924, 42);
             this.splitContainer3.SplitterDistance = 320;
             this.splitContainer3.TabIndex = 7;
             // 
+            // btnEmail
+            // 
+            this.btnEmail.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnEmail.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEmail.Location = new System.Drawing.Point(225, 0);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(75, 42);
+            this.btnEmail.TabIndex = 5;
+            this.btnEmail.Text = "Email senden";
+            this.btnEmail.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDelete.Location = new System.Drawing.Point(150, 0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 42);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "löschen";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSave.Location = new System.Drawing.Point(150, 0);
+            this.btnSave.Location = new System.Drawing.Point(75, 0);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 42);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "speichern";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // btnNew
             // 
+            this.btnNew.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnNew.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNew.Location = new System.Drawing.Point(75, 0);
+            this.btnNew.Location = new System.Drawing.Point(0, 0);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 42);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "hinzufügen";
-            this.btnNew.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDelete.Location = new System.Drawing.Point(0, 0);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 42);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "löschen";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnNew.UseVisualStyleBackColor = false;
             // 
             // contextMenuStrip1
             // 
@@ -823,14 +767,17 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBoxStudentAddress.ResumeLayout(false);
             this.groupBoxStudentAddress.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).EndInit();
             this.groupBoxStudentInfo.ResumeLayout(false);
             this.groupBoxStudentInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -850,9 +797,33 @@
         #endregion
 
         private SplitContainer splitContainer1;
-        private GroupBox groupBoxStudentInfo;
-        private GroupBox groupBoxStudentAddress;
         private BindingSource parkplatzantragBindingSource;
+        private Panel panel1;
+        private Button btnSave;
+        private Button btNew;
+        private Button btnNew;
+        private MenuStrip menuStrip1;
+        private TextBox textBox1;
+        private ContextMenuStrip contextMenuStrip1;
+        private Label label1;
+        private Label label2;
+        private BindingSource schuelerBindingSource;
+        private BindingSource adressenBindingSource;
+        private SplitContainer splitContainer2;
+        private DataGridView dataGridViewParkingApplication;
+        private GroupBox groupBox1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private SplitContainer splitContainer3;
+        private ToolStripMenuItem parkplatzbelastungToolStripMenuItem;
+        private ToolStripMenuItem belastungrechnenToolStripMenuItem;
+        private TabControl tabControl;
+        private TabPage tabPage1;
+        private TextBox textBox3;
+        private Label label4;
+        private Button button1;
+        private TextBox textBox2;
+        private Label label3;
+        private GroupBox groupBoxStudentAddress;
         private Label lblLocation;
         private TextBox tbLocation;
         private Label lblPostcode;
@@ -861,6 +832,7 @@
         private TextBox tbHnr;
         private Label lblStreet;
         private TextBox tbStreet;
+        private GroupBox groupBoxStudentInfo;
         private Label lblEmail;
         private TextBox tbEmail;
         private Label lblClass;
@@ -869,31 +841,13 @@
         private TextBox tbLastname;
         private Label lblFirstname;
         private TextBox tbFirstname;
-        private Panel panel1;
+        private TabPage tabPage3;
+        private Button btnEmail;
+        private Button btnDelete;
         private Button btnLast;
         private Button btnNext;
         private Button btnPrevious;
         private Button btnFirst;
-        private Button btnSave;
-        private Button btnDelete;
-        private Button btNew;
-        private Button btnNew;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem parkplatzbelastungToolStripMenuItem;
-        private ToolStripMenuItem belastungrechnenToolStripMenuItem;
-        private TextBox textBox1;
-        private ContextMenuStrip contextMenuStrip1;
-        private Label label1;
-        private Label label2;
-        private BindingSource schuelerBindingSource;
-        private BindingSource adressenBindingSource;
-        private TextBox textBox3;
-        private Label label4;
-        private Button button1;
-        private TextBox textBox2;
-        private Label label3;
-        private SplitContainer splitContainer2;
-        private DataGridView dataGridViewParkingApplication;
         private DataGridViewTextBoxColumn ParkplatzantragsId;
         private DataGridViewTextBoxColumn KfzKennzeichen;
         private DataGridViewTextBoxColumn EntfernungKm;
@@ -905,21 +859,6 @@
         private DataGridViewTextBoxColumn Antragsdatum;
         private DataGridViewTextBoxColumn Antragszeit;
         private DataGridViewTextBoxColumn Genehmigt;
-        private DataGridViewTextBoxColumn parkplatzantragsIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn kfzKennzeichenDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn entfernungKmDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn besonderefallDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn grundDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn mitfahrgelegenheitDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn moeglichkeitDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn antragsdatumDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn antragszeitDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn genehmigtDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fahrzeitDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn schuelerIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn schuelerDataGridViewTextBoxColumn;
-        private GroupBox groupBox1;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
-        private SplitContainer splitContainer3;
     }
 }

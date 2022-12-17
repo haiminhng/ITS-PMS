@@ -1,3 +1,4 @@
+using App.Forms;
 using Interface;
 using Unity;
 using ViewModels;
@@ -10,6 +11,7 @@ namespace App
         public static void Register()
         {
             Container.RegisterType<IAntragViewModel, AntragViewModel>();
+            Container.RegisterType<IDetailView, Detail>();
         }
     }
 

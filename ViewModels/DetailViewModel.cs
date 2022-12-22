@@ -1,12 +1,16 @@
-﻿using System.Windows.Forms;
+﻿using Interface;
 
-namespace Interface
+namespace ViewModels
 {
-    public interface IDetailView
+    public class DetailViewModel : IDetailView
     {
-        void ShowForm(Form form);
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
+
+        void IDetailView.ShowForm(Form form)
+        {
+            form.ShowDialog();
+        }
     }
 }

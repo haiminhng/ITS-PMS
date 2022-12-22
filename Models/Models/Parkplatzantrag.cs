@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Models.Models;
 
@@ -9,7 +11,7 @@ public partial class Parkplatzantrag
 
     public string? KfzKennzeichen { get; set; }
 
-    public string? EntfernungKm { get; set; }
+    public double? EntfernungKm { get; set; }
 
     public bool? Besonderefall { get; set; }
 
@@ -23,11 +25,12 @@ public partial class Parkplatzantrag
 
     public bool? Genehmigt { get; set; }
 
-    public string? Fahrzeit { get; set; }
+    public TimeSpan? Fahrzeit { get; set; }
 
     public int? SchuelerId { get; set; }
 
     public TimeSpan? Antragszeit { get; set; }
 
     public virtual Schueler? Schueler { get; set; }
+
 }

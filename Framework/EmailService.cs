@@ -1,8 +1,8 @@
 ﻿using Interface;
 using Models.Models.utilities;
+using System.Configuration;
 using System.Net;
 using System.Net.Mail;
-using System.Configuration;
 
 namespace Framework
 {
@@ -27,13 +27,13 @@ namespace Framework
             client.Host = emailConfig.SmtpServer;
             client.Port = emailConfig.Port;
             client.EnableSsl = emailConfig.EnableSsl;
-            client.Credentials = new NetworkCredential(emailConfig.SenderEmail, emailConfig.Password); 
+            client.Credentials = new NetworkCredential(emailConfig.SenderEmail, emailConfig.Password);
 
             MailMessage message = new MailMessage();
-            message.From = new MailAddress(emailConfig.SenderEmail); 
-            message.To.Add(email.To); 
-            message.Subject = email.Subject; 
-            message.Body = email.Body; 
+            message.From = new MailAddress(emailConfig.SenderEmail);
+            message.To.Add(email.To);
+            message.Subject = email.Subject;
+            message.Body = email.Body;
 
             client.Send(message);
         }

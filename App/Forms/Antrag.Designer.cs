@@ -1,4 +1,6 @@
-﻿namespace App
+﻿using System.Windows.Forms;
+
+namespace App
 {
     partial class Antrag
     {
@@ -29,10 +31,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.parkplatzbelastungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.belastungrechnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mailServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -65,6 +70,25 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.dataGridViewParkingApplication = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cMenuGenehmigen = new System.Windows.Forms.ToolStripMenuItem();
+            this.cMenuAblehnen = new System.Windows.Forms.ToolStripMenuItem();
+            this.cMenuWarteliste = new System.Windows.Forms.ToolStripMenuItem();
+            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.btnNewCalc = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.ParkplatzantragsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KfzKennzeichen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EntfernungKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,22 +100,6 @@
             this.Antragsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Antragszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genehmigt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.schuelerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLast = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -110,6 +118,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
@@ -119,9 +128,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -135,7 +143,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.tbSearch);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1208, 729);
             this.splitContainer1.SplitterDistance = 280;
@@ -144,7 +152,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.parkplatzbelastungToolStripMenuItem});
+            this.parkplatzbelastungToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(280, 24);
@@ -153,17 +163,29 @@
             // 
             // parkplatzbelastungToolStripMenuItem
             // 
-            this.parkplatzbelastungToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.belastungrechnenToolStripMenuItem});
             this.parkplatzbelastungToolStripMenuItem.Name = "parkplatzbelastungToolStripMenuItem";
-            this.parkplatzbelastungToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
-            this.parkplatzbelastungToolStripMenuItem.Text = "Parkplatzbelastung";
+            this.parkplatzbelastungToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.parkplatzbelastungToolStripMenuItem.Text = "File";
             // 
-            // belastungrechnenToolStripMenuItem
+            // editToolStripMenuItem
             // 
-            this.belastungrechnenToolStripMenuItem.Name = "belastungrechnenToolStripMenuItem";
-            this.belastungrechnenToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.belastungrechnenToolStripMenuItem.Text = "Belastungrechnen";
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mailServerToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // mailServerToolStripMenuItem
+            // 
+            this.mailServerToolStripMenuItem.Name = "mailServerToolStripMenuItem";
+            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.mailServerToolStripMenuItem.Text = "Mail Server";
             // 
             // tabControl
             // 
@@ -487,6 +509,7 @@
             // 
             // dataGridViewParkingApplication
             // 
+            this.dataGridViewParkingApplication.AllowUserToOrderColumns = true;
             this.dataGridViewParkingApplication.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -504,8 +527,8 @@
             this.Moeglichkeit,
             this.Antragsdatum,
             this.Antragszeit,
-            this.Genehmigt,
-            this.schuelerIdDataGridViewTextBoxColumn});
+            this.Genehmigt});
+            this.dataGridViewParkingApplication.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridViewParkingApplication.DataSource = this.parkplatzantragBindingSource;
             this.dataGridViewParkingApplication.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridViewParkingApplication.Location = new System.Drawing.Point(2, 0);
@@ -514,89 +537,32 @@
             this.dataGridViewParkingApplication.Size = new System.Drawing.Size(592, 636);
             this.dataGridViewParkingApplication.TabIndex = 0;
             // 
-            // ParkplatzantragsId
+            // contextMenuStrip1
             // 
-            this.ParkplatzantragsId.DataPropertyName = "ParkplatzantragsId";
-            this.ParkplatzantragsId.HeaderText = "ParkplatzantragsId";
-            this.ParkplatzantragsId.Name = "ParkplatzantragsId";
-            this.ParkplatzantragsId.Width = 129;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cMenuGenehmigen,
+            this.cMenuAblehnen,
+            this.cMenuWarteliste});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(202, 70);
             // 
-            // KfzKennzeichen
+            // cMenuGenehmigen
             // 
-            this.KfzKennzeichen.DataPropertyName = "KfzKennzeichen";
-            this.KfzKennzeichen.HeaderText = "KfzKennzeichen";
-            this.KfzKennzeichen.Name = "KfzKennzeichen";
-            this.KfzKennzeichen.Width = 115;
+            this.cMenuGenehmigen.Name = "cMenuGenehmigen";
+            this.cMenuGenehmigen.Size = new System.Drawing.Size(201, 22);
+            this.cMenuGenehmigen.Text = "genehmigen";
             // 
-            // EntfernungKm
+            // cMenuAblehnen
             // 
-            this.EntfernungKm.DataPropertyName = "EntfernungKm";
-            this.EntfernungKm.HeaderText = "EntfernungKm";
-            this.EntfernungKm.Name = "EntfernungKm";
-            this.EntfernungKm.Width = 109;
+            this.cMenuAblehnen.Name = "cMenuAblehnen";
+            this.cMenuAblehnen.Size = new System.Drawing.Size(201, 22);
+            this.cMenuAblehnen.Text = "ablehnen";
             // 
-            // Fahrzeit
+            // cMenuWarteliste
             // 
-            this.Fahrzeit.DataPropertyName = "Fahrzeit";
-            this.Fahrzeit.HeaderText = "Fahrzeit";
-            this.Fahrzeit.Name = "Fahrzeit";
-            this.Fahrzeit.Width = 73;
-            // 
-            // Besonderefall
-            // 
-            this.Besonderefall.DataPropertyName = "Besonderefall";
-            this.Besonderefall.HeaderText = "Besonderefall";
-            this.Besonderefall.Name = "Besonderefall";
-            this.Besonderefall.Width = 103;
-            // 
-            // Grund
-            // 
-            this.Grund.DataPropertyName = "Grund";
-            this.Grund.HeaderText = "Grund";
-            this.Grund.Name = "Grund";
-            this.Grund.Width = 65;
-            // 
-            // Mitfahrgelegenheit
-            // 
-            this.Mitfahrgelegenheit.DataPropertyName = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.HeaderText = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.Name = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.Width = 133;
-            // 
-            // Moeglichkeit
-            // 
-            this.Moeglichkeit.DataPropertyName = "Moeglichkeit";
-            this.Moeglichkeit.HeaderText = "Moeglichkeit";
-            this.Moeglichkeit.Name = "Moeglichkeit";
-            this.Moeglichkeit.Width = 101;
-            // 
-            // Antragsdatum
-            // 
-            this.Antragsdatum.DataPropertyName = "Antragsdatum";
-            this.Antragsdatum.HeaderText = "Antragsdatum";
-            this.Antragsdatum.Name = "Antragsdatum";
-            this.Antragsdatum.Width = 108;
-            // 
-            // Antragszeit
-            // 
-            this.Antragszeit.DataPropertyName = "Antragszeit";
-            this.Antragszeit.HeaderText = "Antragszeit";
-            this.Antragszeit.Name = "Antragszeit";
-            this.Antragszeit.Width = 91;
-            // 
-            // Genehmigt
-            // 
-            this.Genehmigt.DataPropertyName = "Genehmigt";
-            this.Genehmigt.HeaderText = "Genehmigt";
-            this.Genehmigt.Name = "Genehmigt";
-            this.Genehmigt.Width = 91;
-            // 
-            // schuelerIdDataGridViewTextBoxColumn
-            // 
-            this.schuelerIdDataGridViewTextBoxColumn.DataPropertyName = "SchuelerId";
-            this.schuelerIdDataGridViewTextBoxColumn.HeaderText = "SchuelerId";
-            this.schuelerIdDataGridViewTextBoxColumn.Name = "schuelerIdDataGridViewTextBoxColumn";
-            this.schuelerIdDataGridViewTextBoxColumn.Width = 87;
+            this.cMenuWarteliste.Name = "cMenuWarteliste";
+            this.cMenuWarteliste.Size = new System.Drawing.Size(201, 22);
+            this.cMenuWarteliste.Text = "auf die Warteliste setzen";
             // 
             // parkplatzantragBindingSource
             // 
@@ -606,7 +572,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(239, 10);
+            this.label2.Location = new System.Drawing.Point(295, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 25);
             this.label2.TabIndex = 4;
@@ -622,14 +588,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Suchen";
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(769, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 23);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearch.Location = new System.Drawing.Point(769, 17);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(148, 23);
+            this.tbSearch.TabIndex = 2;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // panel1
             // 
@@ -695,6 +661,7 @@
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.btnNewCalc);
             this.splitContainer3.Panel2.Controls.Add(this.btnEmail);
             this.splitContainer3.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer3.Panel2.Controls.Add(this.btnSave);
@@ -702,6 +669,17 @@
             this.splitContainer3.Size = new System.Drawing.Size(924, 42);
             this.splitContainer3.SplitterDistance = 320;
             this.splitContainer3.TabIndex = 7;
+            // 
+            // btnNewCalc
+            // 
+            this.btnNewCalc.BackColor = System.Drawing.SystemColors.Menu;
+            this.btnNewCalc.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNewCalc.Location = new System.Drawing.Point(300, 0);
+            this.btnNewCalc.Name = "btnNewCalc";
+            this.btnNewCalc.Size = new System.Drawing.Size(75, 42);
+            this.btnNewCalc.TabIndex = 6;
+            this.btnNewCalc.Text = "Neu berechnen";
+            this.btnNewCalc.UseVisualStyleBackColor = false;
             // 
             // btnEmail
             // 
@@ -747,10 +725,84 @@
             this.btnNew.Text = "hinzufügen";
             this.btnNew.UseVisualStyleBackColor = false;
             // 
-            // contextMenuStrip1
+            // ParkplatzantragsId
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.ParkplatzantragsId.DataPropertyName = "ParkplatzantragsId";
+            this.ParkplatzantragsId.HeaderText = "ParkplatzantragsId";
+            this.ParkplatzantragsId.Name = "ParkplatzantragsId";
+            this.ParkplatzantragsId.Width = 129;
+            // 
+            // KfzKennzeichen
+            // 
+            this.KfzKennzeichen.DataPropertyName = "KfzKennzeichen";
+            this.KfzKennzeichen.HeaderText = "KfzKennzeichen";
+            this.KfzKennzeichen.Name = "KfzKennzeichen";
+            this.KfzKennzeichen.Width = 115;
+            // 
+            // EntfernungKm
+            // 
+            this.EntfernungKm.DataPropertyName = "EntfernungKm";
+            dataGridViewCellStyle1.Format = "0, km";
+            this.EntfernungKm.DefaultCellStyle = dataGridViewCellStyle1;
+            this.EntfernungKm.HeaderText = "EntfernungKm";
+            this.EntfernungKm.Name = "EntfernungKm";
+            this.EntfernungKm.Width = 109;
+            // 
+            // Fahrzeit
+            // 
+            this.Fahrzeit.DataPropertyName = "Fahrzeit";
+            this.Fahrzeit.HeaderText = "Fahrzeit";
+            this.Fahrzeit.Name = "Fahrzeit";
+            this.Fahrzeit.Width = 73;
+            // 
+            // Besonderefall
+            // 
+            this.Besonderefall.DataPropertyName = "Besonderefall";
+            this.Besonderefall.HeaderText = "Besonderefall";
+            this.Besonderefall.Name = "Besonderefall";
+            this.Besonderefall.Width = 103;
+            // 
+            // Grund
+            // 
+            this.Grund.DataPropertyName = "Grund";
+            this.Grund.HeaderText = "Grund";
+            this.Grund.Name = "Grund";
+            this.Grund.Width = 65;
+            // 
+            // Mitfahrgelegenheit
+            // 
+            this.Mitfahrgelegenheit.DataPropertyName = "Mitfahrgelegenheit";
+            this.Mitfahrgelegenheit.HeaderText = "Mitfahrgelegenheit";
+            this.Mitfahrgelegenheit.Name = "Mitfahrgelegenheit";
+            this.Mitfahrgelegenheit.Width = 133;
+            // 
+            // Moeglichkeit
+            // 
+            this.Moeglichkeit.DataPropertyName = "Moeglichkeit";
+            this.Moeglichkeit.HeaderText = "Moeglichkeit";
+            this.Moeglichkeit.Name = "Moeglichkeit";
+            this.Moeglichkeit.Width = 101;
+            // 
+            // Antragsdatum
+            // 
+            this.Antragsdatum.DataPropertyName = "Antragsdatum";
+            this.Antragsdatum.HeaderText = "Antragsdatum";
+            this.Antragsdatum.Name = "Antragsdatum";
+            this.Antragsdatum.Width = 108;
+            // 
+            // Antragszeit
+            // 
+            this.Antragszeit.DataPropertyName = "Antragszeit";
+            this.Antragszeit.HeaderText = "Antragszeit";
+            this.Antragszeit.Name = "Antragszeit";
+            this.Antragszeit.Width = 91;
+            // 
+            // Genehmigt
+            // 
+            this.Genehmigt.DataPropertyName = "Genehmigt";
+            this.Genehmigt.HeaderText = "Genehmigt";
+            this.Genehmigt.Name = "Genehmigt";
+            this.Genehmigt.Width = 91;
             // 
             // Antrag
             // 
@@ -760,7 +812,7 @@
             this.Controls.Add(this.splitContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Antrag";
-            this.Text = "Antrag";
+            this.Text = "Parkplatzantragverwaltung";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -785,6 +837,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
@@ -804,7 +857,6 @@
         private Button btnNew;
         private MenuStrip menuStrip1;
         private TextBox textBox1;
-        private ContextMenuStrip contextMenuStrip1;
         private Label label1;
         private Label label2;
         private BindingSource schuelerBindingSource;
@@ -815,7 +867,6 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private SplitContainer splitContainer3;
         private ToolStripMenuItem parkplatzbelastungToolStripMenuItem;
-        private ToolStripMenuItem belastungrechnenToolStripMenuItem;
         private TabControl tabControl;
         private TabPage tabPage1;
         private TextBox textBox3;
@@ -848,6 +899,15 @@
         private Button btnNext;
         private Button btnPrevious;
         private Button btnFirst;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem settingsToolStripMenuItem;
+        private ToolStripMenuItem mailServerToolStripMenuItem;
+        private TextBox tbSearch;
+        private Button btnNewCalc;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem cMenuGenehmigen;
+        private ToolStripMenuItem cMenuAblehnen;
+        private ToolStripMenuItem cMenuWarteliste;
         private DataGridViewTextBoxColumn ParkplatzantragsId;
         private DataGridViewTextBoxColumn KfzKennzeichen;
         private DataGridViewTextBoxColumn EntfernungKm;
@@ -859,6 +919,5 @@
         private DataGridViewTextBoxColumn Antragsdatum;
         private DataGridViewTextBoxColumn Antragszeit;
         private DataGridViewTextBoxColumn Genehmigt;
-        private DataGridViewTextBoxColumn schuelerIdDataGridViewTextBoxColumn;
     }
 }

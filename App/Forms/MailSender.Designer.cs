@@ -1,6 +1,6 @@
 ﻿namespace App.Forms
 {
-    partial class Mail
+    partial class MailSender
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Mail
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Mail";
-            this.Text = "Mail";
-            this.ResumeLayout(false);
-
+            this.Text = "MailSender";
         }
 
         #endregion

@@ -18,6 +18,8 @@ public partial class ParkplatzverwaltungContext : DbContext
 
     public virtual DbSet<Adressen> Adressens { get; set; }
 
+    public virtual DbSet<Antragsteuerung> Antragsteuerungs { get; set; }
+
     public virtual DbSet<Parkplatzantrag> Parkplatzantrags { get; set; }
 
     public virtual DbSet<Schueler> Schuelers { get; set; }
@@ -63,6 +65,33 @@ public partial class ParkplatzverwaltungContext : DbContext
                 .HasConstraintName("adresse_schueler_null_fk");
         });
 
+        modelBuilder.Entity<Antragsteuerung>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("antragsteuerung");
+
+            entity.Property(e => e.AntragEndzeit)
+                .HasColumnType("date")
+                .HasColumnName("antrag_endzeit");
+            entity.Property(e => e.AntragStartzeit)
+                .HasColumnType("date")
+                .HasColumnName("antrag_startzeit");
+            entity.Property(e => e.AnzahlAbgelehnt).HasColumnName("anzahl_abgelehnt");
+            entity.Property(e => e.AnzahlGenehmigt).HasColumnName("anzahl_genehmigt");
+            entity.Property(e => e.AnzahlMax).HasColumnName("anzahl_max");
+            entity.Property(e => e.IsActive).HasColumnName("is_active");
+            entity.Property(e => e.MietBeginn)
+                .HasColumnType("date")
+                .HasColumnName("miet_beginn");
+            entity.Property(e => e.MietEnde)
+                .HasColumnType("date")
+                .HasColumnName("miet_ende");
+            entity.Property(e => e.NexteStartzeit)
+                .HasColumnType("date")
+                .HasColumnName("nexte_startzeit");
+        });
+
         modelBuilder.Entity<Parkplatzantrag>(entity =>
         {
             entity.HasKey(e => e.ParkplatzantragsId).HasName("parkplatzantrag_pk");
@@ -81,12 +110,8 @@ public partial class ParkplatzverwaltungContext : DbContext
                 .HasColumnName("antragsdatum");
             entity.Property(e => e.Antragszeit).HasColumnName("antragszeit");
             entity.Property(e => e.Besonderefall).HasColumnName("besonderefall");
-            entity.Property(e => e.EntfernungKm)
-                .HasMaxLength(20)
-                .HasColumnName("entfernung_km");
-            entity.Property(e => e.Fahrzeit)
-                .HasMaxLength(50)
-                .HasColumnName("fahrzeit");
+            entity.Property(e => e.EntfernungKm).HasColumnName("entfernung_km");
+            entity.Property(e => e.Fahrzeit).HasColumnName("fahrzeit");
             entity.Property(e => e.Genehmigt).HasColumnName("genehmigt");
             entity.Property(e => e.Grund)
                 .HasMaxLength(120)

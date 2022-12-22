@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Web.WebView2.WinForms;
 using System.Windows.Forms;
-using Microsoft.Web.WebView2.WinForms;
 
 namespace Interface
 {
     public interface IAntragViewModel
     {
+        public TextBox searchBox { get; set; }
         public WebView2 webView { get; set; }
+        public DataGridView parkPlatzAntragView { get; set; }
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
 
         Task LoadAsync();
+        Task CalcNewRouteData();
         void Delete();
         void First();
         void Last();
@@ -24,8 +21,7 @@ namespace Interface
         void Next();
         void Previous();
         void Save();
-        void DataGridView_CellClick( );
+        void DataGridView_CellClick();
         void DataGridView_CellFormatting();
-        void DataGridView_CellDoubleClick(IDetailView detail);
     }
 }

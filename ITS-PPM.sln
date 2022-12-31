@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModels", "ViewModels\Vi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interface", "Interface\Interface.csproj", "{B0B8B316-2398-43B0-A4D0-BB4E7F9EDC55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{AA3A242D-C128-45DF-B555-20A11440D289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "Framework\Framework.csproj", "{AA3A242D-C128-45DF-B555-20A11440D289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

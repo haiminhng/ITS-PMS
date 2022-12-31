@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1418.22" />
-    <PackageReference Include="Unity.Container" Version="5.11.11" />
   </ItemGroup>
 
   <ItemGroup>

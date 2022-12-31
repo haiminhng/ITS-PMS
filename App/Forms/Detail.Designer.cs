@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBoxStudentAddress = new System.Windows.Forms.GroupBox();
             this.lblLocation = new System.Windows.Forms.Label();
@@ -41,19 +43,45 @@
             this.groupBoxStudentInfo = new System.Windows.Forms.GroupBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
+            this.schuelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblClass = new System.Windows.Forms.Label();
             this.tbClass = new System.Windows.Forms.TextBox();
             this.lblLastname = new System.Windows.Forms.Label();
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lblFirstname = new System.Windows.Forms.Label();
             this.tbFirstname = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBoxStudentAddress.SuspendLayout();
             this.groupBoxStudentInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -64,11 +92,16 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.groupBoxStudentAddress);
             this.splitContainer1.Panel1.Controls.Add(this.groupBoxStudentInfo);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.button3);
+            this.splitContainer1.Panel2.Controls.Add(this.button2);
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 346);
             this.splitContainer1.SplitterDistance = 350;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -188,10 +221,15 @@
             this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Email", true));
             this.tbEmail.Location = new System.Drawing.Point(83, 115);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(173, 23);
             this.tbEmail.TabIndex = 6;
+            // 
+            // schuelerBindingSource
+            // 
+            this.schuelerBindingSource.DataSource = typeof(Models.Models.Schueler);
             // 
             // lblClass
             // 
@@ -210,6 +248,7 @@
             this.tbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbClass.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "KlassenName", true));
             this.tbClass.Location = new System.Drawing.Point(83, 86);
             this.tbClass.Name = "tbClass";
             this.tbClass.Size = new System.Drawing.Size(173, 23);
@@ -229,6 +268,7 @@
             // 
             // tbLastname
             // 
+            this.tbLastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Nachname", true));
             this.tbLastname.Location = new System.Drawing.Point(83, 57);
             this.tbLastname.Name = "tbLastname";
             this.tbLastname.Size = new System.Drawing.Size(173, 23);
@@ -248,46 +288,266 @@
             this.tbFirstname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFirstname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Vorname", true));
             this.tbFirstname.Location = new System.Drawing.Point(83, 28);
             this.tbFirstname.Name = "tbFirstname";
             this.tbFirstname.Size = new System.Drawing.Size(173, 23);
             this.tbFirstname.TabIndex = 0;
             // 
-            // button1
+            // button3
             // 
-            this.button1.Location = new System.Drawing.Point(10, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(171, 315);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Email";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(91, 415);
+            this.button2.Location = new System.Drawing.Point(333, 315);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 19;
-            this.button2.Text = "button2";
+            this.button2.Text = "Abbrechen";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(252, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Speichern";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(396, 296);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = " Parkplatzantrag";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(173, 111);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(50, 19);
+            this.radioButton3.TabIndex = 27;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Nein";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(132, 111);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(35, 19);
+            this.radioButton4.TabIndex = 26;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Ja";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(173, 169);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(50, 19);
+            this.radioButton2.TabIndex = 25;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Nein";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(132, 169);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(35, 19);
+            this.radioButton1.TabIndex = 24;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Ja";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 229);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 15);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Antragsdatum";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(132, 226);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(171, 23);
+            this.textBox5.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Location = new System.Drawing.Point(9, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 15);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Möglichkeit";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(132, 197);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(171, 23);
+            this.textBox6.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 15);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Mitfahrgelegenheit";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 142);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 15);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Grund";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(132, 139);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(171, 23);
+            this.textBox8.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Besonderefall";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Location = new System.Drawing.Point(9, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 15);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Entfernung";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(132, 81);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(171, 23);
+            this.textBox2.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 15);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Kennzeichen";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(132, 52);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(171, 23);
+            this.textBox3.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 15);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Id";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(132, 23);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(171, 23);
+            this.textBox4.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 258);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 15);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Antragstatus";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(132, 255);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(171, 23);
+            this.textBox1.TabIndex = 28;
             // 
             // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 346);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detail";
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBoxStudentAddress.ResumeLayout(false);
             this.groupBoxStudentAddress.PerformLayout();
             this.groupBoxStudentInfo.ResumeLayout(false);
             this.groupBoxStudentInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -315,5 +575,29 @@
         private TextBox tbFirstname;
         private Button button2;
         private Button button1;
+        private BindingSource schuelerBindingSource;
+        private GroupBox groupBox1;
+        private Label label5;
+        private TextBox textBox5;
+        private Label label6;
+        private TextBox textBox6;
+        private Label label7;
+        private Label label8;
+        private TextBox textBox8;
+        private Label label1;
+        private Label label2;
+        private TextBox textBox2;
+        private Label label3;
+        private TextBox textBox3;
+        private Label label4;
+        private TextBox textBox4;
+        private RadioButton radioButton5;
+        private RadioButton radioButton3;
+        private RadioButton radioButton4;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private Button button3;
+        private Label label9;
+        private TextBox textBox1;
     }
 }

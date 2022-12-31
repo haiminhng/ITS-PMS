@@ -1,6 +1,9 @@
 ﻿using App.Forms;
+using Framework;
 using Interface;
+using Microsoft.Extensions.Configuration;
 using Unity;
+using Unity.Injection;
 using ViewModels;
 
 namespace App
@@ -13,8 +16,11 @@ namespace App
         {
 
             container.RegisterType<IAntragViewModel, AntragViewModel>();
-            container.RegisterType<IDetailView, DetailViewModel>();
-            container.RegisterType<IMailSender, MailSenderViewModel>();
+            container.RegisterType<IMailSender, MailSender>();
+            container.RegisterType<IDetailView, Detail>();
+            container.RegisterType<IMailServerConfiguration, MailServerConfiguration>();
+            container.RegisterType<IEmailSetting, EmailSetting>();
+            container.RegisterType<IEncryptionTool, EncryptionTool>();
 
         }
     }

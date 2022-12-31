@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace Models.Models;
 
@@ -23,14 +21,17 @@ public partial class Parkplatzantrag
 
     public DateTime? Antragsdatum { get; set; }
 
-    public bool? Genehmigt { get; set; }
-
     public TimeSpan? Fahrzeit { get; set; }
 
     public int? SchuelerId { get; set; }
 
     public TimeSpan? Antragszeit { get; set; }
 
-    public virtual Schueler? Schueler { get; set; }
+    public TimeSpan? Reisezeit { get; set; }
 
+    public int Genehmigt { get; set; }
+
+    public virtual Genehmigtstatus GenehmigtNavigation { get; set; } = null!;
+
+    public virtual Schueler? Schueler { get; set; }
 }

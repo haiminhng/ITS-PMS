@@ -4,7 +4,6 @@ namespace Interface
 {
     public interface IMailSender
     {
-        void ShowForm(Form form);
-
+        void ShowMailSender( );
     }
 }

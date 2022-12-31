@@ -22,6 +22,8 @@ namespace ViewModels
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
+        public BindingSource GenehmigtStatus { get; set; }
+
 
         public async Task LoadAsync()
         {
@@ -30,13 +32,31 @@ namespace ViewModels
                 .Include(e => e.Schueler)
                 .Include(e => e.Schueler.Adressen)
                 .Load();
+            _context.Genehmigtstatuses.Load();
+
             AntragBindingSource.Sort = "ParkplatzantragsId ASC";
             AntragBindingSource.ResetBindings(false);
             AntragBindingSource.DataSource = _context.Parkplatzantrags.Local.ToBindingList();
             await InitParkPlatzAntragAsync();
+
+            GenehmigtStatus.DataSource = _context.Genehmigtstatuses.Local.ToBindingList();
+
+
+            /*
+            BindingList<Genehmigtstatus> genehmigtStatusList = new BindingList<Genehmigtstatus>
+            {
+                new Genehmigtstatus { Wert = 0, Beschreibung = "Bearbeitung" },
+                new Genehmigtstatus { Wert = 1, Beschreibung = "Genehmigt" },
+                new Genehmigtstatus { Wert = 2, Beschreibung = "Abgelehnt" },
+                new Genehmigtstatus { Wert = 3, Beschreibung = "Wartelist" },
+            };
+            GenehmigtStatus.DataSource = genehmigtStatusList;
+            */
+
+
+
             SchuelerBindingSource.DataSource = _context.Schuelers.Local.ToBindingList();
             AdresseBindingSource.DataSource = _context.Adressens.Local.ToBindingList();
-
         }
 
         public void New()
@@ -48,6 +68,9 @@ namespace ViewModels
 
         public void Save()
         {
+            AntragBindingSource.EndEdit();
+            SchuelerBindingSource.EndEdit();
+            AdresseBindingSource.EndEdit();
             // wird geprüft ob record gespeichert wird;
             Int32 record;
             record = _context.SaveChanges();
@@ -165,6 +188,8 @@ namespace ViewModels
                         // problem* _googleService musst initialisiert werden new GoogleService(); ansonsten null reference exception
                         parkplatzantrag.EntfernungKm = await _googleService.GetDistance(schueler.Adressen);
                         parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(schueler.Adressen);
+                        parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(schueler.Adressen);
+
                         _context.SaveChanges();
                         parkPlatzAntragView.Refresh();
                     }
@@ -193,7 +218,9 @@ namespace ViewModels
 
                     parkplatzantrag.EntfernungKm = await _googleService.GetDistance(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
-                    _context.SaveChanges();
+                    parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
+
+                _context.SaveChanges();
                 }
             parkPlatzAntragView.Refresh();
             MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -212,7 +239,48 @@ namespace ViewModels
                     }
                 */
         }
-    
+
+        public void Search()
+        {
+
+            // Get the value to search for from the text box
+
+            string searchText = searchBox.Text.ToLower();
+
+            foreach (DataGridViewRow row in parkPlatzAntragView.Rows)
+            {
+                if (row.IsNewRow) continue; // Skip new rows
+
+                row.Visible = true; // Make the row visible again
+                string cellValue = row.Cells[1].Value?.ToString().ToLower() ?? "";
+                if (!cellValue.Contains(searchText))
+                {
+                    parkPlatzAntragView.EndEdit(); // Commit any pending changes to the data source
+                    int rowIndex = row.Index;
+                    CurrencyManager cm = (CurrencyManager)parkPlatzAntragView.BindingContext[parkPlatzAntragView.DataSource]; ;
+                    cm.SuspendBinding(); // Suspend updates to the data source
+                    parkPlatzAntragView.Rows[rowIndex].Visible = false; // Set the row to be invisible
+                    cm.ResumeBinding(); // Resume updates to the data source
+                }
+            }
+        }
+        
+        public void ShowDetail(IDetailView detailView)
+        {
+            detailView.BindingSource.DataSource = SchuelerBindingSource.Current;
+            detailView.ShowDetail();
+
+        }
+
+        public void ShowMailSender(IMailSender mailSender)
+        {
+            mailSender.ShowMailSender();
+        }
+
+        public void ShowEmailSetting(IEmailSetting emailSetting)
+        {
+            emailSetting.ShowEmailSetting();
+        }
     }
 
 }

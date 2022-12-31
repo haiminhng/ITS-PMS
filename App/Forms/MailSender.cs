@@ -3,13 +3,16 @@ using Unity;
 
 namespace App.Forms
 {
-    public partial class MailSender : Form
+    public partial class MailSender : Form, IMailSender
     {
-        private IMailSender _mailSender = UnityConfig.container.Resolve<IMailSender>();
-
         public MailSender()
         {
             InitializeComponent();
+        }
+
+        public void ShowMailSender( )
+        {
+            this.ShowDialog();
         }
     }
 }

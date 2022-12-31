@@ -20,13 +20,15 @@ public partial class ParkplatzverwaltungContext : DbContext
 
     public virtual DbSet<Antragsteuerung> Antragsteuerungs { get; set; }
 
+    public virtual DbSet<Genehmigtstatus> Genehmigtstatuses { get; set; }
+
     public virtual DbSet<Parkplatzantrag> Parkplatzantrags { get; set; }
 
     public virtual DbSet<Schueler> Schuelers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=130.61.200.85;Initial Catalog=Parkplatzverwaltung;Persist Security Info=True;TrustServerCertificate=True;User ID=sa;Password=Minh@1996");
+        => optionsBuilder.UseSqlServer("Server=130.61.200.85;Database=Parkplatzverwaltung;Persist Security Info=True;TrustServerCertificate=True;User ID=sa;Password=Minh@1996");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -92,6 +94,20 @@ public partial class ParkplatzverwaltungContext : DbContext
                 .HasColumnName("nexte_startzeit");
         });
 
+        modelBuilder.Entity<Genehmigtstatus>(entity =>
+        {
+            entity.HasKey(e => e.Wert).HasName("PK__genehmig__1110996E7DEFED05");
+
+            entity.ToTable("genehmigtstatus");
+
+            entity.Property(e => e.Wert)
+                .ValueGeneratedNever()
+                .HasColumnName("wert");
+            entity.Property(e => e.Beschreibung)
+                .HasMaxLength(50)
+                .HasColumnName("beschreibung");
+        });
+
         modelBuilder.Entity<Parkplatzantrag>(entity =>
         {
             entity.HasKey(e => e.ParkplatzantragsId).HasName("parkplatzantrag_pk");
@@ -123,7 +139,13 @@ public partial class ParkplatzverwaltungContext : DbContext
             entity.Property(e => e.Moeglichkeit)
                 .HasMaxLength(120)
                 .HasColumnName("moeglichkeit");
+            entity.Property(e => e.Reisezeit).HasColumnName("reisezeit");
             entity.Property(e => e.SchuelerId).HasColumnName("schueler_id");
+
+            entity.HasOne(d => d.GenehmigtNavigation).WithMany(p => p.Parkplatzantrags)
+                .HasForeignKey(d => d.Genehmigt)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("genehmigt_fk");
 
             entity.HasOne(d => d.Schueler).WithOne(p => p.Parkplatzantrag)
                 .HasForeignKey<Parkplatzantrag>(d => d.SchuelerId)

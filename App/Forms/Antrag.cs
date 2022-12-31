@@ -1,17 +1,15 @@
 ﻿using App.Forms;
 using Interface;
+using System.CodeDom;
+using System.Data;
+using System.Windows.Forms;
 using Unity;
 namespace App
 {
     public partial class Antrag : Form
     {
         private IAntragViewModel _vm = UnityConfig.container.Resolve<IAntragViewModel>();
-        private IDetailView _detailView = UnityConfig.container.Resolve<IDetailView>();
-        private IMailSender _mailSenderView = UnityConfig.container.Resolve<IMailSender>();
-
-        private Detail _detailForm = new Detail();
-        private MailSender _mailSender = new MailSender();
-
+        
         public Antrag()
         {
             InitializeComponent();
@@ -21,11 +19,13 @@ namespace App
             _vm.AntragBindingSource = parkplatzantragBindingSource;
             _vm.SchuelerBindingSource = schuelerBindingSource;
             _vm.AdresseBindingSource = adressenBindingSource;
+            _vm.GenehmigtStatus = genehmigtstatusBindingSource;
+
 
             Load += delegate { _vm.LoadAsync(); };
 
             //Button Control
-            btnEmail.Click += delegate { _mailSenderView.ShowForm(_mailSender); };
+            btnEmail.Click += delegate { _vm.ShowMailSender(UnityConfig.container.Resolve<IMailSender>()); ;};
             btnNew.Click += delegate { _vm.New(); };
             btnSave.Click += delegate { _vm.Save(); };
             btnDelete.Click += delegate { _vm.Delete(); };
@@ -35,34 +35,17 @@ namespace App
             btnNext.Click += delegate { _vm.Next(); };
             btnLast.Click += delegate { _vm.Last(); };
 
+            //Textbox Control
+            tbSearch.TextChanged += delegate { _vm.Search(); };
+
             //DataGridView Control
             dataGridViewParkingApplication.CellClick += delegate { _vm.DataGridView_CellClick(); };
             dataGridViewParkingApplication.CellFormatting += delegate { _vm.DataGridView_CellFormatting(); };
-            dataGridViewParkingApplication.CellDoubleClick += delegate { _detailView.ShowForm(_detailForm); };
-        }
+            dataGridViewParkingApplication.CellDoubleClick += delegate { _vm.ShowDetail(UnityConfig.container.Resolve<IDetailView>()); };
+                        
+            //ToolStripMenu Control
+            mailServerToolStripMenuItem.Click += delegate { _vm.ShowEmailSetting(UnityConfig.container.Resolve<IEmailSetting>()); ; };
 
-        private void tbSearch_TextChanged(object sender, EventArgs e)
-        {
-            // Get the value to search for from the text box
-
-            string searchText = tbSearch.Text.ToLower();
-
-            foreach (DataGridViewRow row in dataGridViewParkingApplication.Rows)
-            {
-                if (row.IsNewRow) continue; // Skip new rows
-
-                row.Visible = true; // Make the row visible again
-                string cellValue = row.Cells[1].Value?.ToString().ToLower() ?? "";
-                if (!cellValue.Contains(searchText))
-                {
-                    dataGridViewParkingApplication.EndEdit(); // Commit any pending changes to the data source
-                    int rowIndex = row.Index;
-                    CurrencyManager cm = (CurrencyManager)BindingContext[dataGridViewParkingApplication.DataSource];
-                    cm.SuspendBinding(); // Suspend updates to the data source
-                    dataGridViewParkingApplication.Rows[rowIndex].Visible = false; // Set the row to be invisible
-                    cm.ResumeBinding(); // Resume updates to the data source
-                }
-            }
         }
     }
 }

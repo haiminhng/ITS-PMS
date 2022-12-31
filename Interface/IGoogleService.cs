@@ -6,5 +6,7 @@ namespace Interface
     {
         Task<double> GetDistance(Adressen adresse);
         Task<TimeSpan> GetDriveTime(Adressen adresse);
+        Task<TimeSpan> GetTravelTime(Adressen adresse);
+
     }
 }

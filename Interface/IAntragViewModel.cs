@@ -11,9 +11,11 @@ namespace Interface
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
+        public BindingSource GenehmigtStatus { get; set; }
 
         Task LoadAsync();
         Task CalcNewRouteData();
+        void Search();
         void Delete();
         void First();
         void Last();
@@ -21,6 +23,9 @@ namespace Interface
         void Next();
         void Previous();
         void Save();
+        void ShowDetail(IDetailView detailView);
+        void ShowMailSender(IMailSender mailSender);
+        void ShowEmailSetting(IEmailSetting emailSetting);
         void DataGridView_CellClick();
         void DataGridView_CellFormatting();
     }

@@ -1,16 +1,22 @@
 ﻿using Interface;
-using Unity;
 
 namespace App.Forms
 {
-    public partial class Detail : Form
+    public partial class Detail : Form, IDetailView
     {
-        private IDetailView _detailView = UnityConfig.container.Resolve<IDetailView>();
+        public BindingSource BindingSource { get; set; }
 
         public Detail()
         {
             InitializeComponent();
+            BindingSource = schuelerBindingSource;
         }
 
+        
+
+        public void ShowDetail()
+        {
+            this.ShowDialog();
+        }
     }
 }

@@ -31,6 +31,8 @@ public partial class Parkplatzantrag
 
     public int Genehmigt { get; set; }
 
+    public int Punkte { get; set; }
+
     public virtual Genehmigtstatus GenehmigtNavigation { get; set; } = null!;
 
     public virtual Schueler? Schueler { get; set; }

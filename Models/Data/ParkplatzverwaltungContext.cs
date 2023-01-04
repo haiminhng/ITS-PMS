@@ -139,6 +139,7 @@ public partial class ParkplatzverwaltungContext : DbContext
             entity.Property(e => e.Moeglichkeit)
                 .HasMaxLength(120)
                 .HasColumnName("moeglichkeit");
+            entity.Property(e => e.Punkte).HasColumnName("punkte");
             entity.Property(e => e.Reisezeit).HasColumnName("reisezeit");
             entity.Property(e => e.SchuelerId).HasColumnName("schueler_id");
 

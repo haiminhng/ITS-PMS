@@ -107,6 +107,7 @@ namespace App
             this.Moeglichkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Antragsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Antragszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Punkte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genehmigt = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -546,6 +547,7 @@ namespace App
             this.Moeglichkeit,
             this.Antragsdatum,
             this.Antragszeit,
+            this.Punkte,
             this.Genehmigt});
             this.dataGridViewParkingApplication.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridViewParkingApplication.DataSource = this.parkplatzantragBindingSource;
@@ -875,6 +877,13 @@ namespace App
             this.Antragszeit.Name = "Antragszeit";
             this.Antragszeit.Width = 91;
             // 
+            // Punkte
+            // 
+            this.Punkte.DataPropertyName = "Punkte";
+            this.Punkte.HeaderText = "Punkte";
+            this.Punkte.Name = "Punkte";
+            this.Punkte.Width = 69;
+            // 
             // Genehmigt
             // 
             this.Genehmigt.DataPropertyName = "Genehmigt";
@@ -886,7 +895,6 @@ namespace App
             this.Genehmigt.MinimumWidth = 100;
             this.Genehmigt.Name = "Genehmigt";
             this.Genehmigt.ValueMember = "Wert";
-            this.Genehmigt.Width = 100;
             // 
             // Antrag
             // 
@@ -1014,6 +1022,7 @@ namespace App
         private DataGridViewTextBoxColumn Moeglichkeit;
         private DataGridViewTextBoxColumn Antragsdatum;
         private DataGridViewTextBoxColumn Antragszeit;
+        private DataGridViewTextBoxColumn Punkte;
         private DataGridViewComboBoxColumn Genehmigt;
     }
 }

@@ -13,6 +13,7 @@ namespace ViewModels
     public class AntragViewModel : IAntragViewModel
     {
         private readonly IGoogleService _googleService = new GoogleService();
+        private readonly IAntragService _antragService = new WeightedScoring();
         private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
         private string _navUrl { get; set; }
 
@@ -179,16 +180,13 @@ namespace ViewModels
                 {
                     Schueler schueler = _context.Schuelers.Find(parkplatzantrag.SchuelerId);
 
-                    if (
-                        schueler != null && 
-                        schueler.Adressen != null && 
-                        schueler.Parkplatzantrag != null && 
-                        schueler.Parkplatzantrag.EntfernungKm == null)
+                    if (schueler != null && schueler.Adressen != null && schueler.Parkplatzantrag != null && schueler.Parkplatzantrag.EntfernungKm == null && parkplatzantrag != null && parkplatzantrag.Punkte != 0)
                     {
                         // problem* _googleService musst initialisiert werden new GoogleService(); ansonsten null reference exception
                         parkplatzantrag.EntfernungKm = await _googleService.GetDistance(schueler.Adressen);
                         parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(schueler.Adressen);
                         parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(schueler.Adressen);
+                        parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
 
                         _context.SaveChanges();
                         parkPlatzAntragView.Refresh();
@@ -219,6 +217,7 @@ namespace ViewModels
                     parkplatzantrag.EntfernungKm = await _googleService.GetDistance(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
+                    parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
 
                 _context.SaveChanges();
                 }

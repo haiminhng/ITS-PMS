@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Interface;
 using System.Configuration;
-using Interface;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Framework
 {
@@ -17,6 +11,6 @@ namespace Framework
         public string SenderEmail { get; set; } = ConfigurationManager.AppSettings["SenderEmail"] ?? string.Empty;
         public string Password { get; set; } = ConfigurationManager.AppSettings["Password"] ?? string.Empty;
         public bool EnableSsl { get; set; } = bool.TryParse(ConfigurationManager.AppSettings["EnableSsl"], out bool enableSsl) ? enableSsl : false;
-    
+
     }
 }

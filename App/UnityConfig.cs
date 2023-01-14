@@ -1,9 +1,7 @@
 ﻿using App.Forms;
 using Framework;
 using Interface;
-using Microsoft.Extensions.Configuration;
 using Unity;
-using Unity.Injection;
 using ViewModels;
 
 namespace App

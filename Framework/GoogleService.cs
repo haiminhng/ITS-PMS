@@ -2,14 +2,13 @@
 using Models.Models;
 using Models.Models.utilities;
 using Newtonsoft.Json;
-using System;
 using System.Net;
 
 namespace Framework
 {
     public class GoogleService : IGoogleService
     {
-        
+
         private WebClient _webClient = new WebClient();
 
         private string _baseUrl = "https://maps.googleapis.com/maps/api/distancematrix/json";
@@ -45,7 +44,7 @@ namespace Framework
                 return 0;
             }
 
-            return dr.rows[0].elements[0].distance.value;            
+            return dr.rows[0].elements[0].distance.value;
             /*
             HttpResponseMessage response = await _client.GetAsync(URL);
             if (response.IsSuccessStatusCode) {

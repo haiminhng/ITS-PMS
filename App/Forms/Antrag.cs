@@ -1,15 +1,11 @@
-﻿using App.Forms;
-using Interface;
-using System.CodeDom;
-using System.Data;
-using System.Windows.Forms;
+﻿using Interface;
 using Unity;
 namespace App
 {
     public partial class Antrag : Form
     {
         private IAntragViewModel _vm = UnityConfig.container.Resolve<IAntragViewModel>();
-        
+
         public Antrag()
         {
             InitializeComponent();
@@ -25,7 +21,7 @@ namespace App
             Load += delegate { _vm.LoadAsync(); };
 
             //Button Control
-            btnEmail.Click += delegate { _vm.ShowMailSender(UnityConfig.container.Resolve<IMailSender>()); ;};
+            btnEmail.Click += delegate { _vm.ShowMailSender(UnityConfig.container.Resolve<IMailSender>()); ; };
             btnNew.Click += delegate { _vm.New(); };
             btnSave.Click += delegate { _vm.Save(); };
             btnDelete.Click += delegate { _vm.Delete(); };
@@ -42,7 +38,7 @@ namespace App
             dataGridViewParkingApplication.CellClick += delegate { _vm.DataGridView_CellClick(); };
             dataGridViewParkingApplication.CellFormatting += delegate { _vm.DataGridView_CellFormatting(); };
             dataGridViewParkingApplication.CellDoubleClick += delegate { _vm.ShowDetail(UnityConfig.container.Resolve<IDetailView>()); };
-                        
+
             //ToolStripMenu Control
             mailServerToolStripMenuItem.Click += delegate { _vm.ShowEmailSetting(UnityConfig.container.Resolve<IEmailSetting>()); ; };
 

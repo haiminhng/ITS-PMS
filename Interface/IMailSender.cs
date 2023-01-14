@@ -1,9 +1,7 @@
-﻿using System.Windows.Forms;
-
-namespace Interface
+﻿namespace Interface
 {
     public interface IMailSender
     {
-        void ShowMailSender( );
+        void ShowMailSender();
     }
 }

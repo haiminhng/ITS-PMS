@@ -1,5 +1,4 @@
 ﻿using Interface;
-using Unity;
 
 namespace App.Forms
 {
@@ -10,7 +9,7 @@ namespace App.Forms
             InitializeComponent();
         }
 
-        public void ShowMailSender( )
+        public void ShowMailSender()
         {
             this.ShowDialog();
         }

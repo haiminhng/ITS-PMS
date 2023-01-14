@@ -5,7 +5,6 @@ using Microsoft.Web.WebView2.WinForms;
 using Models.Data;
 using Models.Models;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 
 namespace ViewModels
@@ -92,7 +91,7 @@ namespace ViewModels
         public void Previous() => AntragBindingSource.MovePrevious();
         public void Next() => AntragBindingSource.MoveNext();
 
-        
+
         public void DataGridView_CellClick()
         {
             BindingList<Schueler> schuelerData = new BindingList<Schueler>();
@@ -122,7 +121,7 @@ namespace ViewModels
                 }
             }
         }
-        
+
 
         /*
          Es gibt ein paar Probleme mit diesem Code. 
@@ -208,35 +207,35 @@ namespace ViewModels
         public async Task CalcNewRouteData()
         {
 
-                // Durchlaufen alle ausgewählten Zeilen in DataGridView
-                foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
-                {
-                    // jeder Objekt neu berechnen
-                    Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
+            // Durchlaufen alle ausgewählten Zeilen in DataGridView
+            foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
+            {
+                // jeder Objekt neu berechnen
+                Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
 
-                    parkplatzantrag.EntfernungKm = await _googleService.GetDistance(parkplatzantrag.Schueler.Adressen);
-                    parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
-                    parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
-                    parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
+                parkplatzantrag.EntfernungKm = await _googleService.GetDistance(parkplatzantrag.Schueler.Adressen);
+                parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
+                parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
+                parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
 
                 _context.SaveChanges();
-                }
+            }
             parkPlatzAntragView.Refresh();
             MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                /*
-                Parkplatzantrag parkplatzantrag = (Parkplatzantrag)AntragBindingSource.Current;
+            /*
+            Parkplatzantrag parkplatzantrag = (Parkplatzantrag)AntragBindingSource.Current;
 
-                    Schueler schueler = parkplatzantrag.Schueler;
+                Schueler schueler = parkplatzantrag.Schueler;
 
-                    if (schueler != null && schueler.Adressen != null && schueler.Parkplatzantrag != null)
-                    {
-                        // problem* _googleService musst initialisiert werden new GoogleService(); ansonsten null reference exception
-                        parkplatzantrag.EntfernungKm = await _googleService.GetDistance(schueler.Adressen);
-                        parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(schueler.Adressen);
-                        _context.SaveChanges();
-                    }
-                */
+                if (schueler != null && schueler.Adressen != null && schueler.Parkplatzantrag != null)
+                {
+                    // problem* _googleService musst initialisiert werden new GoogleService(); ansonsten null reference exception
+                    parkplatzantrag.EntfernungKm = await _googleService.GetDistance(schueler.Adressen);
+                    parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(schueler.Adressen);
+                    _context.SaveChanges();
+                }
+            */
         }
 
         public void Search()
@@ -263,7 +262,7 @@ namespace ViewModels
                 }
             }
         }
-        
+
         public void ShowDetail(IDetailView detailView)
         {
             detailView.BindingSource.DataSource = SchuelerBindingSource.Current;

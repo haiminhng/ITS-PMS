@@ -12,11 +12,13 @@ namespace App.Forms
             BindingSource = schuelerBindingSource;
         }
 
-        
+
 
         public void ShowDetail()
         {
             this.ShowDialog();
         }
+
+
     }
 }

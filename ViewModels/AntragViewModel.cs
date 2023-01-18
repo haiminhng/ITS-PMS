@@ -270,7 +270,8 @@ namespace ViewModels
             detailView.AdresseBindingSource.DataSource = AdresseBindingSource.Current;
             detailView.AntragBinDingSource.DataSource = AntragBindingSource.Current;
             //detailView.GenehmigtStatus.DataSource = _context.Genehmigtstatuses.Local.ToBindingList();
-            detailView.GenehmigtStatus.DataSource = (Genehmigtstatus) ((Parkplatzantrag)AntragBindingSource.Current).GenehmigtNavigation;
+            //detailView.GenehmigtStatus.DataSource = (Genehmigtstatus) ((Parkplatzantrag)AntragBindingSource.Current).GenehmigtNavigation;
+            detailView.GenehmigtStatus.DataSource = GenehmigtStatus.DataSource;
             detailView.ShowDetail();
 
         }

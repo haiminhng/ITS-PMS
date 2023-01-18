@@ -71,12 +71,25 @@ namespace App
             this.tabControlAntrag = new System.Windows.Forms.TabControl();
             this.alleAntrag = new System.Windows.Forms.TabPage();
             this.dataGridViewParkingApplication = new System.Windows.Forms.DataGridView();
-            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ParkplatzantragsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KfzKennzeichen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EntfernungKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reisezeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fahrzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grund = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Moeglichkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Besonderefall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mitfahrgelegenheit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Antragsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Antragszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Punkte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genehmigt = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.genehmigtstatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cMenuGenehmigen = new System.Windows.Forms.ToolStripMenuItem();
             this.cMenuAblehnen = new System.Windows.Forms.ToolStripMenuItem();
             this.cMenuWarteliste = new System.Windows.Forms.ToolStripMenuItem();
+            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genehmigteAntrag = new System.Windows.Forms.TabPage();
             this.abgelehnteAntrag = new System.Windows.Forms.TabPage();
             this.warteliste = new System.Windows.Forms.TabPage();
@@ -96,19 +109,6 @@ namespace App
             this.btnNew = new System.Windows.Forms.Button();
             this.GenehmigtNavigation = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ParkplatzantragsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KfzKennzeichen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EntfernungKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reisezeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fahrzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grund = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Moeglichkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Besonderefall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mitfahrgelegenheit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Antragsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Antragszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Punkte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genehmigt = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -129,9 +129,9 @@ namespace App
             this.tabControlAntrag.SuspendLayout();
             this.alleAntrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genehmigtstatusBindingSource)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -143,7 +143,6 @@ namespace App
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -158,9 +157,8 @@ namespace App
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.tbSearch);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1381, 972);
+            this.splitContainer1.Size = new System.Drawing.Size(1208, 729);
             this.splitContainer1.SplitterDistance = 280;
-            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // menuStrip1
@@ -170,8 +168,7 @@ namespace App
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(280, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(280, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -180,24 +177,23 @@ namespace App
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mailServerToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // mailServerToolStripMenuItem
             // 
             this.mailServerToolStripMenuItem.Name = "mailServerToolStripMenuItem";
-            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.mailServerToolStripMenuItem.Text = "Mail Server";
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(3, 36);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControl.Location = new System.Drawing.Point(3, 27);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(321, 936);
+            this.tabControl.Size = new System.Drawing.Size(281, 702);
             this.tabControl.TabIndex = 7;
             // 
             // tabPage1
@@ -209,11 +205,10 @@ namespace App
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.groupBoxStudentAddress);
             this.tabPage1.Controls.Add(this.groupBoxStudentInfo);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(313, 903);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(273, 674);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informationen";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -221,27 +216,25 @@ namespace App
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(16, 83);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3.Location = new System.Drawing.Point(14, 62);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(279, 27);
+            this.textBox3.Size = new System.Drawing.Size(245, 23);
             this.textBox3.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 59);
+            this.label4.Location = new System.Drawing.Point(13, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 20);
+            this.label4.Size = new System.Drawing.Size(123, 15);
             this.label4.TabIndex = 19;
             this.label4.Text = "Aktuelle Mietzeitraum";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(202, 19);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(177, 14);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 31);
+            this.button1.Size = new System.Drawing.Size(30, 23);
             this.button1.TabIndex = 18;
             this.button1.Text = "^";
             this.button1.UseVisualStyleBackColor = true;
@@ -249,18 +242,17 @@ namespace App
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(138, 19);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.Location = new System.Drawing.Point(121, 14);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(57, 27);
+            this.textBox2.Size = new System.Drawing.Size(50, 23);
             this.textBox2.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 23);
+            this.label3.Location = new System.Drawing.Point(14, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.Size = new System.Drawing.Size(92, 15);
             this.label3.TabIndex = 16;
             this.label3.Text = "Gesammte Platz";
             // 
@@ -274,11 +266,9 @@ namespace App
             this.groupBoxStudentAddress.Controls.Add(this.tbHnr);
             this.groupBoxStudentAddress.Controls.Add(this.lblStreet);
             this.groupBoxStudentAddress.Controls.Add(this.tbStreet);
-            this.groupBoxStudentAddress.Location = new System.Drawing.Point(1, 524);
-            this.groupBoxStudentAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBoxStudentAddress.Location = new System.Drawing.Point(1, 393);
             this.groupBoxStudentAddress.Name = "groupBoxStudentAddress";
-            this.groupBoxStudentAddress.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxStudentAddress.Size = new System.Drawing.Size(301, 193);
+            this.groupBoxStudentAddress.Size = new System.Drawing.Size(263, 145);
             this.groupBoxStudentAddress.TabIndex = 14;
             this.groupBoxStudentAddress.TabStop = false;
             this.groupBoxStudentAddress.Text = "Adresse";
@@ -286,19 +276,18 @@ namespace App
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(10, 151);
+            this.lblLocation.Location = new System.Drawing.Point(9, 113);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(30, 20);
+            this.lblLocation.Size = new System.Drawing.Size(24, 15);
             this.lblLocation.TabIndex = 15;
             this.lblLocation.Text = "Ort";
             // 
             // tbLocation
             // 
             this.tbLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Ort", true));
-            this.tbLocation.Location = new System.Drawing.Point(95, 147);
-            this.tbLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbLocation.Location = new System.Drawing.Point(83, 110);
             this.tbLocation.Name = "tbLocation";
-            this.tbLocation.Size = new System.Drawing.Size(195, 27);
+            this.tbLocation.Size = new System.Drawing.Size(171, 23);
             this.tbLocation.TabIndex = 14;
             // 
             // adressenBindingSource
@@ -309,55 +298,52 @@ namespace App
             // 
             this.lblPostcode.AutoSize = true;
             this.lblPostcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPostcode.Location = new System.Drawing.Point(10, 112);
+            this.lblPostcode.Location = new System.Drawing.Point(9, 84);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(33, 20);
+            this.lblPostcode.Size = new System.Drawing.Size(27, 15);
             this.lblPostcode.TabIndex = 13;
             this.lblPostcode.Text = "PLZ";
             // 
             // tbPostcode
             // 
             this.tbPostcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Plz", true));
-            this.tbPostcode.Location = new System.Drawing.Point(95, 108);
-            this.tbPostcode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbPostcode.Location = new System.Drawing.Point(83, 81);
             this.tbPostcode.Name = "tbPostcode";
-            this.tbPostcode.Size = new System.Drawing.Size(195, 27);
+            this.tbPostcode.Size = new System.Drawing.Size(171, 23);
             this.tbPostcode.TabIndex = 12;
             // 
             // lblHnr
             // 
             this.lblHnr.AutoSize = true;
-            this.lblHnr.Location = new System.Drawing.Point(10, 73);
+            this.lblHnr.Location = new System.Drawing.Point(9, 55);
             this.lblHnr.Name = "lblHnr";
-            this.lblHnr.Size = new System.Drawing.Size(58, 20);
+            this.lblHnr.Size = new System.Drawing.Size(47, 15);
             this.lblHnr.TabIndex = 11;
             this.lblHnr.Text = "HausNr";
             // 
             // tbHnr
             // 
             this.tbHnr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Hausnr", true));
-            this.tbHnr.Location = new System.Drawing.Point(95, 69);
-            this.tbHnr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbHnr.Location = new System.Drawing.Point(83, 52);
             this.tbHnr.Name = "tbHnr";
-            this.tbHnr.Size = new System.Drawing.Size(195, 27);
+            this.tbHnr.Size = new System.Drawing.Size(171, 23);
             this.tbHnr.TabIndex = 10;
             // 
             // lblStreet
             // 
             this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(10, 35);
+            this.lblStreet.Location = new System.Drawing.Point(9, 26);
             this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(51, 20);
+            this.lblStreet.Size = new System.Drawing.Size(40, 15);
             this.lblStreet.TabIndex = 9;
             this.lblStreet.Text = "Straße";
             // 
             // tbStreet
             // 
             this.tbStreet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Strasse", true));
-            this.tbStreet.Location = new System.Drawing.Point(95, 31);
-            this.tbStreet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbStreet.Location = new System.Drawing.Point(83, 23);
             this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(195, 27);
+            this.tbStreet.Size = new System.Drawing.Size(171, 23);
             this.tbStreet.TabIndex = 8;
             // 
             // groupBoxStudentInfo
@@ -370,11 +356,9 @@ namespace App
             this.groupBoxStudentInfo.Controls.Add(this.tbLastname);
             this.groupBoxStudentInfo.Controls.Add(this.lblFirstname);
             this.groupBoxStudentInfo.Controls.Add(this.tbFirstname);
-            this.groupBoxStudentInfo.Location = new System.Drawing.Point(-1, 321);
-            this.groupBoxStudentInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBoxStudentInfo.Location = new System.Drawing.Point(-1, 241);
             this.groupBoxStudentInfo.Name = "groupBoxStudentInfo";
-            this.groupBoxStudentInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxStudentInfo.Size = new System.Drawing.Size(303, 195);
+            this.groupBoxStudentInfo.Size = new System.Drawing.Size(265, 146);
             this.groupBoxStudentInfo.TabIndex = 15;
             this.groupBoxStudentInfo.TabStop = false;
             this.groupBoxStudentInfo.Text = "Schueler";
@@ -385,9 +369,9 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(10, 157);
+            this.lblEmail.Location = new System.Drawing.Point(9, 118);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(46, 20);
+            this.lblEmail.Size = new System.Drawing.Size(36, 15);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "Email";
             // 
@@ -397,10 +381,9 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Email", true));
-            this.tbEmail.Location = new System.Drawing.Point(95, 153);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbEmail.Location = new System.Drawing.Point(83, 115);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(197, 27);
+            this.tbEmail.Size = new System.Drawing.Size(173, 23);
             this.tbEmail.TabIndex = 6;
             // 
             // schuelerBindingSource
@@ -413,9 +396,9 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(10, 119);
+            this.lblClass.Location = new System.Drawing.Point(9, 89);
             this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(50, 20);
+            this.lblClass.Size = new System.Drawing.Size(39, 15);
             this.lblClass.TabIndex = 5;
             this.lblClass.Text = "Klasse";
             // 
@@ -425,10 +408,9 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbClass.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "KlassenName", true));
-            this.tbClass.Location = new System.Drawing.Point(95, 115);
-            this.tbClass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbClass.Location = new System.Drawing.Point(83, 86);
             this.tbClass.Name = "tbClass";
-            this.tbClass.Size = new System.Drawing.Size(197, 27);
+            this.tbClass.Size = new System.Drawing.Size(173, 23);
             this.tbClass.TabIndex = 4;
             // 
             // lblLastname
@@ -437,27 +419,26 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(9, 80);
+            this.lblLastname.Location = new System.Drawing.Point(8, 60);
             this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(80, 20);
+            this.lblLastname.Size = new System.Drawing.Size(65, 15);
             this.lblLastname.TabIndex = 3;
             this.lblLastname.Text = "Nachname";
             // 
             // tbLastname
             // 
             this.tbLastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Nachname", true));
-            this.tbLastname.Location = new System.Drawing.Point(95, 76);
-            this.tbLastname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbLastname.Location = new System.Drawing.Point(83, 57);
             this.tbLastname.Name = "tbLastname";
-            this.tbLastname.Size = new System.Drawing.Size(197, 27);
+            this.tbLastname.Size = new System.Drawing.Size(173, 23);
             this.tbLastname.TabIndex = 2;
             // 
             // lblFirstname
             // 
             this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(10, 41);
+            this.lblFirstname.Location = new System.Drawing.Point(9, 31);
             this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(68, 20);
+            this.lblFirstname.Size = new System.Drawing.Size(54, 15);
             this.lblFirstname.TabIndex = 1;
             this.lblFirstname.Text = "Vorname";
             // 
@@ -467,19 +448,17 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFirstname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Vorname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbFirstname.Location = new System.Drawing.Point(95, 37);
-            this.tbFirstname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbFirstname.Location = new System.Drawing.Point(83, 28);
             this.tbFirstname.Name = "tbFirstname";
-            this.tbFirstname.Size = new System.Drawing.Size(197, 27);
+            this.tbFirstname.Size = new System.Drawing.Size(173, 23);
             this.tbFirstname.TabIndex = 0;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage3.Size = new System.Drawing.Size(313, 903);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(273, 674);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Belastung";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -489,8 +468,7 @@ namespace App
             this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer2.Location = new System.Drawing.Point(3, 65);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.splitContainer2.Location = new System.Drawing.Point(3, 49);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -500,9 +478,8 @@ namespace App
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControlAntrag);
-            this.splitContainer2.Size = new System.Drawing.Size(1089, 852);
-            this.splitContainer2.SplitterDistance = 375;
-            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.Size = new System.Drawing.Size(917, 639);
+            this.splitContainer2.SplitterDistance = 315;
             this.splitContainer2.TabIndex = 5;
             // 
             // groupBox1
@@ -510,10 +487,8 @@ namespace App
             this.groupBox1.Controls.Add(this.webView21);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(375, 852);
+            this.groupBox1.Size = new System.Drawing.Size(315, 639);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fahrzeit Informationen";
@@ -524,10 +499,9 @@ namespace App
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webView21.Location = new System.Drawing.Point(3, 24);
-            this.webView21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.webView21.Location = new System.Drawing.Point(3, 19);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(369, 824);
+            this.webView21.Size = new System.Drawing.Size(309, 617);
             this.webView21.Source = new System.Uri("https://its-stuttgart.de", System.UriKind.Absolute);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
@@ -540,20 +514,18 @@ namespace App
             this.tabControlAntrag.Controls.Add(this.warteliste);
             this.tabControlAntrag.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlAntrag.Location = new System.Drawing.Point(0, 0);
-            this.tabControlAntrag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControlAntrag.Name = "tabControlAntrag";
             this.tabControlAntrag.SelectedIndex = 0;
-            this.tabControlAntrag.Size = new System.Drawing.Size(709, 852);
+            this.tabControlAntrag.Size = new System.Drawing.Size(598, 639);
             this.tabControlAntrag.TabIndex = 1;
             // 
             // alleAntrag
             // 
             this.alleAntrag.Controls.Add(this.dataGridViewParkingApplication);
-            this.alleAntrag.Location = new System.Drawing.Point(4, 29);
-            this.alleAntrag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.alleAntrag.Location = new System.Drawing.Point(4, 24);
             this.alleAntrag.Name = "alleAntrag";
-            this.alleAntrag.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.alleAntrag.Size = new System.Drawing.Size(701, 819);
+            this.alleAntrag.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.alleAntrag.Size = new System.Drawing.Size(590, 611);
             this.alleAntrag.TabIndex = 0;
             this.alleAntrag.Text = "Alle";
             this.alleAntrag.UseVisualStyleBackColor = true;
@@ -582,17 +554,122 @@ namespace App
             this.dataGridViewParkingApplication.DataSource = this.parkplatzantragBindingSource;
             this.dataGridViewParkingApplication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParkingApplication.GridColor = System.Drawing.SystemColors.ControlText;
-            this.dataGridViewParkingApplication.Location = new System.Drawing.Point(3, 4);
-            this.dataGridViewParkingApplication.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewParkingApplication.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewParkingApplication.Name = "dataGridViewParkingApplication";
             this.dataGridViewParkingApplication.RowHeadersWidth = 51;
             this.dataGridViewParkingApplication.RowTemplate.Height = 25;
-            this.dataGridViewParkingApplication.Size = new System.Drawing.Size(695, 811);
+            this.dataGridViewParkingApplication.Size = new System.Drawing.Size(584, 605);
             this.dataGridViewParkingApplication.TabIndex = 0;
             // 
-            // parkplatzantragBindingSource
+            // ParkplatzantragsId
             // 
-            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
+            this.ParkplatzantragsId.DataPropertyName = "ParkplatzantragsId";
+            this.ParkplatzantragsId.HeaderText = "ParkplatzantragsId";
+            this.ParkplatzantragsId.MinimumWidth = 6;
+            this.ParkplatzantragsId.Name = "ParkplatzantragsId";
+            this.ParkplatzantragsId.Width = 129;
+            // 
+            // KfzKennzeichen
+            // 
+            this.KfzKennzeichen.DataPropertyName = "KfzKennzeichen";
+            this.KfzKennzeichen.HeaderText = "KfzKennzeichen";
+            this.KfzKennzeichen.MinimumWidth = 6;
+            this.KfzKennzeichen.Name = "KfzKennzeichen";
+            this.KfzKennzeichen.Width = 115;
+            // 
+            // EntfernungKm
+            // 
+            this.EntfernungKm.DataPropertyName = "EntfernungKm";
+            dataGridViewCellStyle1.Format = "0, km";
+            this.EntfernungKm.DefaultCellStyle = dataGridViewCellStyle1;
+            this.EntfernungKm.HeaderText = "EntfernungKm";
+            this.EntfernungKm.MinimumWidth = 6;
+            this.EntfernungKm.Name = "EntfernungKm";
+            this.EntfernungKm.Width = 109;
+            // 
+            // Reisezeit
+            // 
+            this.Reisezeit.DataPropertyName = "Reisezeit";
+            this.Reisezeit.HeaderText = "Reisezeit";
+            this.Reisezeit.MinimumWidth = 6;
+            this.Reisezeit.Name = "Reisezeit";
+            this.Reisezeit.Width = 77;
+            // 
+            // Fahrzeit
+            // 
+            this.Fahrzeit.DataPropertyName = "Fahrzeit";
+            this.Fahrzeit.HeaderText = "Fahrzeit";
+            this.Fahrzeit.MinimumWidth = 6;
+            this.Fahrzeit.Name = "Fahrzeit";
+            this.Fahrzeit.Width = 73;
+            // 
+            // Grund
+            // 
+            this.Grund.DataPropertyName = "Grund";
+            this.Grund.HeaderText = "Grund";
+            this.Grund.MinimumWidth = 6;
+            this.Grund.Name = "Grund";
+            this.Grund.Width = 65;
+            // 
+            // Moeglichkeit
+            // 
+            this.Moeglichkeit.DataPropertyName = "Moeglichkeit";
+            this.Moeglichkeit.HeaderText = "Moeglichkeit";
+            this.Moeglichkeit.MinimumWidth = 6;
+            this.Moeglichkeit.Name = "Moeglichkeit";
+            this.Moeglichkeit.Width = 101;
+            // 
+            // Besonderefall
+            // 
+            this.Besonderefall.DataPropertyName = "Besonderefall";
+            this.Besonderefall.HeaderText = "Besonderefall";
+            this.Besonderefall.MinimumWidth = 6;
+            this.Besonderefall.Name = "Besonderefall";
+            this.Besonderefall.Width = 103;
+            // 
+            // Mitfahrgelegenheit
+            // 
+            this.Mitfahrgelegenheit.DataPropertyName = "Mitfahrgelegenheit";
+            this.Mitfahrgelegenheit.HeaderText = "Mitfahrgelegenheit";
+            this.Mitfahrgelegenheit.MinimumWidth = 6;
+            this.Mitfahrgelegenheit.Name = "Mitfahrgelegenheit";
+            this.Mitfahrgelegenheit.Width = 133;
+            // 
+            // Antragsdatum
+            // 
+            this.Antragsdatum.DataPropertyName = "Antragsdatum";
+            this.Antragsdatum.HeaderText = "Antragsdatum";
+            this.Antragsdatum.MinimumWidth = 6;
+            this.Antragsdatum.Name = "Antragsdatum";
+            this.Antragsdatum.Width = 108;
+            // 
+            // Antragszeit
+            // 
+            this.Antragszeit.DataPropertyName = "Antragszeit";
+            this.Antragszeit.HeaderText = "Antragszeit";
+            this.Antragszeit.MinimumWidth = 6;
+            this.Antragszeit.Name = "Antragszeit";
+            this.Antragszeit.Width = 91;
+            // 
+            // Punkte
+            // 
+            this.Punkte.DataPropertyName = "Punkte";
+            this.Punkte.HeaderText = "Punkte";
+            this.Punkte.MinimumWidth = 6;
+            this.Punkte.Name = "Punkte";
+            this.Punkte.Width = 69;
+            // 
+            // Genehmigt
+            // 
+            this.Genehmigt.DataPropertyName = "Genehmigt";
+            this.Genehmigt.DataSource = this.genehmigtstatusBindingSource;
+            this.Genehmigt.DisplayMember = "Beschreibung";
+            this.Genehmigt.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Genehmigt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Genehmigt.HeaderText = "Genehmigt";
+            this.Genehmigt.MinimumWidth = 100;
+            this.Genehmigt.Name = "Genehmigt";
+            this.Genehmigt.ValueMember = "Wert";
             // 
             // genehmigtstatusBindingSource
             // 
@@ -606,53 +683,54 @@ namespace App
             this.cMenuAblehnen,
             this.cMenuWarteliste});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(243, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(204, 70);
             // 
             // cMenuGenehmigen
             // 
             this.cMenuGenehmigen.Name = "cMenuGenehmigen";
-            this.cMenuGenehmigen.Size = new System.Drawing.Size(242, 24);
+            this.cMenuGenehmigen.Size = new System.Drawing.Size(203, 22);
             this.cMenuGenehmigen.Text = "Genehmigen";
             // 
             // cMenuAblehnen
             // 
             this.cMenuAblehnen.Name = "cMenuAblehnen";
-            this.cMenuAblehnen.Size = new System.Drawing.Size(242, 24);
+            this.cMenuAblehnen.Size = new System.Drawing.Size(203, 22);
             this.cMenuAblehnen.Text = "Ablehnen";
             // 
             // cMenuWarteliste
             // 
             this.cMenuWarteliste.Name = "cMenuWarteliste";
-            this.cMenuWarteliste.Size = new System.Drawing.Size(242, 24);
+            this.cMenuWarteliste.Size = new System.Drawing.Size(203, 22);
             this.cMenuWarteliste.Text = "Auf die Warteliste setzen";
+            // 
+            // parkplatzantragBindingSource
+            // 
+            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
             // 
             // genehmigteAntrag
             // 
-            this.genehmigteAntrag.Location = new System.Drawing.Point(4, 29);
-            this.genehmigteAntrag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.genehmigteAntrag.Location = new System.Drawing.Point(4, 24);
             this.genehmigteAntrag.Name = "genehmigteAntrag";
-            this.genehmigteAntrag.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.genehmigteAntrag.Size = new System.Drawing.Size(701, 819);
+            this.genehmigteAntrag.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.genehmigteAntrag.Size = new System.Drawing.Size(612, 611);
             this.genehmigteAntrag.TabIndex = 1;
             this.genehmigteAntrag.Text = "Genehmigt";
             this.genehmigteAntrag.UseVisualStyleBackColor = true;
             // 
             // abgelehnteAntrag
             // 
-            this.abgelehnteAntrag.Location = new System.Drawing.Point(4, 29);
-            this.abgelehnteAntrag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.abgelehnteAntrag.Location = new System.Drawing.Point(4, 24);
             this.abgelehnteAntrag.Name = "abgelehnteAntrag";
-            this.abgelehnteAntrag.Size = new System.Drawing.Size(701, 819);
+            this.abgelehnteAntrag.Size = new System.Drawing.Size(612, 611);
             this.abgelehnteAntrag.TabIndex = 2;
             this.abgelehnteAntrag.Text = "Abgelehnt";
             this.abgelehnteAntrag.UseVisualStyleBackColor = true;
             // 
             // warteliste
             // 
-            this.warteliste.Location = new System.Drawing.Point(4, 29);
-            this.warteliste.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.warteliste.Location = new System.Drawing.Point(4, 24);
             this.warteliste.Name = "warteliste";
-            this.warteliste.Size = new System.Drawing.Size(701, 819);
+            this.warteliste.Size = new System.Drawing.Size(612, 611);
             this.warteliste.TabIndex = 3;
             this.warteliste.Text = "Wartelist";
             this.warteliste.UseVisualStyleBackColor = true;
@@ -661,9 +739,9 @@ namespace App
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(337, 16);
+            this.label2.Location = new System.Drawing.Point(295, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 32);
+            this.label2.Size = new System.Drawing.Size(159, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Parkplatz anträge";
             // 
@@ -671,19 +749,18 @@ namespace App
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(855, 27);
+            this.label1.Location = new System.Drawing.Point(712, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Suchen";
             // 
             // tbSearch
             // 
             this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSearch.Location = new System.Drawing.Point(915, 23);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSearch.Location = new System.Drawing.Point(765, 17);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(169, 27);
+            this.tbSearch.Size = new System.Drawing.Size(148, 23);
             this.tbSearch.TabIndex = 2;
             // 
             // panel1
@@ -694,19 +771,17 @@ namespace App
             this.panel1.Controls.Add(this.btnFirst);
             this.panel1.Controls.Add(this.splitContainer3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 916);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(0, 687);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1096, 56);
+            this.panel1.Size = new System.Drawing.Size(924, 42);
             this.panel1.TabIndex = 1;
             // 
             // btnLast
             // 
             this.btnLast.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLast.Location = new System.Drawing.Point(904, 0);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLast.Location = new System.Drawing.Point(756, 0);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(48, 56);
+            this.btnLast.Size = new System.Drawing.Size(42, 42);
             this.btnLast.TabIndex = 6;
             this.btnLast.Text = ">>";
             this.btnLast.UseVisualStyleBackColor = true;
@@ -714,10 +789,9 @@ namespace App
             // btnNext
             // 
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnNext.Location = new System.Drawing.Point(952, 0);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNext.Location = new System.Drawing.Point(798, 0);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(48, 56);
+            this.btnNext.Size = new System.Drawing.Size(42, 42);
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -725,10 +799,9 @@ namespace App
             // btnPrevious
             // 
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPrevious.Location = new System.Drawing.Point(1000, 0);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrevious.Location = new System.Drawing.Point(840, 0);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(48, 56);
+            this.btnPrevious.Size = new System.Drawing.Size(42, 42);
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.Text = "<";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -736,10 +809,9 @@ namespace App
             // btnFirst
             // 
             this.btnFirst.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFirst.Location = new System.Drawing.Point(1048, 0);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFirst.Location = new System.Drawing.Point(882, 0);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(48, 56);
+            this.btnFirst.Size = new System.Drawing.Size(42, 42);
             this.btnFirst.TabIndex = 3;
             this.btnFirst.Text = "<<";
             this.btnFirst.UseVisualStyleBackColor = true;
@@ -750,7 +822,6 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Panel1MinSize = 320;
             // 
@@ -761,19 +832,17 @@ namespace App
             this.splitContainer3.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer3.Panel2.Controls.Add(this.btnSave);
             this.splitContainer3.Panel2.Controls.Add(this.btnNew);
-            this.splitContainer3.Size = new System.Drawing.Size(1096, 56);
-            this.splitContainer3.SplitterDistance = 379;
-            this.splitContainer3.SplitterWidth = 5;
+            this.splitContainer3.Size = new System.Drawing.Size(924, 42);
+            this.splitContainer3.SplitterDistance = 320;
             this.splitContainer3.TabIndex = 7;
             // 
             // btnNewCalc
             // 
             this.btnNewCalc.BackColor = System.Drawing.SystemColors.Menu;
             this.btnNewCalc.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNewCalc.Location = new System.Drawing.Point(344, 0);
-            this.btnNewCalc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNewCalc.Location = new System.Drawing.Point(300, 0);
             this.btnNewCalc.Name = "btnNewCalc";
-            this.btnNewCalc.Size = new System.Drawing.Size(86, 56);
+            this.btnNewCalc.Size = new System.Drawing.Size(75, 42);
             this.btnNewCalc.TabIndex = 6;
             this.btnNewCalc.Text = "Neu berechnen";
             this.btnNewCalc.UseVisualStyleBackColor = false;
@@ -782,10 +851,9 @@ namespace App
             // 
             this.btnEmail.BackColor = System.Drawing.Color.DarkOrange;
             this.btnEmail.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEmail.Location = new System.Drawing.Point(258, 0);
-            this.btnEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEmail.Location = new System.Drawing.Point(225, 0);
             this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(86, 56);
+            this.btnEmail.Size = new System.Drawing.Size(75, 42);
             this.btnEmail.TabIndex = 5;
             this.btnEmail.Text = "Email senden";
             this.btnEmail.UseVisualStyleBackColor = false;
@@ -794,10 +862,9 @@ namespace App
             // 
             this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDelete.Location = new System.Drawing.Point(172, 0);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Location = new System.Drawing.Point(150, 0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 56);
+            this.btnDelete.Size = new System.Drawing.Size(75, 42);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "löschen";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -806,10 +873,9 @@ namespace App
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSave.Location = new System.Drawing.Point(86, 0);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Location = new System.Drawing.Point(75, 0);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 56);
+            this.btnSave.Size = new System.Drawing.Size(75, 42);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "speichern";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -819,9 +885,8 @@ namespace App
             this.btnNew.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnNew.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnNew.Location = new System.Drawing.Point(0, 0);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(86, 56);
+            this.btnNew.Size = new System.Drawing.Size(75, 42);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "hinzufügen";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -848,125 +913,14 @@ namespace App
             this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewComboBoxColumn1.Width = 149;
             // 
-            // ParkplatzantragsId
-            // 
-            this.ParkplatzantragsId.DataPropertyName = "ParkplatzantragsId";
-            this.ParkplatzantragsId.HeaderText = "ParkplatzantragsId";
-            this.ParkplatzantragsId.MinimumWidth = 6;
-            this.ParkplatzantragsId.Name = "ParkplatzantragsId";
-            this.ParkplatzantragsId.Width = 160;
-            // 
-            // KfzKennzeichen
-            // 
-            this.KfzKennzeichen.DataPropertyName = "KfzKennzeichen";
-            this.KfzKennzeichen.HeaderText = "KfzKennzeichen";
-            this.KfzKennzeichen.MinimumWidth = 6;
-            this.KfzKennzeichen.Name = "KfzKennzeichen";
-            this.KfzKennzeichen.Width = 142;
-            // 
-            // EntfernungKm
-            // 
-            this.EntfernungKm.DataPropertyName = "EntfernungKm";
-            dataGridViewCellStyle1.Format = "0, km";
-            this.EntfernungKm.DefaultCellStyle = dataGridViewCellStyle1;
-            this.EntfernungKm.HeaderText = "EntfernungKm";
-            this.EntfernungKm.MinimumWidth = 6;
-            this.EntfernungKm.Name = "EntfernungKm";
-            this.EntfernungKm.Width = 132;
-            // 
-            // Reisezeit
-            // 
-            this.Reisezeit.DataPropertyName = "Reisezeit";
-            this.Reisezeit.HeaderText = "Reisezeit";
-            this.Reisezeit.MinimumWidth = 6;
-            this.Reisezeit.Name = "Reisezeit";
-            this.Reisezeit.Width = 97;
-            // 
-            // Fahrzeit
-            // 
-            this.Fahrzeit.DataPropertyName = "Fahrzeit";
-            this.Fahrzeit.HeaderText = "Fahrzeit";
-            this.Fahrzeit.MinimumWidth = 6;
-            this.Fahrzeit.Name = "Fahrzeit";
-            this.Fahrzeit.Width = 89;
-            // 
-            // Grund
-            // 
-            this.Grund.DataPropertyName = "Grund";
-            this.Grund.HeaderText = "Grund";
-            this.Grund.MinimumWidth = 6;
-            this.Grund.Name = "Grund";
-            this.Grund.Width = 78;
-            // 
-            // Moeglichkeit
-            // 
-            this.Moeglichkeit.DataPropertyName = "Moeglichkeit";
-            this.Moeglichkeit.HeaderText = "Moeglichkeit";
-            this.Moeglichkeit.MinimumWidth = 6;
-            this.Moeglichkeit.Name = "Moeglichkeit";
-            this.Moeglichkeit.Width = 124;
-            // 
-            // Besonderefall
-            // 
-            this.Besonderefall.DataPropertyName = "Besonderefall";
-            this.Besonderefall.HeaderText = "Besonderefall";
-            this.Besonderefall.MinimumWidth = 6;
-            this.Besonderefall.Name = "Besonderefall";
-            this.Besonderefall.Width = 129;
-            // 
-            // Mitfahrgelegenheit
-            // 
-            this.Mitfahrgelegenheit.DataPropertyName = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.HeaderText = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.MinimumWidth = 6;
-            this.Mitfahrgelegenheit.Name = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.Width = 165;
-            // 
-            // Antragsdatum
-            // 
-            this.Antragsdatum.DataPropertyName = "Antragsdatum";
-            this.Antragsdatum.HeaderText = "Antragsdatum";
-            this.Antragsdatum.MinimumWidth = 6;
-            this.Antragsdatum.Name = "Antragsdatum";
-            this.Antragsdatum.Width = 132;
-            // 
-            // Antragszeit
-            // 
-            this.Antragszeit.DataPropertyName = "Antragszeit";
-            this.Antragszeit.HeaderText = "Antragszeit";
-            this.Antragszeit.MinimumWidth = 6;
-            this.Antragszeit.Name = "Antragszeit";
-            this.Antragszeit.Width = 113;
-            // 
-            // Punkte
-            // 
-            this.Punkte.DataPropertyName = "Punkte";
-            this.Punkte.HeaderText = "Punkte";
-            this.Punkte.MinimumWidth = 6;
-            this.Punkte.Name = "Punkte";
-            this.Punkte.Width = 82;
-            // 
-            // Genehmigt
-            // 
-            this.Genehmigt.DataPropertyName = "Genehmigt";
-            this.Genehmigt.DataSource = this.genehmigtstatusBindingSource;
-            this.Genehmigt.DisplayMember = "Beschreibung";
-            this.Genehmigt.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Genehmigt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Genehmigt.HeaderText = "Genehmigt";
-            this.Genehmigt.MinimumWidth = 100;
-            this.Genehmigt.Name = "Genehmigt";
-            this.Genehmigt.ValueMember = "Wert";
-            // 
             // Antrag
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1381, 972);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1208, 729);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Antrag";
             this.Text = "Parkplatzantragverwaltung";
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -995,9 +949,9 @@ namespace App
             this.tabControlAntrag.ResumeLayout(false);
             this.alleAntrag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genehmigtstatusBindingSource)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();

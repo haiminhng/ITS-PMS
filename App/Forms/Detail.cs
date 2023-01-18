@@ -18,8 +18,6 @@ namespace App.Forms
             AdresseBindingSource = adressenBindingSource;
             AntragBinDingSource = parkplatzantragBindingSource;
             GenehmigtStatus = genehmigtstatusBindingSource;
-
-
         }
 
 

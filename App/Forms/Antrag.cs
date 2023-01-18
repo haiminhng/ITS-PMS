@@ -36,11 +36,21 @@ namespace App
 
             //DataGridView Control
             dataGridViewParkingApplication.CellClick += delegate { _vm.DataGridView_CellClick(); };
-            dataGridViewParkingApplication.CellFormatting += delegate { _vm.DataGridView_CellFormatting(); };
             dataGridViewParkingApplication.CellDoubleClick += delegate { _vm.ShowDetail(UnityConfig.container.Resolve<IDetailView>()); };
+
+            /*
+            dataGridViewParkingApplication.CellFormatting += DataGridView_CellFormatting;
+
+            void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+                if (e.ColumnIndex == dataGridViewParkingApplication.Columns["Besonderefall"].Index) {
+                    e.Value = (bool)e.Value ? "Ja" : "Nein";
+                }   
+            }
+            */
 
             //ToolStripMenu Control
             mailServerToolStripMenuItem.Click += delegate { _vm.ShowEmailSetting(UnityConfig.container.Resolve<IEmailSetting>()); ; };
+
 
         }
     }

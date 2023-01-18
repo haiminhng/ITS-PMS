@@ -6,7 +6,6 @@ using Models.Data;
 using Models.Models;
 using System.ComponentModel;
 
-
 namespace ViewModels
 {
     public class AntragViewModel : IAntragViewModel
@@ -213,12 +212,14 @@ namespace ViewModels
                 // jeder Objekt neu berechnen
                 Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
 
-                parkplatzantrag.EntfernungKm = await _googleService.GetDistance(parkplatzantrag.Schueler.Adressen);
-                parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
-                parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
-                parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
+                if (parkplatzantrag != null) {
+                    parkplatzantrag.EntfernungKm = await _googleService.GetDistance(parkplatzantrag.Schueler.Adressen);
+                    parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
+                    parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
+                    parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
 
-                _context.SaveChanges();
+                    _context.SaveChanges();
+                } 
             }
             parkPlatzAntragView.Refresh();
             MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -265,7 +266,11 @@ namespace ViewModels
 
         public void ShowDetail(IDetailView detailView)
         {
-            detailView.BindingSource.DataSource = SchuelerBindingSource.Current;
+            detailView.SchuelerBindingSource.DataSource = SchuelerBindingSource.Current;
+            detailView.AdresseBindingSource.DataSource = AdresseBindingSource.Current;
+            detailView.AntragBinDingSource.DataSource = AntragBindingSource.Current;
+            //detailView.GenehmigtStatus.DataSource = _context.Genehmigtstatuses.Local.ToBindingList();
+            detailView.GenehmigtStatus.DataSource = (Genehmigtstatus) ((Parkplatzantrag)AntragBindingSource.Current).GenehmigtNavigation;
             detailView.ShowDetail();
 
         }

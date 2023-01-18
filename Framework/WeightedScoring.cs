@@ -1,26 +1,32 @@
 ﻿using Interface;
+using Models.Data;
 using Models.Models;
 
 namespace Framework
 {
     public class WeightedScoring : IAntragService
     {
+        private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
         public int AntragBewerten(Parkplatzantrag application)
         {
+
             // Define the weights for each factor
             int distanceWeight = 2;
             int besonderefallWeight = 1;
-            int rideshareWeight = 3;
+            int rideshareWeight = 3; 
             int travelTimeWeight = 1;
             int drivingTimeWeight = 2;
-
+            /*
+             
+             */
             // Define the range of values for each factor
+            //int distanceMin = 0;
             int distanceMin = 0;
             int distanceMax = 10;
             int travelTimeMin = 0;
             int travelTimeMax = 60;
             int drivingTimeMin = 0;
-            int drivingTimeMax = 60;
+            int drivingTimeMax = 60;    
 
             // Calculate the score for each factor
             int distanceScore = PunkteRechnen((double)application.EntfernungKm, distanceMin, distanceMax);

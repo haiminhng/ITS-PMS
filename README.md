@@ -6,10 +6,10 @@ Das System sollte es den Schülern ermöglichen, Anträge auf Parkplätze einzur
 Gleichzeitig sollte das System für die Schulsekretärin eine große Erleichterung darstellen, da es jeden Antrag automatisch bewertet und sortiert, indem es die Entfernung des Schülers von der Schule mithilfe von Google API live berechnet. 
 Das System sollte auch einen Überblick über alle genehmigten, abgelehnten und wartelisten-Anträge bieten und die Schulsekretärin sollte in der Lage sein, E-Mails an alle genehmigten oder abgelehnten Antragssteller zu senden.
 
+![Unbenannt_geschwärzt_Seite_3](https://user-images.githubusercontent.com/77732765/213553915-db4e3cb8-d9ff-4e4b-b847-4e41945e7243.png)
+![Unbenannt_geschwärzt_Seite_2](https://user-images.githubusercontent.com/77732765/213553923-dc3d6524-99b6-488e-b592-c4093a6df965.png)
+![Unbenannt_geschwärzt_Seite_1](https://user-images.githubusercontent.com/77732765/213553925-f10e2ae0-48ee-4acc-945e-8ab3db5630e3.png)
 
-![Bildschirm­foto 2023-01-19 um 21 21 57](https://user-images.githubusercontent.com/77732765/213551768-89a0bbd7-826c-4b48-9a2c-9411638aaa1c.png)
-![Bildschirm­foto 2023-01-19 um 21 21 45](https://user-images.githubusercontent.com/77732765/213551779-3efee62e-60ae-4262-895c-1ffdbac1f395.png)
-![Bildschirm­foto 2023-01-19 um 21 21 37](https://user-images.githubusercontent.com/77732765/213551783-b9be5806-c779-4829-b752-9ed885130981.png)
 
 ### Technology:
 

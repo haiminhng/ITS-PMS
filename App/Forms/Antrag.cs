@@ -1,4 +1,5 @@
-﻿using Interface;
+﻿using Framework;
+using Interface;
 using Unity;
 namespace App
 {
@@ -11,12 +12,12 @@ namespace App
             InitializeComponent();
             _vm.webView = webView21;
             _vm.searchBox = tbSearch;
+            _vm.untisPathBox = tBUntisPath;
             _vm.parkPlatzAntragView = dataGridViewParkingApplication;
             _vm.AntragBindingSource = parkplatzantragBindingSource;
             _vm.SchuelerBindingSource = schuelerBindingSource;
             _vm.AdresseBindingSource = adressenBindingSource;
             _vm.GenehmigtStatus = genehmigtstatusBindingSource;
-
 
             Load += delegate { _vm.LoadAsync(); };
 
@@ -50,8 +51,9 @@ namespace App
 
             //ToolStripMenu Control
             mailServerToolStripMenuItem.Click += delegate { _vm.ShowEmailSetting(UnityConfig.container.Resolve<IEmailSetting>()); ; };
-
-
+            parkstatistikToolStripMenuItem.Click += delegate { _vm.ShowParkingStatistics(UnityConfig.container.Resolve<IParkingStatisticsView>()); ; };
+            // Parkplatz statistik
+            btnLoadUntis.Click += delegate { _vm.LoadUntisStunde();  };
         }
     }
 }

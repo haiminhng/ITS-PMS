@@ -32,6 +32,9 @@ namespace App
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Antrag));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -65,6 +68,10 @@ namespace App
             this.lblFirstname = new System.Windows.Forms.Label();
             this.tbFirstname = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dTUntisDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.tBUntisPath = new System.Windows.Forms.TextBox();
+            this.btnLoadUntis = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
@@ -109,6 +116,7 @@ namespace App
             this.btnNew = new System.Windows.Forms.Button();
             this.GenehmigtNavigation = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.parkstatistikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -120,6 +128,7 @@ namespace App
             ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).BeginInit();
             this.groupBoxStudentInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -165,6 +174,7 @@ namespace App
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parkstatistikToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -183,7 +193,7 @@ namespace App
             // mailServerToolStripMenuItem
             // 
             this.mailServerToolStripMenuItem.Name = "mailServerToolStripMenuItem";
-            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mailServerToolStripMenuItem.Text = "Mail Server";
             // 
             // tabControl
@@ -207,7 +217,7 @@ namespace App
             this.tabPage1.Controls.Add(this.groupBoxStudentInfo);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(273, 674);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informationen";
@@ -455,13 +465,49 @@ namespace App
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dTUntisDatePicker);
+            this.tabPage3.Controls.Add(this.tBUntisPath);
+            this.tabPage3.Controls.Add(this.btnLoadUntis);
+            this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(273, 674);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Belastung";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dTUntisDatePicker
+            // 
+            this.dTUntisDatePicker.Location = new System.Drawing.Point(6, 33);
+            this.dTUntisDatePicker.Name = "dTUntisDatePicker";
+            this.dTUntisDatePicker.Size = new System.Drawing.Size(204, 23);
+            this.dTUntisDatePicker.TabIndex = 4;
+            // 
+            // tBUntisPath
+            // 
+            this.tBUntisPath.Location = new System.Drawing.Point(89, 4);
+            this.tBUntisPath.Name = "tBUntisPath";
+            this.tBUntisPath.Size = new System.Drawing.Size(100, 23);
+            this.tBUntisPath.TabIndex = 2;
+            // 
+            // btnLoadUntis
+            // 
+            this.btnLoadUntis.Location = new System.Drawing.Point(195, 4);
+            this.btnLoadUntis.Name = "btnLoadUntis";
+            this.btnLoadUntis.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadUntis.TabIndex = 1;
+            this.btnLoadUntis.Text = "Load";
+            this.btnLoadUntis.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Untis Stunde";
             // 
             // splitContainer2
             // 
@@ -524,7 +570,7 @@ namespace App
             this.alleAntrag.Controls.Add(this.dataGridViewParkingApplication);
             this.alleAntrag.Location = new System.Drawing.Point(4, 24);
             this.alleAntrag.Name = "alleAntrag";
-            this.alleAntrag.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.alleAntrag.Padding = new System.Windows.Forms.Padding(3);
             this.alleAntrag.Size = new System.Drawing.Size(590, 611);
             this.alleAntrag.TabIndex = 0;
             this.alleAntrag.Text = "Alle";
@@ -535,6 +581,14 @@ namespace App
             this.dataGridViewParkingApplication.AllowUserToOrderColumns = true;
             this.dataGridViewParkingApplication.AutoGenerateColumns = false;
             this.dataGridViewParkingApplication.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParkingApplication.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewParkingApplication.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParkingApplication.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ParkplatzantragsId,
@@ -552,10 +606,26 @@ namespace App
             this.Genehmigt});
             this.dataGridViewParkingApplication.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridViewParkingApplication.DataSource = this.parkplatzantragBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewParkingApplication.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewParkingApplication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewParkingApplication.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridViewParkingApplication.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewParkingApplication.Name = "dataGridViewParkingApplication";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewParkingApplication.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewParkingApplication.RowHeadersWidth = 51;
             this.dataGridViewParkingApplication.RowTemplate.Height = 25;
             this.dataGridViewParkingApplication.Size = new System.Drawing.Size(584, 605);
@@ -580,8 +650,8 @@ namespace App
             // EntfernungKm
             // 
             this.EntfernungKm.DataPropertyName = "EntfernungKm";
-            dataGridViewCellStyle1.Format = "0, km";
-            this.EntfernungKm.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "0, km";
+            this.EntfernungKm.DefaultCellStyle = dataGridViewCellStyle2;
             this.EntfernungKm.HeaderText = "EntfernungKm";
             this.EntfernungKm.MinimumWidth = 6;
             this.EntfernungKm.Name = "EntfernungKm";
@@ -711,8 +781,8 @@ namespace App
             // 
             this.genehmigteAntrag.Location = new System.Drawing.Point(4, 24);
             this.genehmigteAntrag.Name = "genehmigteAntrag";
-            this.genehmigteAntrag.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.genehmigteAntrag.Size = new System.Drawing.Size(612, 611);
+            this.genehmigteAntrag.Padding = new System.Windows.Forms.Padding(3);
+            this.genehmigteAntrag.Size = new System.Drawing.Size(590, 611);
             this.genehmigteAntrag.TabIndex = 1;
             this.genehmigteAntrag.Text = "Genehmigt";
             this.genehmigteAntrag.UseVisualStyleBackColor = true;
@@ -721,7 +791,7 @@ namespace App
             // 
             this.abgelehnteAntrag.Location = new System.Drawing.Point(4, 24);
             this.abgelehnteAntrag.Name = "abgelehnteAntrag";
-            this.abgelehnteAntrag.Size = new System.Drawing.Size(612, 611);
+            this.abgelehnteAntrag.Size = new System.Drawing.Size(590, 611);
             this.abgelehnteAntrag.TabIndex = 2;
             this.abgelehnteAntrag.Text = "Abgelehnt";
             this.abgelehnteAntrag.UseVisualStyleBackColor = true;
@@ -730,7 +800,7 @@ namespace App
             // 
             this.warteliste.Location = new System.Drawing.Point(4, 24);
             this.warteliste.Name = "warteliste";
-            this.warteliste.Size = new System.Drawing.Size(612, 611);
+            this.warteliste.Size = new System.Drawing.Size(590, 611);
             this.warteliste.TabIndex = 3;
             this.warteliste.Text = "Wartelist";
             this.warteliste.UseVisualStyleBackColor = true;
@@ -913,6 +983,12 @@ namespace App
             this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewComboBoxColumn1.Width = 149;
             // 
+            // parkstatistikToolStripMenuItem
+            // 
+            this.parkstatistikToolStripMenuItem.Name = "parkstatistikToolStripMenuItem";
+            this.parkstatistikToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.parkstatistikToolStripMenuItem.Text = "Parkstatistik";
+            // 
             // Antrag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -940,6 +1016,8 @@ namespace App
             this.groupBoxStudentInfo.ResumeLayout(false);
             this.groupBoxStudentInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -1041,5 +1119,10 @@ namespace App
         private DataGridViewTextBoxColumn Antragszeit;
         private DataGridViewTextBoxColumn Punkte;
         private DataGridViewComboBoxColumn Genehmigt;
+        private TextBox tBUntisPath;
+        private Button btnLoadUntis;
+        private Label label5;
+        private DateTimePicker dTUntisDatePicker;
+        private ToolStripMenuItem parkstatistikToolStripMenuItem;
     }
 }

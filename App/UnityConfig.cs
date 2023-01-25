@@ -17,8 +17,12 @@ namespace App
             container.RegisterType<IMailSender, MailSender>();
             container.RegisterType<IDetailView, Detail>();
             container.RegisterType<IMailServerConfiguration, MailServerConfiguration>();
+            container.RegisterType<IParkingStatisticsView, ParkingStatistics>();
             container.RegisterType<IEmailSetting, EmailSetting>();
             container.RegisterType<IEncryptionTool, EncryptionTool>();
+
+            //container.RegisterType<IGoogleService, GoogleService>();
+
 
         }
     }

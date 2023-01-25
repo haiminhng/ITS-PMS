@@ -52,12 +52,14 @@
             this.lblFirstname = new System.Windows.Forms.Label();
             this.tbFirstname = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancle = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -106,8 +108,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button3);
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.btnCancle);
+            this.splitContainer1.Panel2.Controls.Add(this.btnSave);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(800, 346);
             this.splitContainer1.SplitterDistance = 291;
@@ -319,26 +321,28 @@
             this.button3.Text = "Email";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancle
             // 
-            this.button2.Location = new System.Drawing.Point(410, 313);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Abbrechen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancle.Location = new System.Drawing.Point(410, 313);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(83, 23);
+            this.btnCancle.TabIndex = 19;
+            this.btnCancle.Text = "Abbrechen";
+            this.btnCancle.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(329, 313);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Speichern";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(329, 313);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.Text = "Speichern";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label10);
@@ -368,6 +372,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Parkplatzantrag";
             // 
+            // textBox7
+            // 
+            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Punkte", true));
+            this.textBox7.Location = new System.Drawing.Point(104, 259);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(123, 23);
+            this.textBox7.TabIndex = 40;
+            // 
+            // parkplatzantragBindingSource
+            // 
+            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 264);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 15);
+            this.label12.TabIndex = 39;
+            this.label12.Text = "Antragpunkte";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -384,10 +409,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(123, 23);
             this.textBox6.TabIndex = 37;
-            // 
-            // parkplatzantragBindingSource
-            // 
-            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
             // 
             // label10
             // 
@@ -449,7 +470,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(149, 265);
+            this.label9.Location = new System.Drawing.Point(253, 264);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 15);
             this.label9.TabIndex = 29;
@@ -461,10 +482,10 @@
             this.comboBox1.DataSource = this.genehmigtstatusBindingSource;
             this.comboBox1.DisplayMember = "Beschreibung";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(253, 262);
+            this.comboBox1.Location = new System.Drawing.Point(348, 261);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 23);
+            this.comboBox1.Size = new System.Drawing.Size(123, 23);
             this.comboBox1.TabIndex = 30;
             this.comboBox1.ValueMember = "Wert";
             // 
@@ -628,8 +649,8 @@
         private TextBox tbLastname;
         private Label lblFirstname;
         private TextBox tbFirstname;
-        private Button button2;
-        private Button button1;
+        private Button btnCancle;
+        private Button btnSave;
         private BindingSource schuelerBindingSource;
         private GroupBox groupBox1;
         private Label label5;
@@ -659,5 +680,7 @@
         private Label label10;
         private TextBox textBox1;
         private BindingSource genehmigtstatusBindingSource;
+        private TextBox textBox7;
+        private Label label12;
     }
 }

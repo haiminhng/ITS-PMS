@@ -12,20 +12,43 @@ namespace App.Forms
         public EmailSetting()
         {
             InitializeComponent();
-            textBoxSmtpServer.Text = _mailServer.SmtpServer; ;
-
-            //_mailServer.SmtpServer = textBoxSmtpServer.Text;
-            /*
-            _mailServer.Port = int.Parse(textBoxPort.Text);
-            _mailServer.SenderEmail = textBoxSenderEmail.Text;
-            _mailServer.Password = textBoxPassword.Text;
-            _mailServer.EnableSsl = checkBoxEnableSsl.Checked;
-            */
+            InitializeData();
         }
 
         public void ShowEmailSetting()
         {
             this.ShowDialog();
+        }
+
+        public void InitializeData() {
+            textBoxSmtpServer.Text = _mailServer.SmtpServer;
+            textBoxSenderEmail.Text = _mailServer.SenderEmail;
+            textBoxPassword.Text = _mailServer.Password;
+            checkBoxEnableSsl.Checked = _mailServer.EnableSsl;
+            textBoxPort.Text = _mailServer.Port.ToString();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            _mailServer.SmtpServer = textBoxSmtpServer.Text;
+            _mailServer.SenderEmail = textBoxSenderEmail.Text;
+            _mailServer.Password = textBoxPassword.Text;
+            _mailServer.EnableSsl = checkBoxEnableSsl.Checked;
+            _mailServer.Port = int.Parse(textBoxPort.Text);
+            try
+            {
+                _mailServer.SaveConfiguration();
+                MessageBox.Show("Erfolgreich gespeichert");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler beim speichern " + ex.Message);
+            }
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

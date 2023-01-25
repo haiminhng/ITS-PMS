@@ -1,9 +1,11 @@
 ﻿using Framework;
 using Interface;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using Microsoft.Web.WebView2.WinForms;
 using Models.Data;
 using Models.Models;
+using Models.Models.utilities;
 using System.ComponentModel;
 
 namespace ViewModels
@@ -13,19 +15,21 @@ namespace ViewModels
         private readonly IGoogleService _googleService = new GoogleService();
         private readonly IAntragService _antragService = new WeightedScoring();
         private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
+
         private string _navUrl { get; set; }
 
         public WebView2 webView { get; set; }
         public TextBox searchBox { get; set; }
+        public TextBox untisPathBox { get; set; }
         public DataGridView parkPlatzAntragView { get; set; }
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
         public BindingSource GenehmigtStatus { get; set; }
 
-
         public async Task LoadAsync()
         {
+            //Alle Daten zum context Laden
             _context
                 .Parkplatzantrags
                 .Include(e => e.Schueler)
@@ -33,27 +37,14 @@ namespace ViewModels
                 .Load();
             _context.Genehmigtstatuses.Load();
 
+            //Sortiert ASC
             AntragBindingSource.Sort = "ParkplatzantragsId ASC";
+
+            //Daten zum DataSource zu weisen und Reisezeit bzw Fahrzeit berechnen
             AntragBindingSource.ResetBindings(false);
             AntragBindingSource.DataSource = _context.Parkplatzantrags.Local.ToBindingList();
             await InitParkPlatzAntragAsync();
-
             GenehmigtStatus.DataSource = _context.Genehmigtstatuses.Local.ToBindingList();
-
-
-            /*
-            BindingList<Genehmigtstatus> genehmigtStatusList = new BindingList<Genehmigtstatus>
-            {
-                new Genehmigtstatus { Wert = 0, Beschreibung = "Bearbeitung" },
-                new Genehmigtstatus { Wert = 1, Beschreibung = "Genehmigt" },
-                new Genehmigtstatus { Wert = 2, Beschreibung = "Abgelehnt" },
-                new Genehmigtstatus { Wert = 3, Beschreibung = "Wartelist" },
-            };
-            GenehmigtStatus.DataSource = genehmigtStatusList;
-            */
-
-
-
             SchuelerBindingSource.DataSource = _context.Schuelers.Local.ToBindingList();
             AdresseBindingSource.DataSource = _context.Adressens.Local.ToBindingList();
         }
@@ -67,9 +58,11 @@ namespace ViewModels
 
         public void Save()
         {
+            
             AntragBindingSource.EndEdit();
             SchuelerBindingSource.EndEdit();
             AdresseBindingSource.EndEdit();
+            
             // wird geprüft ob record gespeichert wird;
             Int32 record;
             record = _context.SaveChanges();
@@ -218,11 +211,15 @@ namespace ViewModels
                     parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
 
-                    _context.SaveChanges();
+                    // Prüft ob erfolgtreich gespeichert wird 
+                    if (_context.SaveChanges() != 0) {
+                        parkPlatzAntragView.Refresh();
+                        MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 } 
             }
-            parkPlatzAntragView.Refresh();
-            MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
 
             /*
             Parkplatzantrag parkplatzantrag = (Parkplatzantrag)AntragBindingSource.Current;
@@ -269,8 +266,6 @@ namespace ViewModels
             detailView.SchuelerBindingSource.DataSource = SchuelerBindingSource.Current;
             detailView.AdresseBindingSource.DataSource = AdresseBindingSource.Current;
             detailView.AntragBinDingSource.DataSource = AntragBindingSource.Current;
-            //detailView.GenehmigtStatus.DataSource = _context.Genehmigtstatuses.Local.ToBindingList();
-            //detailView.GenehmigtStatus.DataSource = (Genehmigtstatus) ((Parkplatzantrag)AntragBindingSource.Current).GenehmigtNavigation;
             detailView.GenehmigtStatus.DataSource = GenehmigtStatus.DataSource;
             detailView.ShowDetail();
 
@@ -284,6 +279,37 @@ namespace ViewModels
         public void ShowEmailSetting(IEmailSetting emailSetting)
         {
             emailSetting.ShowEmailSetting();
+        }
+
+        public void LoadUntisStunde()
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+                List<UntisStunde> untisStundeList = new List<UntisStunde>();
+                
+                foreach (var line in lines)
+                {
+                    untisStundeList.Add(new UntisStunde(line, ","));
+                }
+
+                if (untisStundeList.Count > 0)
+                    MessageBox.Show(untisStundeList.Count.ToString() + "Untis Stunde von "+ DateAndTime.Now + "geladen");
+                else
+                    MessageBox.Show("List is empty");
+
+                untisPathBox.Text = openFileDialog1.FileName;
+            }
+        }
+
+        public void ShowParkingStatistics(IParkingStatisticsView parkingStatisticsView)
+        {
+            parkingStatisticsView.showParkingStatistics();
         }
     }
 

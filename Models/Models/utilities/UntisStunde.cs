@@ -14,26 +14,27 @@ namespace Models.Models.utilities
         /**
        * Lehrerkurzzeichen
        */
-        private string kurzzeichen
 
+        private string _kurzzeichen;
+        public string Kurzzeichen
         {
             get
             {
                 string tmpKurzzeichen = "";
-                string[] split = this.kurzzeichen.Split(", ");
+                string[] split = this._kurzzeichen.Split(", ");
 
                 foreach (var strKurz in split)
                 {
-                    tmpKurzzeichen = tmpKurzzeichen + strKurz.ToUpper().ElementAt(0) + strKurz.ToLower().Substring(1) +
-                                     ", ";
+                    tmpKurzzeichen = tmpKurzzeichen + strKurz.ToUpper().ElementAt(0) + strKurz.ToLower().Substring(1) + ", ";
                 }
 
                 tmpKurzzeichen = tmpKurzzeichen.Substring(0, tmpKurzzeichen.Length - 2);
                 return tmpKurzzeichen;
             }
-            set { }
+            set { _kurzzeichen = value; }
         }
-
+        
+        
         /**
     * Jahr der Unterrichtsstunde
 */
@@ -100,7 +101,7 @@ namespace Models.Models.utilities
             string[] tmpDaten = zeile.Split(trennzeichen);
             try
             {
-                this.kurzzeichen = tmpDaten[0];
+                this._kurzzeichen = tmpDaten[0];
                 this._jahr = Int32.Parse(tmpDaten[1]);
                 this._monat = Int32.Parse(tmpDaten[2]);
                 this._tag = Int32.Parse(tmpDaten[3]);
@@ -125,7 +126,7 @@ namespace Models.Models.utilities
 
         public override string ToString()
         {
-            return this.kurzzeichen + " " + this._jahr + "/" + this._monat + "/" + this._tag + ":" + this._schulstunde;
+            return this._kurzzeichen + " " + this._jahr + "/" + this._monat + "/" + this._tag + ":" + this._schulstunde;
         }
     }
 }

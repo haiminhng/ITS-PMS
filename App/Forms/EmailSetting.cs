@@ -13,7 +13,7 @@ namespace App.Forms
         public EmailSetting()
         {
             InitializeComponent();
-            InitializeData();
+            InitializeSetting();
         }
 
         public void ShowEmailSetting()
@@ -21,7 +21,7 @@ namespace App.Forms
             this.ShowDialog();
         }
 
-        public void InitializeData() {
+        public void InitializeSetting() {
             textBoxSmtpServer.Text = _mailServer.SmtpServer;
             textBoxSenderEmail.Text = _mailServer.SenderEmail;
             textBoxPassword.Text = _mailServer.Password;

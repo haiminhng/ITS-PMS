@@ -29,109 +29,120 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailSender));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbEmailFrom = new System.Windows.Forms.TextBox();
+            this.tbEmailTo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbEmailSubject = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.rtbEmailBody = new System.Windows.Forms.RichTextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSend
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(632, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Senden";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSend.Location = new System.Drawing.Point(1174, 885);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(139, 49);
+            this.btnSend.TabIndex = 0;
+            this.btnSend.Text = "Senden";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(22, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 15);
+            this.label1.Size = new System.Drawing.Size(55, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Von";
             // 
-            // textBox1
+            // tbEmailFrom
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(711, 23);
-            this.textBox1.TabIndex = 2;
+            this.tbEmailFrom.Location = new System.Drawing.Point(143, 26);
+            this.tbEmailFrom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbEmailFrom.Name = "tbEmailFrom";
+            this.tbEmailFrom.Size = new System.Drawing.Size(1317, 39);
+            this.tbEmailFrom.TabIndex = 2;
             // 
-            // textBox2
+            // tbEmailTo
             // 
-            this.textBox2.Location = new System.Drawing.Point(77, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(711, 23);
-            this.textBox2.TabIndex = 4;
+            this.tbEmailTo.Location = new System.Drawing.Point(143, 87);
+            this.tbEmailTo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbEmailTo.Name = "tbEmailTo";
+            this.tbEmailTo.Size = new System.Drawing.Size(1317, 39);
+            this.tbEmailTo.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Location = new System.Drawing.Point(22, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 15);
+            this.label2.Size = new System.Drawing.Size(43, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "An";
             // 
-            // textBox3
+            // tbEmailSubject
             // 
-            this.textBox3.Location = new System.Drawing.Point(77, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(711, 23);
-            this.textBox3.TabIndex = 6;
+            this.tbEmailSubject.Location = new System.Drawing.Point(143, 149);
+            this.tbEmailSubject.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbEmailSubject.Name = "tbEmailSubject";
+            this.tbEmailSubject.Size = new System.Drawing.Size(1317, 39);
+            this.tbEmailSubject.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 73);
+            this.label3.Location = new System.Drawing.Point(22, 156);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 15);
+            this.label3.Size = new System.Drawing.Size(86, 32);
             this.label3.TabIndex = 5;
             this.label3.Text = "Betreff";
             // 
-            // richTextBox1
+            // rtbEmailBody
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(77, 99);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(711, 310);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.rtbEmailBody.Location = new System.Drawing.Point(143, 211);
+            this.rtbEmailBody.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rtbEmailBody.Name = "rtbEmailBody";
+            this.rtbEmailBody.Size = new System.Drawing.Size(1317, 657);
+            this.rtbEmailBody.TabIndex = 7;
+            this.rtbEmailBody.Text = "";
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(713, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Abbrechen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Location = new System.Drawing.Point(1324, 885);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(139, 49);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Abbrechen";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // MailSender
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox3);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(1486, 960);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.rtbEmailBody);
+            this.Controls.Add(this.tbEmailSubject);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbEmailTo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbEmailFrom);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSend);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "MailSender";
             this.Text = "MailSender";
             this.ResumeLayout(false);
@@ -141,14 +152,14 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnSend;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbEmailFrom;
+        private TextBox tbEmailTo;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox tbEmailSubject;
         private Label label3;
-        private RichTextBox richTextBox1;
-        private Button button2;
+        private RichTextBox rtbEmailBody;
+        private Button btnCancel;
     }
 }

@@ -8,6 +8,7 @@ namespace App.Forms
     {
         private IMailServerConfiguration _mailServer = UnityConfig.container.Resolve<IMailServerConfiguration>();
         private IEncryptionTool _encryptionTool = UnityConfig.container.Resolve<IEncryptionTool>();
+        private string _originalPassword;
 
         public EmailSetting()
         {
@@ -35,6 +36,8 @@ namespace App.Forms
             _mailServer.Password = textBoxPassword.Text;
             _mailServer.EnableSsl = checkBoxEnableSsl.Checked;
             _mailServer.Port = int.Parse(textBoxPort.Text);
+            
+            
             try
             {
                 _mailServer.SaveConfiguration();

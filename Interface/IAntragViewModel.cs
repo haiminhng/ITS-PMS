@@ -6,8 +6,6 @@ namespace Interface
     public interface IAntragViewModel
     {
         public TextBox searchBox { get; set; }
-
-        public TextBox untisPathBox { get; set; }
         public WebView2 webView { get; set; }
         public DataGridView parkPlatzAntragView { get; set; }
         public BindingSource AntragBindingSource { get; set; }
@@ -32,8 +30,5 @@ namespace Interface
         void ShowEmailSetting(IEmailSetting emailSetting);
         void DataGridView_CellClick();
         void DataGridView_CellFormatting();
-
-        //Parkplatz statistik
-        void LoadUntisStunde();
     }
 }

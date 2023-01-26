@@ -429,6 +429,7 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Moeglichkeit", true));
             this.richTextBox2.Location = new System.Drawing.Point(253, 163);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox2.Name = "richTextBox2";
@@ -438,6 +439,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Grund", true));
             this.richTextBox1.Location = new System.Drawing.Point(9, 163);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
@@ -448,6 +450,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.parkplatzantragBindingSource, "Mitfahrgelegenheit", true));
             this.checkBox2.Location = new System.Drawing.Point(378, 112);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox2.Name = "checkBox2";
@@ -459,6 +462,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.parkplatzantragBindingSource, "Besonderefall", true));
             this.checkBox1.Location = new System.Drawing.Point(134, 112);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";

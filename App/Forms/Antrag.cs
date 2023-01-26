@@ -10,9 +10,8 @@ namespace App
         public Antrag()
         {
             InitializeComponent();
-            _vm.webView = webView21;
+            _vm.webView = wViewGoogleMap;
             _vm.searchBox = tbSearch;
-            _vm.untisPathBox = tBUntisPath;
             _vm.parkPlatzAntragView = dataGridViewParkingApplication;
             _vm.AntragBindingSource = parkplatzantragBindingSource;
             _vm.SchuelerBindingSource = schuelerBindingSource;
@@ -52,8 +51,6 @@ namespace App
             //ToolStripMenu Control
             mailServerToolStripMenuItem.Click += delegate { _vm.ShowEmailSetting(UnityConfig.container.Resolve<IEmailSetting>()); ; };
             parkstatistikToolStripMenuItem.Click += delegate { _vm.ShowParkingStatistics(UnityConfig.container.Resolve<IParkingStatisticsView>()); ; };
-            // Parkplatz statistik
-            btnLoadUntis.Click += delegate { _vm.LoadUntisStunde();  };
         }
     }
 }

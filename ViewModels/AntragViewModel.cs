@@ -273,6 +273,13 @@ namespace ViewModels
 
         public void ShowMailSender(IMailSender mailSender)
         {
+            //mailSender.emailsReceiverList = new List<Parkplatzantrag>();
+            foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
+            {
+                // jeder Objekt neu berechnen
+                Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
+                mailSender.emailsReceiverList.Add(parkplatzantrag);
+            }
             mailSender.ShowMailSender();
         }
 
@@ -281,6 +288,8 @@ namespace ViewModels
             emailSetting.ShowEmailSetting();
         }
 
+
+        /*
         public void LoadUntisStunde()
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -299,14 +308,14 @@ namespace ViewModels
                 }
 
                 if (untisStundeList.Count > 0)
-                    MessageBox.Show(untisStundeList.Count.ToString() + "Untis Stunde von "+ DateAndTime.Now + "geladen");
+                    MessageBox.Show(untisStundeList.Count.ToString() + "Untis Stunde von "+ DateAndTime.Now + " geladen");
                 else
                     MessageBox.Show("List is empty");
 
                 untisPathBox.Text = openFileDialog1.FileName;
             }
         }
-
+        */
         public void ShowParkingStatistics(IParkingStatisticsView parkingStatisticsView)
         {
             parkingStatisticsView.showParkingStatistics();

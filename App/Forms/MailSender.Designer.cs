@@ -44,7 +44,7 @@
             // 
             this.btnSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSend.Location = new System.Drawing.Point(1174, 885);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(6);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(139, 49);
             this.btnSend.TabIndex = 0;
@@ -65,15 +65,16 @@
             // tbEmailFrom
             // 
             this.tbEmailFrom.Location = new System.Drawing.Point(143, 26);
-            this.tbEmailFrom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbEmailFrom.Margin = new System.Windows.Forms.Padding(6);
             this.tbEmailFrom.Name = "tbEmailFrom";
+            this.tbEmailFrom.ReadOnly = true;
             this.tbEmailFrom.Size = new System.Drawing.Size(1317, 39);
             this.tbEmailFrom.TabIndex = 2;
             // 
             // tbEmailTo
             // 
             this.tbEmailTo.Location = new System.Drawing.Point(143, 87);
-            this.tbEmailTo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbEmailTo.Margin = new System.Windows.Forms.Padding(6);
             this.tbEmailTo.Name = "tbEmailTo";
             this.tbEmailTo.Size = new System.Drawing.Size(1317, 39);
             this.tbEmailTo.TabIndex = 4;
@@ -91,7 +92,7 @@
             // tbEmailSubject
             // 
             this.tbEmailSubject.Location = new System.Drawing.Point(143, 149);
-            this.tbEmailSubject.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbEmailSubject.Margin = new System.Windows.Forms.Padding(6);
             this.tbEmailSubject.Name = "tbEmailSubject";
             this.tbEmailSubject.Size = new System.Drawing.Size(1317, 39);
             this.tbEmailSubject.TabIndex = 6;
@@ -109,7 +110,7 @@
             // rtbEmailBody
             // 
             this.rtbEmailBody.Location = new System.Drawing.Point(143, 211);
-            this.rtbEmailBody.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rtbEmailBody.Margin = new System.Windows.Forms.Padding(6);
             this.rtbEmailBody.Name = "rtbEmailBody";
             this.rtbEmailBody.Size = new System.Drawing.Size(1317, 657);
             this.rtbEmailBody.TabIndex = 7;
@@ -119,7 +120,7 @@
             // 
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Location = new System.Drawing.Point(1324, 885);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(139, 49);
             this.btnCancel.TabIndex = 8;
@@ -142,7 +143,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSend);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MailSender";
             this.Text = "MailSender";
             this.ResumeLayout(false);

@@ -16,7 +16,6 @@ namespace App
             container.RegisterType<IAntragViewModel, AntragViewModel>();
             container.RegisterType<IMailSender, MailSender>();
             container.RegisterType<IEmailService, EmailService>();
-
             container.RegisterType<IDetailView, Detail>();
             container.RegisterType<IMailServerConfiguration, MailServerConfiguration>();
             container.RegisterType<IParkingStatisticsView, ParkingStatistics>();

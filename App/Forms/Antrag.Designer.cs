@@ -38,43 +38,14 @@ namespace App
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Antrag));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.parkstatistikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mailServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBoxStudentAddress = new System.Windows.Forms.GroupBox();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.tbLocation = new System.Windows.Forms.TextBox();
             this.adressenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblPostcode = new System.Windows.Forms.Label();
-            this.tbPostcode = new System.Windows.Forms.TextBox();
-            this.lblHnr = new System.Windows.Forms.Label();
-            this.tbHnr = new System.Windows.Forms.TextBox();
-            this.lblStreet = new System.Windows.Forms.Label();
-            this.tbStreet = new System.Windows.Forms.TextBox();
-            this.groupBoxStudentInfo = new System.Windows.Forms.GroupBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
             this.schuelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblClass = new System.Windows.Forms.Label();
-            this.tbClass = new System.Windows.Forms.TextBox();
-            this.lblLastname = new System.Windows.Forms.Label();
-            this.tbLastname = new System.Windows.Forms.TextBox();
-            this.lblFirstname = new System.Windows.Forms.Label();
-            this.tbFirstname = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dTUntisDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.tBUntisPath = new System.Windows.Forms.TextBox();
-            this.btnLoadUntis = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.wViewGoogleMap = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.tabControlAntrag = new System.Windows.Forms.TabControl();
             this.alleAntrag = new System.Windows.Forms.TabPage();
             this.dataGridViewParkingApplication = new System.Windows.Forms.DataGridView();
@@ -116,25 +87,44 @@ namespace App
             this.btnNew = new System.Windows.Forms.Button();
             this.GenehmigtNavigation = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.parkstatistikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBoxStudentInfo = new System.Windows.Forms.GroupBox();
+            this.tbFirstname = new System.Windows.Forms.TextBox();
+            this.lblFirstname = new System.Windows.Forms.Label();
+            this.tbLastname = new System.Windows.Forms.TextBox();
+            this.lblLastname = new System.Windows.Forms.Label();
+            this.tbClass = new System.Windows.Forms.TextBox();
+            this.lblClass = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.groupBoxStudentAddress = new System.Windows.Forms.GroupBox();
+            this.tbStreet = new System.Windows.Forms.TextBox();
+            this.lblStreet = new System.Windows.Forms.Label();
+            this.tbHnr = new System.Windows.Forms.TextBox();
+            this.lblHnr = new System.Windows.Forms.Label();
+            this.tbPostcode = new System.Windows.Forms.TextBox();
+            this.lblPostcode = new System.Windows.Forms.Label();
+            this.tbLocation = new System.Windows.Forms.TextBox();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tabControl = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBoxStudentAddress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).BeginInit();
-            this.groupBoxStudentInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).BeginInit();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wViewGoogleMap)).BeginInit();
             this.tabControlAntrag.SuspendLayout();
             this.alleAntrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).BeginInit();
@@ -145,6 +135,10 @@ namespace App
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.groupBoxStudentInfo.SuspendLayout();
+            this.groupBoxStudentAddress.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -182,6 +176,12 @@ namespace App
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // parkstatistikToolStripMenuItem
+            // 
+            this.parkstatistikToolStripMenuItem.Name = "parkstatistikToolStripMenuItem";
+            this.parkstatistikToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.parkstatistikToolStripMenuItem.Text = "Parkstatistik";
+            // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -193,321 +193,16 @@ namespace App
             // mailServerToolStripMenuItem
             // 
             this.mailServerToolStripMenuItem.Name = "mailServerToolStripMenuItem";
-            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.mailServerToolStripMenuItem.Text = "Mail Server";
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(3, 27);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(281, 702);
-            this.tabControl.TabIndex = 7;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.groupBoxStudentAddress);
-            this.tabPage1.Controls.Add(this.groupBoxStudentInfo);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(273, 674);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Informationen";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(14, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 23);
-            this.textBox3.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 15);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Aktuelle Mietzeitraum";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(177, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "^";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(121, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(50, 23);
-            this.textBox2.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 15);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Gesammte Platz";
-            // 
-            // groupBoxStudentAddress
-            // 
-            this.groupBoxStudentAddress.Controls.Add(this.lblLocation);
-            this.groupBoxStudentAddress.Controls.Add(this.tbLocation);
-            this.groupBoxStudentAddress.Controls.Add(this.lblPostcode);
-            this.groupBoxStudentAddress.Controls.Add(this.tbPostcode);
-            this.groupBoxStudentAddress.Controls.Add(this.lblHnr);
-            this.groupBoxStudentAddress.Controls.Add(this.tbHnr);
-            this.groupBoxStudentAddress.Controls.Add(this.lblStreet);
-            this.groupBoxStudentAddress.Controls.Add(this.tbStreet);
-            this.groupBoxStudentAddress.Location = new System.Drawing.Point(1, 393);
-            this.groupBoxStudentAddress.Name = "groupBoxStudentAddress";
-            this.groupBoxStudentAddress.Size = new System.Drawing.Size(263, 145);
-            this.groupBoxStudentAddress.TabIndex = 14;
-            this.groupBoxStudentAddress.TabStop = false;
-            this.groupBoxStudentAddress.Text = "Adresse";
-            // 
-            // lblLocation
-            // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(9, 113);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(24, 15);
-            this.lblLocation.TabIndex = 15;
-            this.lblLocation.Text = "Ort";
-            // 
-            // tbLocation
-            // 
-            this.tbLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Ort", true));
-            this.tbLocation.Location = new System.Drawing.Point(83, 110);
-            this.tbLocation.Name = "tbLocation";
-            this.tbLocation.Size = new System.Drawing.Size(171, 23);
-            this.tbLocation.TabIndex = 14;
             // 
             // adressenBindingSource
             // 
             this.adressenBindingSource.DataSource = typeof(Models.Models.Adressen);
             // 
-            // lblPostcode
-            // 
-            this.lblPostcode.AutoSize = true;
-            this.lblPostcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPostcode.Location = new System.Drawing.Point(9, 84);
-            this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(27, 15);
-            this.lblPostcode.TabIndex = 13;
-            this.lblPostcode.Text = "PLZ";
-            // 
-            // tbPostcode
-            // 
-            this.tbPostcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Plz", true));
-            this.tbPostcode.Location = new System.Drawing.Point(83, 81);
-            this.tbPostcode.Name = "tbPostcode";
-            this.tbPostcode.Size = new System.Drawing.Size(171, 23);
-            this.tbPostcode.TabIndex = 12;
-            // 
-            // lblHnr
-            // 
-            this.lblHnr.AutoSize = true;
-            this.lblHnr.Location = new System.Drawing.Point(9, 55);
-            this.lblHnr.Name = "lblHnr";
-            this.lblHnr.Size = new System.Drawing.Size(47, 15);
-            this.lblHnr.TabIndex = 11;
-            this.lblHnr.Text = "HausNr";
-            // 
-            // tbHnr
-            // 
-            this.tbHnr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Hausnr", true));
-            this.tbHnr.Location = new System.Drawing.Point(83, 52);
-            this.tbHnr.Name = "tbHnr";
-            this.tbHnr.Size = new System.Drawing.Size(171, 23);
-            this.tbHnr.TabIndex = 10;
-            // 
-            // lblStreet
-            // 
-            this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(9, 26);
-            this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(40, 15);
-            this.lblStreet.TabIndex = 9;
-            this.lblStreet.Text = "Straße";
-            // 
-            // tbStreet
-            // 
-            this.tbStreet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Strasse", true));
-            this.tbStreet.Location = new System.Drawing.Point(83, 23);
-            this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(171, 23);
-            this.tbStreet.TabIndex = 8;
-            // 
-            // groupBoxStudentInfo
-            // 
-            this.groupBoxStudentInfo.Controls.Add(this.lblEmail);
-            this.groupBoxStudentInfo.Controls.Add(this.tbEmail);
-            this.groupBoxStudentInfo.Controls.Add(this.lblClass);
-            this.groupBoxStudentInfo.Controls.Add(this.tbClass);
-            this.groupBoxStudentInfo.Controls.Add(this.lblLastname);
-            this.groupBoxStudentInfo.Controls.Add(this.tbLastname);
-            this.groupBoxStudentInfo.Controls.Add(this.lblFirstname);
-            this.groupBoxStudentInfo.Controls.Add(this.tbFirstname);
-            this.groupBoxStudentInfo.Location = new System.Drawing.Point(-1, 241);
-            this.groupBoxStudentInfo.Name = "groupBoxStudentInfo";
-            this.groupBoxStudentInfo.Size = new System.Drawing.Size(265, 146);
-            this.groupBoxStudentInfo.TabIndex = 15;
-            this.groupBoxStudentInfo.TabStop = false;
-            this.groupBoxStudentInfo.Text = "Schueler";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(9, 118);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(36, 15);
-            this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "Email";
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Email", true));
-            this.tbEmail.Location = new System.Drawing.Point(83, 115);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(173, 23);
-            this.tbEmail.TabIndex = 6;
-            // 
             // schuelerBindingSource
             // 
             this.schuelerBindingSource.DataSource = typeof(Models.Models.Schueler);
-            // 
-            // lblClass
-            // 
-            this.lblClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(9, 89);
-            this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(39, 15);
-            this.lblClass.TabIndex = 5;
-            this.lblClass.Text = "Klasse";
-            // 
-            // tbClass
-            // 
-            this.tbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbClass.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "KlassenName", true));
-            this.tbClass.Location = new System.Drawing.Point(83, 86);
-            this.tbClass.Name = "tbClass";
-            this.tbClass.Size = new System.Drawing.Size(173, 23);
-            this.tbClass.TabIndex = 4;
-            // 
-            // lblLastname
-            // 
-            this.lblLastname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(8, 60);
-            this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(65, 15);
-            this.lblLastname.TabIndex = 3;
-            this.lblLastname.Text = "Nachname";
-            // 
-            // tbLastname
-            // 
-            this.tbLastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Nachname", true));
-            this.tbLastname.Location = new System.Drawing.Point(83, 57);
-            this.tbLastname.Name = "tbLastname";
-            this.tbLastname.Size = new System.Drawing.Size(173, 23);
-            this.tbLastname.TabIndex = 2;
-            // 
-            // lblFirstname
-            // 
-            this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(9, 31);
-            this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(54, 15);
-            this.lblFirstname.TabIndex = 1;
-            this.lblFirstname.Text = "Vorname";
-            // 
-            // tbFirstname
-            // 
-            this.tbFirstname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFirstname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Vorname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbFirstname.Location = new System.Drawing.Point(83, 28);
-            this.tbFirstname.Name = "tbFirstname";
-            this.tbFirstname.Size = new System.Drawing.Size(173, 23);
-            this.tbFirstname.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dTUntisDatePicker);
-            this.tabPage3.Controls.Add(this.tBUntisPath);
-            this.tabPage3.Controls.Add(this.btnLoadUntis);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(273, 674);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Belastung";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dTUntisDatePicker
-            // 
-            this.dTUntisDatePicker.Location = new System.Drawing.Point(6, 33);
-            this.dTUntisDatePicker.Name = "dTUntisDatePicker";
-            this.dTUntisDatePicker.Size = new System.Drawing.Size(204, 23);
-            this.dTUntisDatePicker.TabIndex = 4;
-            // 
-            // tBUntisPath
-            // 
-            this.tBUntisPath.Location = new System.Drawing.Point(89, 4);
-            this.tBUntisPath.Name = "tBUntisPath";
-            this.tBUntisPath.Size = new System.Drawing.Size(100, 23);
-            this.tBUntisPath.TabIndex = 2;
-            // 
-            // btnLoadUntis
-            // 
-            this.btnLoadUntis.Location = new System.Drawing.Point(195, 4);
-            this.btnLoadUntis.Name = "btnLoadUntis";
-            this.btnLoadUntis.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadUntis.TabIndex = 1;
-            this.btnLoadUntis.Text = "Load";
-            this.btnLoadUntis.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Untis Stunde";
             // 
             // splitContainer2
             // 
@@ -530,7 +225,7 @@ namespace App
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.webView21);
+            this.groupBox1.Controls.Add(this.wViewGoogleMap);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -539,18 +234,18 @@ namespace App
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fahrzeit Informationen";
             // 
-            // webView21
+            // wViewGoogleMap
             // 
-            this.webView21.AllowExternalDrop = true;
-            this.webView21.CreationProperties = null;
-            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webView21.Location = new System.Drawing.Point(3, 19);
-            this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(309, 617);
-            this.webView21.Source = new System.Uri("https://its-stuttgart.de", System.UriKind.Absolute);
-            this.webView21.TabIndex = 0;
-            this.webView21.ZoomFactor = 1D;
+            this.wViewGoogleMap.AllowExternalDrop = true;
+            this.wViewGoogleMap.CreationProperties = null;
+            this.wViewGoogleMap.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.wViewGoogleMap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wViewGoogleMap.Location = new System.Drawing.Point(3, 19);
+            this.wViewGoogleMap.Name = "wViewGoogleMap";
+            this.wViewGoogleMap.Size = new System.Drawing.Size(309, 617);
+            this.wViewGoogleMap.Source = new System.Uri("https://its-stuttgart.de", System.UriKind.Absolute);
+            this.wViewGoogleMap.TabIndex = 0;
+            this.wViewGoogleMap.ZoomFactor = 1D;
             // 
             // tabControlAntrag
             // 
@@ -983,11 +678,263 @@ namespace App
             this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewComboBoxColumn1.Width = 149;
             // 
-            // parkstatistikToolStripMenuItem
+            // tabPage1
             // 
-            this.parkstatistikToolStripMenuItem.Name = "parkstatistikToolStripMenuItem";
-            this.parkstatistikToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.parkstatistikToolStripMenuItem.Text = "Parkstatistik";
+            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.groupBoxStudentAddress);
+            this.tabPage1.Controls.Add(this.groupBoxStudentInfo);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(273, 674);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Informationen";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxStudentInfo
+            // 
+            this.groupBoxStudentInfo.Controls.Add(this.lblEmail);
+            this.groupBoxStudentInfo.Controls.Add(this.tbEmail);
+            this.groupBoxStudentInfo.Controls.Add(this.lblClass);
+            this.groupBoxStudentInfo.Controls.Add(this.tbClass);
+            this.groupBoxStudentInfo.Controls.Add(this.lblLastname);
+            this.groupBoxStudentInfo.Controls.Add(this.tbLastname);
+            this.groupBoxStudentInfo.Controls.Add(this.lblFirstname);
+            this.groupBoxStudentInfo.Controls.Add(this.tbFirstname);
+            this.groupBoxStudentInfo.Location = new System.Drawing.Point(-1, 241);
+            this.groupBoxStudentInfo.Name = "groupBoxStudentInfo";
+            this.groupBoxStudentInfo.Size = new System.Drawing.Size(265, 146);
+            this.groupBoxStudentInfo.TabIndex = 15;
+            this.groupBoxStudentInfo.TabStop = false;
+            this.groupBoxStudentInfo.Text = "Schueler";
+            // 
+            // tbFirstname
+            // 
+            this.tbFirstname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFirstname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Vorname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbFirstname.Location = new System.Drawing.Point(83, 28);
+            this.tbFirstname.Name = "tbFirstname";
+            this.tbFirstname.Size = new System.Drawing.Size(173, 23);
+            this.tbFirstname.TabIndex = 0;
+            // 
+            // lblFirstname
+            // 
+            this.lblFirstname.AutoSize = true;
+            this.lblFirstname.Location = new System.Drawing.Point(9, 31);
+            this.lblFirstname.Name = "lblFirstname";
+            this.lblFirstname.Size = new System.Drawing.Size(54, 15);
+            this.lblFirstname.TabIndex = 1;
+            this.lblFirstname.Text = "Vorname";
+            // 
+            // tbLastname
+            // 
+            this.tbLastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Nachname", true));
+            this.tbLastname.Location = new System.Drawing.Point(83, 57);
+            this.tbLastname.Name = "tbLastname";
+            this.tbLastname.Size = new System.Drawing.Size(173, 23);
+            this.tbLastname.TabIndex = 2;
+            // 
+            // lblLastname
+            // 
+            this.lblLastname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLastname.AutoSize = true;
+            this.lblLastname.Location = new System.Drawing.Point(8, 60);
+            this.lblLastname.Name = "lblLastname";
+            this.lblLastname.Size = new System.Drawing.Size(65, 15);
+            this.lblLastname.TabIndex = 3;
+            this.lblLastname.Text = "Nachname";
+            // 
+            // tbClass
+            // 
+            this.tbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbClass.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "KlassenName", true));
+            this.tbClass.Location = new System.Drawing.Point(83, 86);
+            this.tbClass.Name = "tbClass";
+            this.tbClass.Size = new System.Drawing.Size(173, 23);
+            this.tbClass.TabIndex = 4;
+            // 
+            // lblClass
+            // 
+            this.lblClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblClass.AutoSize = true;
+            this.lblClass.Location = new System.Drawing.Point(9, 89);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Size = new System.Drawing.Size(39, 15);
+            this.lblClass.TabIndex = 5;
+            this.lblClass.Text = "Klasse";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Email", true));
+            this.tbEmail.Location = new System.Drawing.Point(83, 115);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(173, 23);
+            this.tbEmail.TabIndex = 6;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(9, 118);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(36, 15);
+            this.lblEmail.TabIndex = 7;
+            this.lblEmail.Text = "Email";
+            // 
+            // groupBoxStudentAddress
+            // 
+            this.groupBoxStudentAddress.Controls.Add(this.lblLocation);
+            this.groupBoxStudentAddress.Controls.Add(this.tbLocation);
+            this.groupBoxStudentAddress.Controls.Add(this.lblPostcode);
+            this.groupBoxStudentAddress.Controls.Add(this.tbPostcode);
+            this.groupBoxStudentAddress.Controls.Add(this.lblHnr);
+            this.groupBoxStudentAddress.Controls.Add(this.tbHnr);
+            this.groupBoxStudentAddress.Controls.Add(this.lblStreet);
+            this.groupBoxStudentAddress.Controls.Add(this.tbStreet);
+            this.groupBoxStudentAddress.Location = new System.Drawing.Point(1, 393);
+            this.groupBoxStudentAddress.Name = "groupBoxStudentAddress";
+            this.groupBoxStudentAddress.Size = new System.Drawing.Size(263, 145);
+            this.groupBoxStudentAddress.TabIndex = 14;
+            this.groupBoxStudentAddress.TabStop = false;
+            this.groupBoxStudentAddress.Text = "Adresse";
+            // 
+            // tbStreet
+            // 
+            this.tbStreet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Strasse", true));
+            this.tbStreet.Location = new System.Drawing.Point(83, 23);
+            this.tbStreet.Name = "tbStreet";
+            this.tbStreet.Size = new System.Drawing.Size(171, 23);
+            this.tbStreet.TabIndex = 8;
+            // 
+            // lblStreet
+            // 
+            this.lblStreet.AutoSize = true;
+            this.lblStreet.Location = new System.Drawing.Point(9, 26);
+            this.lblStreet.Name = "lblStreet";
+            this.lblStreet.Size = new System.Drawing.Size(40, 15);
+            this.lblStreet.TabIndex = 9;
+            this.lblStreet.Text = "Straße";
+            // 
+            // tbHnr
+            // 
+            this.tbHnr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Hausnr", true));
+            this.tbHnr.Location = new System.Drawing.Point(83, 52);
+            this.tbHnr.Name = "tbHnr";
+            this.tbHnr.Size = new System.Drawing.Size(171, 23);
+            this.tbHnr.TabIndex = 10;
+            // 
+            // lblHnr
+            // 
+            this.lblHnr.AutoSize = true;
+            this.lblHnr.Location = new System.Drawing.Point(9, 55);
+            this.lblHnr.Name = "lblHnr";
+            this.lblHnr.Size = new System.Drawing.Size(47, 15);
+            this.lblHnr.TabIndex = 11;
+            this.lblHnr.Text = "HausNr";
+            // 
+            // tbPostcode
+            // 
+            this.tbPostcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Plz", true));
+            this.tbPostcode.Location = new System.Drawing.Point(83, 81);
+            this.tbPostcode.Name = "tbPostcode";
+            this.tbPostcode.Size = new System.Drawing.Size(171, 23);
+            this.tbPostcode.TabIndex = 12;
+            // 
+            // lblPostcode
+            // 
+            this.lblPostcode.AutoSize = true;
+            this.lblPostcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPostcode.Location = new System.Drawing.Point(9, 84);
+            this.lblPostcode.Name = "lblPostcode";
+            this.lblPostcode.Size = new System.Drawing.Size(27, 15);
+            this.lblPostcode.TabIndex = 13;
+            this.lblPostcode.Text = "PLZ";
+            // 
+            // tbLocation
+            // 
+            this.tbLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Ort", true));
+            this.tbLocation.Location = new System.Drawing.Point(83, 110);
+            this.tbLocation.Name = "tbLocation";
+            this.tbLocation.Size = new System.Drawing.Size(171, 23);
+            this.tbLocation.TabIndex = 14;
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(9, 113);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(24, 15);
+            this.lblLocation.TabIndex = 15;
+            this.lblLocation.Text = "Ort";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 15);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Gesammte Platz";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(121, 14);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(50, 23);
+            this.textBox2.TabIndex = 17;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(177, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "^";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 15);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Aktuelle Mietzeitraum";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(14, 62);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(245, 23);
+            this.textBox3.TabIndex = 20;
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Location = new System.Drawing.Point(3, 27);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(281, 702);
+            this.tabControl.TabIndex = 7;
             // 
             // Antrag
             // 
@@ -1007,23 +954,14 @@ namespace App
             this.splitContainer1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.groupBoxStudentAddress.ResumeLayout(false);
-            this.groupBoxStudentAddress.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).EndInit();
-            this.groupBoxStudentInfo.ResumeLayout(false);
-            this.groupBoxStudentInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wViewGoogleMap)).EndInit();
             this.tabControlAntrag.ResumeLayout(false);
             this.alleAntrag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).EndInit();
@@ -1034,6 +972,13 @@ namespace App
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.groupBoxStudentInfo.ResumeLayout(false);
+            this.groupBoxStudentInfo.PerformLayout();
+            this.groupBoxStudentAddress.ResumeLayout(false);
+            this.groupBoxStudentAddress.PerformLayout();
+            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1055,34 +1000,8 @@ namespace App
         private SplitContainer splitContainer2;
         private DataGridView dataGridViewParkingApplication;
         private GroupBox groupBox1;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private Microsoft.Web.WebView2.WinForms.WebView2 wViewGoogleMap;
         private SplitContainer splitContainer3;
-        private TabControl tabControl;
-        private TabPage tabPage1;
-        private TextBox textBox3;
-        private Label label4;
-        private Button button1;
-        private TextBox textBox2;
-        private Label label3;
-        private GroupBox groupBoxStudentAddress;
-        private Label lblLocation;
-        private TextBox tbLocation;
-        private Label lblPostcode;
-        private TextBox tbPostcode;
-        private Label lblHnr;
-        private TextBox tbHnr;
-        private Label lblStreet;
-        private TextBox tbStreet;
-        private GroupBox groupBoxStudentInfo;
-        private Label lblEmail;
-        private TextBox tbEmail;
-        private Label lblClass;
-        private TextBox tbClass;
-        private Label lblLastname;
-        private TextBox tbLastname;
-        private Label lblFirstname;
-        private TextBox tbFirstname;
-        private TabPage tabPage3;
         private Button btnEmail;
         private Button btnDelete;
         private Button btnLast;
@@ -1119,10 +1038,31 @@ namespace App
         private DataGridViewTextBoxColumn Antragszeit;
         private DataGridViewTextBoxColumn Punkte;
         private DataGridViewComboBoxColumn Genehmigt;
-        private TextBox tBUntisPath;
-        private Button btnLoadUntis;
-        private Label label5;
-        private DateTimePicker dTUntisDatePicker;
         private ToolStripMenuItem parkstatistikToolStripMenuItem;
+        private TabControl tabControl;
+        private TabPage tabPage1;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private Label label4;
+        private Button button1;
+        private Label label3;
+        private GroupBox groupBoxStudentAddress;
+        private Label lblLocation;
+        private TextBox tbLocation;
+        private Label lblPostcode;
+        private TextBox tbPostcode;
+        private Label lblHnr;
+        private TextBox tbHnr;
+        private Label lblStreet;
+        private TextBox tbStreet;
+        private GroupBox groupBoxStudentInfo;
+        private Label lblEmail;
+        private TextBox tbEmail;
+        private Label lblClass;
+        private TextBox tbClass;
+        private Label lblLastname;
+        private TextBox tbLastname;
+        private Label lblFirstname;
+        private TextBox tbFirstname;
     }
 }

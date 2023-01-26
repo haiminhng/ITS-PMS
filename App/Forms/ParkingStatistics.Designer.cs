@@ -60,6 +60,7 @@
             this.btnLoadFileUntis.TabIndex = 2;
             this.btnLoadFileUntis.Text = "Load";
             this.btnLoadFileUntis.UseVisualStyleBackColor = true;
+            this.btnLoadFileUntis.Click += new System.EventHandler(this.btnLoadFileUntis_Click);
             // 
             // dateTimePicker1
             // 

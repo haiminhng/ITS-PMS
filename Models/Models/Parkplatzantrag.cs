@@ -1,12 +1,15 @@
-﻿namespace Models.Models;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-public partial class Parkplatzantrag
+namespace Models.Models;
+
+public partial class Parkplatzantrag : INotifyPropertyChanged
 {
+    public double? EntfernungKm { get; set; }
+
     public int ParkplatzantragsId { get; set; }
 
     public string? KfzKennzeichen { get; set; }
-
-    public double? EntfernungKm { get; set; }
 
     public bool? Besonderefall { get; set; }
 
@@ -33,4 +36,11 @@ public partial class Parkplatzantrag
     public virtual Genehmigtstatus GenehmigtNavigation { get; set; } = null!;
 
     public virtual Schueler? Schueler { get; set; }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 }

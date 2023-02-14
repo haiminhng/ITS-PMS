@@ -1,6 +1,9 @@
-﻿namespace Models.Models;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-public partial class Schueler
+namespace Models.Models;
+
+public partial class Schueler : INotifyPropertyChanged
 {
     public int SchuelerId { get; set; }
 
@@ -12,7 +15,25 @@ public partial class Schueler
 
     public string? KlassenName { get; set; }
 
-    public virtual Adressen? Adressen { get; set; }
+    //public virtual Adressen? Adressen { get; set; }
 
     public virtual Parkplatzantrag? Parkplatzantrag { get; set; }
+
+    private Adressen? _adressen;
+    public virtual Adressen? Adressen
+    {
+        get => _adressen;
+        set
+        {
+            _adressen = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 }

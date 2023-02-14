@@ -7,14 +7,17 @@ using Models.Data;
 using Models.Models;
 using Models.Models.utilities;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace ViewModels
 {
-    public class AntragViewModel : IAntragViewModel
+    public class AntragViewModel : IAntragViewModel, INotifyPropertyChanged
     {
         private readonly IGoogleService _googleService = new GoogleService();
         private readonly IAntragService _antragService = new WeightedScoring();
         private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private string _navUrl { get; set; }
 
@@ -26,6 +29,10 @@ namespace ViewModels
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
         public BindingSource GenehmigtStatus { get; set; }
+
+        // Use to Calculate and get Notified everytime Atribute of Adresse changed
+        private Schueler selectedSchueler;
+        private Parkplatzantrag selectedParkplatzantrag;
 
         public async Task LoadAsync()
         {
@@ -56,9 +63,13 @@ namespace ViewModels
 
         }
 
-        public void Save()
+        public async Task SaveAsync()
         {
-            
+            await UpdateTravelDetailsAsync();
+            if (selectedSchueler.Adressen != null)
+            {
+                selectedSchueler.Adressen.PropertyChanged += Adressen_PropertyChanged;
+            }
             AntragBindingSource.EndEdit();
             SchuelerBindingSource.EndEdit();
             AdresseBindingSource.EndEdit();
@@ -66,8 +77,13 @@ namespace ViewModels
             // wird geprüft ob record gespeichert wird;
             Int32 record;
             record = _context.SaveChanges();
+
+            
+            
+
             if (record != 0)
             {
+                parkPlatzAntragView.Refresh();
                 MessageBox.Show("Erfolgreich gespeichert");
                 NavWebView();
             }
@@ -75,6 +91,8 @@ namespace ViewModels
             {
                 MessageBox.Show("Fehler");
             }
+
+            
         }
 
         public void Delete() => AntragBindingSource.RemoveCurrent();
@@ -289,6 +307,29 @@ namespace ViewModels
         }
 
 
+
+        private async void Adressen_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            await UpdateTravelDetailsAsync();
+        }
+
+        private async Task UpdateTravelDetailsAsync()
+        {
+            if (SchuelerBindingSource.Current is Schueler schueler)
+            {
+                selectedSchueler = schueler;
+                selectedParkplatzantrag = selectedSchueler.Parkplatzantrag;
+                if (selectedParkplatzantrag != null && selectedSchueler.Adressen != null)
+                {
+                    // Perform calculation to update the EntfernungKm attribute
+                    selectedParkplatzantrag.EntfernungKm = await _googleService.GetDistance(selectedSchueler.Adressen);
+                    selectedParkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(selectedSchueler.Adressen);
+                    selectedParkplatzantrag.Reisezeit = await _googleService.GetTravelTime(selectedSchueler.Adressen);
+                    selectedParkplatzantrag.Punkte = _antragService.AntragBewerten(selectedParkplatzantrag);
+                }
+            }
+        }
+
         /*
         public void LoadUntisStunde()
         {
@@ -319,6 +360,11 @@ namespace ViewModels
         public void ShowParkingStatistics(IParkingStatisticsView parkingStatisticsView)
         {
             parkingStatisticsView.showParkingStatistics();
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 

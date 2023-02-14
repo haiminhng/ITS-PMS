@@ -37,7 +37,6 @@ namespace App.Forms
             _mailServer.EnableSsl = checkBoxEnableSsl.Checked;
             _mailServer.Port = int.Parse(textBoxPort.Text);
             
-            
             try
             {
                 _mailServer.SaveConfiguration();

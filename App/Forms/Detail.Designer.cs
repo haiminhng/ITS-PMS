@@ -51,7 +51,7 @@
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lblFirstname = new System.Windows.Forms.Label();
             this.tbFirstname = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -107,7 +107,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
+            this.splitContainer1.Panel2.Controls.Add(this.btnEmail);
             this.splitContainer1.Panel2.Controls.Add(this.btnCancle);
             this.splitContainer1.Panel2.Controls.Add(this.btnSave);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
@@ -312,14 +312,14 @@
             this.tbFirstname.Size = new System.Drawing.Size(173, 23);
             this.tbFirstname.TabIndex = 0;
             // 
-            // button3
+            // btnEmail
             // 
-            this.button3.Location = new System.Drawing.Point(248, 313);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Email";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEmail.Location = new System.Drawing.Point(248, 313);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(75, 23);
+            this.btnEmail.TabIndex = 20;
+            this.btnEmail.Text = "Email";
+            this.btnEmail.UseVisualStyleBackColor = true;
             // 
             // btnCancle
             // 
@@ -670,7 +670,7 @@
         private Label label4;
         private TextBox textBox4;
         private RadioButton radioButton5;
-        private Button button3;
+        private Button btnEmail;
         private Label label9;
         private BindingSource adressenBindingSource;
         private BindingSource parkplatzantragBindingSource;

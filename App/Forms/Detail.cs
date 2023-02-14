@@ -8,7 +8,7 @@ namespace App.Forms
     public partial class Detail : Form, IDetailView
     {
         private IAntragViewModel _vm = UnityConfig.container.Resolve<IAntragViewModel>();
-
+        private IMailSender _mailServer = UnityConfig.container.Resolve<IMailSender>();
 
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
@@ -23,8 +23,9 @@ namespace App.Forms
             AntragBinDingSource = parkplatzantragBindingSource;
             GenehmigtStatus = genehmigtstatusBindingSource;
 
-            btnSave.Click += delegate { _vm.Save();  };
+            btnSave.Click += delegate { _vm.SaveAsync();  };
             btnCancle.Click += delegate { this.Hide(); };
+            btnEmail.Click += delegate { _mailServer.ShowMailSender(); };
         }
 
 

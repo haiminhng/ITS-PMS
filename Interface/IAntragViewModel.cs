@@ -23,7 +23,7 @@ namespace Interface
         void New();
         void Next();
         void Previous();
-        void Save();
+        Task SaveAsync();
         void ShowDetail(IDetailView detailView);
         void ShowParkingStatistics(IParkingStatisticsView parkingStatisticsView);
         void ShowMailSender(IMailSender mailSender);

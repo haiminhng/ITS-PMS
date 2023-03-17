@@ -1,22 +1,28 @@
 ﻿using Interface;
 using Microsoft.VisualBasic;
+using Models.Models;
 using Models.Models.utilities;
 using OxyPlot;
 using OxyPlot.WindowsForms;
-
-
+using Unity;
 
 namespace App.Forms
 {
     public partial class ParkingStatistics : Form, IParkingStatisticsView
     {
+
         private PlotModel myModel;
+
+        private List<UntisStunde> untisStundeList = new List<UntisStunde>();
+
+        public List<Parkplatzantrag> genehmigteAntraege { get; set; }
 
         public ParkingStatistics()
         {
             InitializeComponent();
+            genehmigteAntraege = new List<Parkplatzantrag>();
             myModel = new PlotModel();
-            myModel.Title = "My Chart";
+            myModel.Title = "Parkplatzstatistik";
             var xAxis = new OxyPlot.Axes.LinearAxis();
             xAxis.Position = OxyPlot.Axes.AxisPosition.Bottom;
             myModel.Axes.Add(xAxis);
@@ -30,6 +36,7 @@ namespace App.Forms
             myModel.Series.Add(series);
             plotView1.Model = myModel;
         }
+
 
         public void showParkingStatistics()
         {
@@ -46,7 +53,6 @@ namespace App.Forms
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string[] lines = File.ReadAllLines(openFileDialog1.FileName);
-                List<UntisStunde> untisStundeList = new List<UntisStunde>();
 
                 foreach (var line in lines)
                 {

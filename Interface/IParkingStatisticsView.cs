@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Interface
 {
     public interface IParkingStatisticsView
     {
+        List<Parkplatzantrag> genehmigteAntraege { get; set; }
+
         void showParkingStatistics();
     }
 }

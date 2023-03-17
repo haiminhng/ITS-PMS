@@ -1,71 +1,66 @@
 ﻿using Interface;
+using Microsoft.EntityFrameworkCore;
 using Models.Data;
 using Models.Models;
+using System;
+using System.Linq;
 
 namespace Framework
 {
     public class WeightedScoring : IAntragService
     {
         private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
+
         public int AntragBewerten(Parkplatzantrag application)
         {
+            _context
+             .Parkplatzantrags
+             .Include(e => e.Schueler)
+             .Include(e => e.Schueler.Adressen)
+             .Load();
 
             // Define the weights for each factor
-            int distanceWeight = 2;
-            int besonderefallWeight = 1;
-            int rideshareWeight = 3; 
-            int travelTimeWeight = 1;
-            int drivingTimeWeight = 2;
-            /*
-             
-             */
+            double distanceWeight = 0.2;
+            double besonderefallWeight = 0.1;
+            double rideshareWeight = 0.3;
+            double travelTimeWeight = 0.1;
+            double drivingTimeWeight = 0.2;
+
             // Define the range of values for each factor
-            //int distanceMin = 0;
-            int distanceMin = 0;
-            int distanceMax = 10;
-            int travelTimeMin = 0;
-            int travelTimeMax = 60;
-            int drivingTimeMin = 0;
-            int drivingTimeMax = 60;    
+            double distanceMin = _context.Parkplatzantrags.Min(a => a.EntfernungKm.GetValueOrDefault());
+            double distanceMax = _context.Parkplatzantrags.Max(a => a.EntfernungKm.GetValueOrDefault());
+            double travelTimeMin = _context.Parkplatzantrags.Min(a => a.Reisezeit.GetValueOrDefault().TotalMinutes);
+            double travelTimeMax = _context.Parkplatzantrags.Max(a => a.Reisezeit.GetValueOrDefault().TotalMinutes);
+            double drivingTimeMin = _context.Parkplatzantrags.Min(a => a.Fahrzeit.GetValueOrDefault().TotalMinutes);
+            double drivingTimeMax = _context.Parkplatzantrags.Max(a => a.Fahrzeit.GetValueOrDefault().TotalMinutes);
+
+            // Normalize the values for each factor using Min-Max normalization
+            double distanceNormalized = NormalizeValue(application.EntfernungKm.GetValueOrDefault(), distanceMin, distanceMax);
+            double besonderefallNormalized = application.Besonderefall.GetValueOrDefault() ? 1 : 0;
+            double rideshareNormalized = application.Mitfahrgelegenheit.GetValueOrDefault() ? 1 : 0;
+            double travelTimeNormalized = NormalizeValue(application.Reisezeit.GetValueOrDefault().TotalMinutes, travelTimeMin, travelTimeMax);
+            double drivingTimeNormalized = NormalizeValue(application.Fahrzeit.GetValueOrDefault().TotalMinutes, drivingTimeMin, drivingTimeMax);
 
             // Calculate the score for each factor
-            int distanceScore = PunkteRechnen((double)application.EntfernungKm, distanceMin, distanceMax);
-            int besonderefallScore = application.Besonderefall.GetValueOrDefault() ? 1 : 0;
-            int rideshareScore = application.Mitfahrgelegenheit.GetValueOrDefault() ? 1 : 0;
-            int travelTimeScore = PunkteRechnen(application.Reisezeit.GetValueOrDefault().TotalMinutes, travelTimeMin, travelTimeMax);
-            int drivingTimeScore = PunkteRechnen(application.Fahrzeit.GetValueOrDefault().TotalMinutes, drivingTimeMin, drivingTimeMax);
+            double distanceScore = distanceNormalized * distanceWeight;
+            double besonderefallScore = besonderefallNormalized * besonderefallWeight;
+            double rideshareScore = rideshareNormalized * rideshareWeight;
+            double travelTimeScore = travelTimeNormalized * travelTimeWeight;
+            double drivingTimeScore = drivingTimeNormalized * drivingTimeWeight;
 
             // Calculate the overall score
-            int overallScore = (distanceScore * distanceWeight) + (besonderefallScore * besonderefallWeight) + (rideshareScore * rideshareWeight) + (travelTimeScore * travelTimeWeight) + (drivingTimeScore * drivingTimeWeight);
+            double overallScore = distanceScore + besonderefallScore + rideshareScore + travelTimeScore + drivingTimeScore;
 
-            return overallScore;
+            // Convert the overall score to an integer
+            int finalScore = Convert.ToInt32(overallScore * 10);
+
+            return finalScore;
         }
 
-        private int PunkteRechnen(double value, int min, int max)
+        private double NormalizeValue(double value, double min, double max)
         {
-            /*
-            if (value < min)
-            {
-                return 0;
-            }
-            if (value > max)
-            {
-                return max - min;
-            }
-            return (int)(value - min);
-            */
-            // Calculate the range of values
             double range = max - min;
-
-            // Calculate the score using a linear function
-            double score = (value - min) / range;
-
-            // Map the score to the range 0-10
-            int scoreInt = (int)Math.Round(score * 10);
-
-            // Ensure the score is within the range 0-10
-            return Math.Min(Math.Max(scoreInt, 0), 10);
+            return (value - min) / range;
         }
     }
-
 }

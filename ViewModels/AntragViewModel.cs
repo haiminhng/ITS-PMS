@@ -1,11 +1,9 @@
 ﻿using Framework;
 using Interface;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 using Microsoft.Web.WebView2.WinForms;
 using Models.Data;
 using Models.Models;
-using Models.Models.utilities;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -73,13 +71,13 @@ namespace ViewModels
             AntragBindingSource.EndEdit();
             SchuelerBindingSource.EndEdit();
             AdresseBindingSource.EndEdit();
-            
+
             // wird geprüft ob record gespeichert wird;
             Int32 record;
             record = _context.SaveChanges();
 
-            
-            
+
+
 
             if (record != 0)
             {
@@ -92,7 +90,7 @@ namespace ViewModels
                 MessageBox.Show("Fehler");
             }
 
-            
+
         }
 
         public void Delete() => AntragBindingSource.RemoveCurrent();
@@ -223,21 +221,23 @@ namespace ViewModels
                 // jeder Objekt neu berechnen
                 Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
 
-                if (parkplatzantrag != null) {
+                if (parkplatzantrag != null)
+                {
                     parkplatzantrag.EntfernungKm = await _googleService.GetDistance(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
 
                     // Prüft ob erfolgtreich gespeichert wird 
-                    if (_context.SaveChanges() != 0) {
+                    if (_context.SaveChanges() != 0)
+                    {
                         parkPlatzAntragView.Refresh();
                         MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                } 
+                }
             }
 
-            
+
 
             /*
             Parkplatzantrag parkplatzantrag = (Parkplatzantrag)AntragBindingSource.Current;
@@ -359,7 +359,17 @@ namespace ViewModels
         */
         public void ShowParkingStatistics(IParkingStatisticsView parkingStatisticsView)
         {
+            foreach (DataGridViewRow row in parkPlatzAntragView.Rows)
+            {
+                Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
+                if (parkplatzantrag != null && parkplatzantrag.GenehmigtNavigation != null && parkplatzantrag.GenehmigtNavigation.Wert == 1)
+                {
+                    parkingStatisticsView.genehmigteAntraege.Add(parkplatzantrag);
+                }
+            }
             parkingStatisticsView.showParkingStatistics();
+           
+
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = "")

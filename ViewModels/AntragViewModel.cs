@@ -223,13 +223,16 @@ namespace ViewModels
                     parkplatzantrag.Fahrzeit = await _googleService.GetDriveTime(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
+                    parkPlatzAntragView.Refresh();
 
+                    /*
                     // Prüft ob erfolgtreich gespeichert wird 
                     if (_context.SaveChanges() != 0)
                     {
                         parkPlatzAntragView.Refresh();
                         MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    */
                 }
             }
 

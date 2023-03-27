@@ -9,15 +9,14 @@ namespace Framework
 {
     public class WeightedScoring : IAntragService
     {
-        private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
-
         public int AntragBewerten(Parkplatzantrag application)
         {
-            _context
-             .Parkplatzantrags
-             .Include(e => e.Schueler)
-             .Include(e => e.Schueler.Adressen)
-             .Load();
+            using var context = new ParkplatzverwaltungContext();
+            context
+                .Parkplatzantrags
+                .Include(e => e.Schueler)
+                .Include(e => e.Schueler.Adressen)
+                .Load();
 
             // Define the weights for each factor
             double distanceWeight = 0.2;
@@ -27,12 +26,13 @@ namespace Framework
             double drivingTimeWeight = 0.2;
 
             // Define the range of values for each factor
-            double distanceMin = _context.Parkplatzantrags.Min(a => a.EntfernungKm.GetValueOrDefault());
-            double distanceMax = _context.Parkplatzantrags.Max(a => a.EntfernungKm.GetValueOrDefault());
-            double travelTimeMin = _context.Parkplatzantrags.Min(a => a.Reisezeit.GetValueOrDefault().TotalMinutes);
-            double travelTimeMax = _context.Parkplatzantrags.Max(a => a.Reisezeit.GetValueOrDefault().TotalMinutes);
-            double drivingTimeMin = _context.Parkplatzantrags.Min(a => a.Fahrzeit.GetValueOrDefault().TotalMinutes);
-            double drivingTimeMax = _context.Parkplatzantrags.Max(a => a.Fahrzeit.GetValueOrDefault().TotalMinutes);
+            double distanceMin = 0;
+            double distanceMax = 100;
+            double travelTimeMin = 0;
+            double travelTimeMax = 60;
+            double drivingTimeMin = 0;
+            double drivingTimeMax = 60;
+
 
             // Normalize the values for each factor using Min-Max normalization
             double distanceNormalized = NormalizeValue(application.EntfernungKm.GetValueOrDefault(), distanceMin, distanceMax);

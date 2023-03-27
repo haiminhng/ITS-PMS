@@ -9,6 +9,8 @@ namespace Interface
         public BindingSource AntragBinDingSource { get; set; }
         public BindingSource GenehmigtStatus { get; set; }
 
+        public event EventHandler CountsUpdated;
+
         public void ShowDetail();
 
     }

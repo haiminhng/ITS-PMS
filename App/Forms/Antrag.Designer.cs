@@ -30,957 +30,925 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Antrag));
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.parkstatistikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mailServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBoxStudentAddress = new System.Windows.Forms.GroupBox();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.tbLocation = new System.Windows.Forms.TextBox();
-            this.adressenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblPostcode = new System.Windows.Forms.Label();
-            this.tbPostcode = new System.Windows.Forms.TextBox();
-            this.lblHnr = new System.Windows.Forms.Label();
-            this.tbHnr = new System.Windows.Forms.TextBox();
-            this.lblStreet = new System.Windows.Forms.Label();
-            this.tbStreet = new System.Windows.Forms.TextBox();
-            this.groupBoxStudentInfo = new System.Windows.Forms.GroupBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.schuelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblClass = new System.Windows.Forms.Label();
-            this.tbClass = new System.Windows.Forms.TextBox();
-            this.lblLastname = new System.Windows.Forms.Label();
-            this.tbLastname = new System.Windows.Forms.TextBox();
-            this.lblFirstname = new System.Windows.Forms.Label();
-            this.tbFirstname = new System.Windows.Forms.TextBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.wViewGoogleMap = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.tabControlAntrag = new System.Windows.Forms.TabControl();
-            this.alleAntrag = new System.Windows.Forms.TabPage();
-            this.dataGridViewParkingApplication = new System.Windows.Forms.DataGridView();
-            this.ParkplatzantragsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KfzKennzeichen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EntfernungKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reisezeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fahrzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grund = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Moeglichkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Besonderefall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mitfahrgelegenheit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Antragsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Antragszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Punkte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genehmigt = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.genehmigtstatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cMenuGenehmigen = new System.Windows.Forms.ToolStripMenuItem();
-            this.cMenuAblehnen = new System.Windows.Forms.ToolStripMenuItem();
-            this.cMenuWarteliste = new System.Windows.Forms.ToolStripMenuItem();
-            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.genehmigteAntrag = new System.Windows.Forms.TabPage();
-            this.abgelehnteAntrag = new System.Windows.Forms.TabPage();
-            this.warteliste = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLast = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.btnNewCalc = new System.Windows.Forms.Button();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.GenehmigtNavigation = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBoxStudentAddress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).BeginInit();
-            this.groupBoxStudentInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wViewGoogleMap)).BeginInit();
-            this.tabControlAntrag.SuspendLayout();
-            this.alleAntrag.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genehmigtstatusBindingSource)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            this.SuspendLayout();
+            splitContainer1 = new SplitContainer();
+            menuStrip1 = new MenuStrip();
+            parkstatistikToolStripMenuItem = new ToolStripMenuItem();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
+            mailServerToolStripMenuItem = new ToolStripMenuItem();
+            tabControl = new TabControl();
+            tabPage1 = new TabPage();
+            tbProcessingCount = new TextBox();
+            label7 = new Label();
+            tbWaitlistedCount = new TextBox();
+            label6 = new Label();
+            tbRejectedCount = new TextBox();
+            label5 = new Label();
+            tbApprovedCount = new TextBox();
+            label3 = new Label();
+            groupBoxStudentAddress = new GroupBox();
+            lblLocation = new Label();
+            tbLocation = new TextBox();
+            adressenBindingSource = new BindingSource(components);
+            lblPostcode = new Label();
+            tbPostcode = new TextBox();
+            lblHnr = new Label();
+            tbHnr = new TextBox();
+            lblStreet = new Label();
+            tbStreet = new TextBox();
+            groupBoxStudentInfo = new GroupBox();
+            lblEmail = new Label();
+            tbEmail = new TextBox();
+            schuelerBindingSource = new BindingSource(components);
+            lblClass = new Label();
+            tbClass = new TextBox();
+            lblLastname = new Label();
+            tbLastname = new TextBox();
+            lblFirstname = new Label();
+            tbFirstname = new TextBox();
+            splitContainer2 = new SplitContainer();
+            groupBox1 = new GroupBox();
+            wViewGoogleMap = new Microsoft.Web.WebView2.WinForms.WebView2();
+            tabControlAntrag = new TabControl();
+            alleAntrag = new TabPage();
+            dataGridViewParkingApplication = new DataGridView();
+            ParkplatzantragsId = new DataGridViewTextBoxColumn();
+            KfzKennzeichen = new DataGridViewTextBoxColumn();
+            EntfernungKm = new DataGridViewTextBoxColumn();
+            Reisezeit = new DataGridViewTextBoxColumn();
+            Fahrzeit = new DataGridViewTextBoxColumn();
+            Grund = new DataGridViewTextBoxColumn();
+            Moeglichkeit = new DataGridViewTextBoxColumn();
+            Besonderefall = new DataGridViewTextBoxColumn();
+            Mitfahrgelegenheit = new DataGridViewTextBoxColumn();
+            Antragsdatum = new DataGridViewTextBoxColumn();
+            Antragszeit = new DataGridViewTextBoxColumn();
+            Punkte = new DataGridViewTextBoxColumn();
+            Genehmigt = new DataGridViewComboBoxColumn();
+            genehmigtstatusBindingSource = new BindingSource(components);
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            cMenuGenehmigen = new ToolStripMenuItem();
+            cMenuAblehnen = new ToolStripMenuItem();
+            cMenuWarteliste = new ToolStripMenuItem();
+            parkplatzantragBindingSource = new BindingSource(components);
+            label2 = new Label();
+            label1 = new Label();
+            tbSearch = new TextBox();
+            panel1 = new Panel();
+            btnLast = new Button();
+            btnNext = new Button();
+            btnPrevious = new Button();
+            btnFirst = new Button();
+            splitContainer3 = new SplitContainer();
+            btnNewCalc = new Button();
+            btnEmail = new Button();
+            btnDelete = new Button();
+            btnSave = new Button();
+            btnNew = new Button();
+            GenehmigtNavigation = new DataGridViewComboBoxColumn();
+            dataGridViewComboBoxColumn1 = new DataGridViewComboBoxColumn();
+            cMenuImBearbeitung = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            menuStrip1.SuspendLayout();
+            tabControl.SuspendLayout();
+            tabPage1.SuspendLayout();
+            groupBoxStudentAddress.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)adressenBindingSource).BeginInit();
+            groupBoxStudentInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)schuelerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel1.SuspendLayout();
+            splitContainer2.Panel2.SuspendLayout();
+            splitContainer2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)wViewGoogleMap).BeginInit();
+            tabControlAntrag.SuspendLayout();
+            alleAntrag.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewParkingApplication).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)genehmigtstatusBindingSource).BeginInit();
+            contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)parkplatzantragBindingSource).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
+            splitContainer3.Panel2.SuspendLayout();
+            splitContainer3.SuspendLayout();
+            SuspendLayout();
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.FixedPanel = FixedPanel.Panel1;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
-            this.splitContainer1.Panel1.Controls.Add(this.tabControl);
+            splitContainer1.Panel1.Controls.Add(menuStrip1);
+            splitContainer1.Panel1.Controls.Add(tabControl);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.tbSearch);
-            this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1208, 729);
-            this.splitContainer1.SplitterDistance = 280;
-            this.splitContainer1.TabIndex = 0;
+            splitContainer1.Panel2.Controls.Add(splitContainer2);
+            splitContainer1.Panel2.Controls.Add(label2);
+            splitContainer1.Panel2.Controls.Add(label1);
+            splitContainer1.Panel2.Controls.Add(tbSearch);
+            splitContainer1.Panel2.Controls.Add(panel1);
+            splitContainer1.Size = new Size(1208, 729);
+            splitContainer1.SplitterDistance = 280;
+            splitContainer1.TabIndex = 0;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.parkstatistikToolStripMenuItem,
-            this.settingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(280, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { parkstatistikToolStripMenuItem, settingsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(280, 24);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
             // 
             // parkstatistikToolStripMenuItem
             // 
-            this.parkstatistikToolStripMenuItem.Name = "parkstatistikToolStripMenuItem";
-            this.parkstatistikToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.parkstatistikToolStripMenuItem.Text = "Parkstatistik";
+            parkstatistikToolStripMenuItem.Name = "parkstatistikToolStripMenuItem";
+            parkstatistikToolStripMenuItem.Size = new Size(82, 20);
+            parkstatistikToolStripMenuItem.Text = "Parkstatistik";
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mailServerToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mailServerToolStripMenuItem });
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new Size(61, 20);
+            settingsToolStripMenuItem.Text = "Settings";
             // 
             // mailServerToolStripMenuItem
             // 
-            this.mailServerToolStripMenuItem.Name = "mailServerToolStripMenuItem";
-            this.mailServerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.mailServerToolStripMenuItem.Text = "Mail Server";
+            mailServerToolStripMenuItem.Name = "mailServerToolStripMenuItem";
+            mailServerToolStripMenuItem.Size = new Size(132, 22);
+            mailServerToolStripMenuItem.Text = "Mail Server";
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Location = new System.Drawing.Point(3, 27);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(281, 702);
-            this.tabControl.TabIndex = 7;
+            tabControl.Controls.Add(tabPage1);
+            tabControl.Location = new Point(3, 27);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(281, 702);
+            tabControl.TabIndex = 7;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.groupBoxStudentAddress);
-            this.tabPage1.Controls.Add(this.groupBoxStudentInfo);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(273, 674);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Informationen";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Controls.Add(tbProcessingCount);
+            tabPage1.Controls.Add(label7);
+            tabPage1.Controls.Add(tbWaitlistedCount);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(tbRejectedCount);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Controls.Add(tbApprovedCount);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(groupBoxStudentAddress);
+            tabPage1.Controls.Add(groupBoxStudentInfo);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(273, 674);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Informationen";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // tbProcessingCount
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(14, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 23);
-            this.textBox3.TabIndex = 20;
+            tbProcessingCount.Enabled = false;
+            tbProcessingCount.Location = new Point(119, 101);
+            tbProcessingCount.Name = "tbProcessingCount";
+            tbProcessingCount.Size = new Size(114, 23);
+            tbProcessingCount.TabIndex = 23;
             // 
-            // textBox2
+            // label7
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(121, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(50, 23);
-            this.textBox2.TabIndex = 17;
+            label7.AutoSize = true;
+            label7.Location = new Point(14, 104);
+            label7.Name = "label7";
+            label7.Size = new Size(88, 15);
+            label7.TabIndex = 22;
+            label7.Text = "Im Bearbeitung";
             // 
-            // label4
+            // tbWaitlistedCount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 15);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Aktuelle Mietzeitraum";
+            tbWaitlistedCount.Enabled = false;
+            tbWaitlistedCount.Location = new Point(119, 72);
+            tbWaitlistedCount.Name = "tbWaitlistedCount";
+            tbWaitlistedCount.Size = new Size(114, 23);
+            tbWaitlistedCount.TabIndex = 21;
             // 
-            // button1
+            // label6
             // 
-            this.button1.Location = new System.Drawing.Point(177, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "^";
-            this.button1.UseVisualStyleBackColor = true;
+            label6.AutoSize = true;
+            label6.Location = new Point(14, 75);
+            label6.Name = "label6";
+            label6.Size = new Size(53, 15);
+            label6.TabIndex = 20;
+            label6.Text = "Wartelist";
+            // 
+            // tbRejectedCount
+            // 
+            tbRejectedCount.Enabled = false;
+            tbRejectedCount.Location = new Point(119, 43);
+            tbRejectedCount.Name = "tbRejectedCount";
+            tbRejectedCount.Size = new Size(114, 23);
+            tbRejectedCount.TabIndex = 19;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(14, 46);
+            label5.Name = "label5";
+            label5.Size = new Size(62, 15);
+            label5.TabIndex = 18;
+            label5.Text = "Abgelehnt";
+            // 
+            // tbApprovedCount
+            // 
+            tbApprovedCount.Enabled = false;
+            tbApprovedCount.Location = new Point(119, 14);
+            tbApprovedCount.Name = "tbApprovedCount";
+            tbApprovedCount.Size = new Size(114, 23);
+            tbApprovedCount.TabIndex = 17;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 15);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Gesammte Platz";
+            label3.AutoSize = true;
+            label3.Location = new Point(14, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 15);
+            label3.TabIndex = 16;
+            label3.Text = "Genehmigt";
             // 
             // groupBoxStudentAddress
             // 
-            this.groupBoxStudentAddress.Controls.Add(this.lblLocation);
-            this.groupBoxStudentAddress.Controls.Add(this.tbLocation);
-            this.groupBoxStudentAddress.Controls.Add(this.lblPostcode);
-            this.groupBoxStudentAddress.Controls.Add(this.tbPostcode);
-            this.groupBoxStudentAddress.Controls.Add(this.lblHnr);
-            this.groupBoxStudentAddress.Controls.Add(this.tbHnr);
-            this.groupBoxStudentAddress.Controls.Add(this.lblStreet);
-            this.groupBoxStudentAddress.Controls.Add(this.tbStreet);
-            this.groupBoxStudentAddress.Location = new System.Drawing.Point(1, 393);
-            this.groupBoxStudentAddress.Name = "groupBoxStudentAddress";
-            this.groupBoxStudentAddress.Size = new System.Drawing.Size(263, 145);
-            this.groupBoxStudentAddress.TabIndex = 14;
-            this.groupBoxStudentAddress.TabStop = false;
-            this.groupBoxStudentAddress.Text = "Adresse";
+            groupBoxStudentAddress.Controls.Add(lblLocation);
+            groupBoxStudentAddress.Controls.Add(tbLocation);
+            groupBoxStudentAddress.Controls.Add(lblPostcode);
+            groupBoxStudentAddress.Controls.Add(tbPostcode);
+            groupBoxStudentAddress.Controls.Add(lblHnr);
+            groupBoxStudentAddress.Controls.Add(tbHnr);
+            groupBoxStudentAddress.Controls.Add(lblStreet);
+            groupBoxStudentAddress.Controls.Add(tbStreet);
+            groupBoxStudentAddress.Location = new Point(1, 393);
+            groupBoxStudentAddress.Name = "groupBoxStudentAddress";
+            groupBoxStudentAddress.Size = new Size(263, 145);
+            groupBoxStudentAddress.TabIndex = 14;
+            groupBoxStudentAddress.TabStop = false;
+            groupBoxStudentAddress.Text = "Adresse";
             // 
             // lblLocation
             // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(9, 113);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(24, 15);
-            this.lblLocation.TabIndex = 15;
-            this.lblLocation.Text = "Ort";
+            lblLocation.AutoSize = true;
+            lblLocation.Location = new Point(9, 113);
+            lblLocation.Name = "lblLocation";
+            lblLocation.Size = new Size(24, 15);
+            lblLocation.TabIndex = 15;
+            lblLocation.Text = "Ort";
             // 
             // tbLocation
             // 
-            this.tbLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Ort", true));
-            this.tbLocation.Location = new System.Drawing.Point(83, 110);
-            this.tbLocation.Name = "tbLocation";
-            this.tbLocation.Size = new System.Drawing.Size(171, 23);
-            this.tbLocation.TabIndex = 14;
+            tbLocation.DataBindings.Add(new Binding("Text", adressenBindingSource, "Ort", true));
+            tbLocation.Location = new Point(83, 110);
+            tbLocation.Name = "tbLocation";
+            tbLocation.Size = new Size(171, 23);
+            tbLocation.TabIndex = 14;
             // 
             // adressenBindingSource
             // 
-            this.adressenBindingSource.DataSource = typeof(Models.Models.Adressen);
+            adressenBindingSource.DataSource = typeof(Models.Models.Adressen);
             // 
             // lblPostcode
             // 
-            this.lblPostcode.AutoSize = true;
-            this.lblPostcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPostcode.Location = new System.Drawing.Point(9, 84);
-            this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(27, 15);
-            this.lblPostcode.TabIndex = 13;
-            this.lblPostcode.Text = "PLZ";
+            lblPostcode.AutoSize = true;
+            lblPostcode.FlatStyle = FlatStyle.Flat;
+            lblPostcode.Location = new Point(9, 84);
+            lblPostcode.Name = "lblPostcode";
+            lblPostcode.Size = new Size(27, 15);
+            lblPostcode.TabIndex = 13;
+            lblPostcode.Text = "PLZ";
             // 
             // tbPostcode
             // 
-            this.tbPostcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Plz", true));
-            this.tbPostcode.Location = new System.Drawing.Point(83, 81);
-            this.tbPostcode.Name = "tbPostcode";
-            this.tbPostcode.Size = new System.Drawing.Size(171, 23);
-            this.tbPostcode.TabIndex = 12;
+            tbPostcode.DataBindings.Add(new Binding("Text", adressenBindingSource, "Plz", true));
+            tbPostcode.Location = new Point(83, 81);
+            tbPostcode.Name = "tbPostcode";
+            tbPostcode.Size = new Size(171, 23);
+            tbPostcode.TabIndex = 12;
             // 
             // lblHnr
             // 
-            this.lblHnr.AutoSize = true;
-            this.lblHnr.Location = new System.Drawing.Point(9, 55);
-            this.lblHnr.Name = "lblHnr";
-            this.lblHnr.Size = new System.Drawing.Size(47, 15);
-            this.lblHnr.TabIndex = 11;
-            this.lblHnr.Text = "HausNr";
+            lblHnr.AutoSize = true;
+            lblHnr.Location = new Point(9, 55);
+            lblHnr.Name = "lblHnr";
+            lblHnr.Size = new Size(47, 15);
+            lblHnr.TabIndex = 11;
+            lblHnr.Text = "HausNr";
             // 
             // tbHnr
             // 
-            this.tbHnr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Hausnr", true));
-            this.tbHnr.Location = new System.Drawing.Point(83, 52);
-            this.tbHnr.Name = "tbHnr";
-            this.tbHnr.Size = new System.Drawing.Size(171, 23);
-            this.tbHnr.TabIndex = 10;
+            tbHnr.DataBindings.Add(new Binding("Text", adressenBindingSource, "Hausnr", true));
+            tbHnr.Location = new Point(83, 52);
+            tbHnr.Name = "tbHnr";
+            tbHnr.Size = new Size(171, 23);
+            tbHnr.TabIndex = 10;
             // 
             // lblStreet
             // 
-            this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(9, 26);
-            this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(40, 15);
-            this.lblStreet.TabIndex = 9;
-            this.lblStreet.Text = "Straße";
+            lblStreet.AutoSize = true;
+            lblStreet.Location = new Point(9, 26);
+            lblStreet.Name = "lblStreet";
+            lblStreet.Size = new Size(40, 15);
+            lblStreet.TabIndex = 9;
+            lblStreet.Text = "Straße";
             // 
             // tbStreet
             // 
-            this.tbStreet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Strasse", true));
-            this.tbStreet.Location = new System.Drawing.Point(83, 23);
-            this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(171, 23);
-            this.tbStreet.TabIndex = 8;
+            tbStreet.DataBindings.Add(new Binding("Text", adressenBindingSource, "Strasse", true));
+            tbStreet.Location = new Point(83, 23);
+            tbStreet.Name = "tbStreet";
+            tbStreet.Size = new Size(171, 23);
+            tbStreet.TabIndex = 8;
             // 
             // groupBoxStudentInfo
             // 
-            this.groupBoxStudentInfo.Controls.Add(this.lblEmail);
-            this.groupBoxStudentInfo.Controls.Add(this.tbEmail);
-            this.groupBoxStudentInfo.Controls.Add(this.lblClass);
-            this.groupBoxStudentInfo.Controls.Add(this.tbClass);
-            this.groupBoxStudentInfo.Controls.Add(this.lblLastname);
-            this.groupBoxStudentInfo.Controls.Add(this.tbLastname);
-            this.groupBoxStudentInfo.Controls.Add(this.lblFirstname);
-            this.groupBoxStudentInfo.Controls.Add(this.tbFirstname);
-            this.groupBoxStudentInfo.Location = new System.Drawing.Point(-1, 241);
-            this.groupBoxStudentInfo.Name = "groupBoxStudentInfo";
-            this.groupBoxStudentInfo.Size = new System.Drawing.Size(265, 146);
-            this.groupBoxStudentInfo.TabIndex = 15;
-            this.groupBoxStudentInfo.TabStop = false;
-            this.groupBoxStudentInfo.Text = "Schueler";
+            groupBoxStudentInfo.Controls.Add(lblEmail);
+            groupBoxStudentInfo.Controls.Add(tbEmail);
+            groupBoxStudentInfo.Controls.Add(lblClass);
+            groupBoxStudentInfo.Controls.Add(tbClass);
+            groupBoxStudentInfo.Controls.Add(lblLastname);
+            groupBoxStudentInfo.Controls.Add(tbLastname);
+            groupBoxStudentInfo.Controls.Add(lblFirstname);
+            groupBoxStudentInfo.Controls.Add(tbFirstname);
+            groupBoxStudentInfo.Location = new Point(-1, 241);
+            groupBoxStudentInfo.Name = "groupBoxStudentInfo";
+            groupBoxStudentInfo.Size = new Size(265, 146);
+            groupBoxStudentInfo.TabIndex = 15;
+            groupBoxStudentInfo.TabStop = false;
+            groupBoxStudentInfo.Text = "Schueler";
             // 
             // lblEmail
             // 
-            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(9, 118);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(36, 15);
-            this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "Email";
+            lblEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(9, 118);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(36, 15);
+            lblEmail.TabIndex = 7;
+            lblEmail.Text = "Email";
             // 
             // tbEmail
             // 
-            this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Email", true));
-            this.tbEmail.Location = new System.Drawing.Point(83, 115);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(173, 23);
-            this.tbEmail.TabIndex = 6;
+            tbEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbEmail.DataBindings.Add(new Binding("Text", schuelerBindingSource, "Email", true));
+            tbEmail.Location = new Point(83, 115);
+            tbEmail.Name = "tbEmail";
+            tbEmail.Size = new Size(173, 23);
+            tbEmail.TabIndex = 6;
             // 
             // schuelerBindingSource
             // 
-            this.schuelerBindingSource.DataSource = typeof(Models.Models.Schueler);
+            schuelerBindingSource.DataSource = typeof(Models.Models.Schueler);
             // 
             // lblClass
             // 
-            this.lblClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(9, 89);
-            this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(39, 15);
-            this.lblClass.TabIndex = 5;
-            this.lblClass.Text = "Klasse";
+            lblClass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblClass.AutoSize = true;
+            lblClass.Location = new Point(9, 89);
+            lblClass.Name = "lblClass";
+            lblClass.Size = new Size(39, 15);
+            lblClass.TabIndex = 5;
+            lblClass.Text = "Klasse";
             // 
             // tbClass
             // 
-            this.tbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbClass.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "KlassenName", true));
-            this.tbClass.Location = new System.Drawing.Point(83, 86);
-            this.tbClass.Name = "tbClass";
-            this.tbClass.Size = new System.Drawing.Size(173, 23);
-            this.tbClass.TabIndex = 4;
+            tbClass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbClass.DataBindings.Add(new Binding("Text", schuelerBindingSource, "KlassenName", true));
+            tbClass.Location = new Point(83, 86);
+            tbClass.Name = "tbClass";
+            tbClass.Size = new Size(173, 23);
+            tbClass.TabIndex = 4;
             // 
             // lblLastname
             // 
-            this.lblLastname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(8, 60);
-            this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(65, 15);
-            this.lblLastname.TabIndex = 3;
-            this.lblLastname.Text = "Nachname";
+            lblLastname.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblLastname.AutoSize = true;
+            lblLastname.Location = new Point(8, 60);
+            lblLastname.Name = "lblLastname";
+            lblLastname.Size = new Size(65, 15);
+            lblLastname.TabIndex = 3;
+            lblLastname.Text = "Nachname";
             // 
             // tbLastname
             // 
-            this.tbLastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Nachname", true));
-            this.tbLastname.Location = new System.Drawing.Point(83, 57);
-            this.tbLastname.Name = "tbLastname";
-            this.tbLastname.Size = new System.Drawing.Size(173, 23);
-            this.tbLastname.TabIndex = 2;
+            tbLastname.DataBindings.Add(new Binding("Text", schuelerBindingSource, "Nachname", true));
+            tbLastname.Location = new Point(83, 57);
+            tbLastname.Name = "tbLastname";
+            tbLastname.Size = new Size(173, 23);
+            tbLastname.TabIndex = 2;
             // 
             // lblFirstname
             // 
-            this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(9, 31);
-            this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(54, 15);
-            this.lblFirstname.TabIndex = 1;
-            this.lblFirstname.Text = "Vorname";
+            lblFirstname.AutoSize = true;
+            lblFirstname.Location = new Point(9, 31);
+            lblFirstname.Name = "lblFirstname";
+            lblFirstname.Size = new Size(54, 15);
+            lblFirstname.TabIndex = 1;
+            lblFirstname.Text = "Vorname";
             // 
             // tbFirstname
             // 
-            this.tbFirstname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFirstname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Vorname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbFirstname.Location = new System.Drawing.Point(83, 28);
-            this.tbFirstname.Name = "tbFirstname";
-            this.tbFirstname.Size = new System.Drawing.Size(173, 23);
-            this.tbFirstname.TabIndex = 0;
+            tbFirstname.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbFirstname.DataBindings.Add(new Binding("Text", schuelerBindingSource, "Vorname", true, DataSourceUpdateMode.OnPropertyChanged));
+            tbFirstname.Location = new Point(83, 28);
+            tbFirstname.Name = "tbFirstname";
+            tbFirstname.Size = new Size(173, 23);
+            tbFirstname.TabIndex = 0;
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer2.Location = new System.Drawing.Point(3, 49);
-            this.splitContainer2.Name = "splitContainer2";
+            splitContainer2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            splitContainer2.Location = new Point(3, 49);
+            splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
+            splitContainer2.Panel1.Controls.Add(groupBox1);
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.tabControlAntrag);
-            this.splitContainer2.Size = new System.Drawing.Size(917, 639);
-            this.splitContainer2.SplitterDistance = 315;
-            this.splitContainer2.TabIndex = 5;
+            splitContainer2.Panel2.Controls.Add(tabControlAntrag);
+            splitContainer2.Size = new Size(917, 639);
+            splitContainer2.SplitterDistance = 315;
+            splitContainer2.TabIndex = 5;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.wViewGoogleMap);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 639);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fahrzeit Informationen";
+            groupBox1.Controls.Add(wViewGoogleMap);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Location = new Point(0, 0);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(315, 639);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Fahrzeit Informationen";
             // 
             // wViewGoogleMap
             // 
-            this.wViewGoogleMap.AllowExternalDrop = true;
-            this.wViewGoogleMap.CreationProperties = null;
-            this.wViewGoogleMap.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.wViewGoogleMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wViewGoogleMap.Location = new System.Drawing.Point(3, 19);
-            this.wViewGoogleMap.Name = "wViewGoogleMap";
-            this.wViewGoogleMap.Size = new System.Drawing.Size(309, 617);
-            this.wViewGoogleMap.Source = new System.Uri("https://its-stuttgart.de", System.UriKind.Absolute);
-            this.wViewGoogleMap.TabIndex = 0;
-            this.wViewGoogleMap.ZoomFactor = 1D;
+            wViewGoogleMap.AllowExternalDrop = true;
+            wViewGoogleMap.CreationProperties = null;
+            wViewGoogleMap.DefaultBackgroundColor = Color.White;
+            wViewGoogleMap.Dock = DockStyle.Fill;
+            wViewGoogleMap.Location = new Point(3, 19);
+            wViewGoogleMap.Name = "wViewGoogleMap";
+            wViewGoogleMap.Size = new Size(309, 617);
+            wViewGoogleMap.Source = new Uri("https://its-stuttgart.de", UriKind.Absolute);
+            wViewGoogleMap.TabIndex = 0;
+            wViewGoogleMap.ZoomFactor = 1D;
             // 
             // tabControlAntrag
             // 
-            this.tabControlAntrag.Controls.Add(this.alleAntrag);
-            this.tabControlAntrag.Controls.Add(this.genehmigteAntrag);
-            this.tabControlAntrag.Controls.Add(this.abgelehnteAntrag);
-            this.tabControlAntrag.Controls.Add(this.warteliste);
-            this.tabControlAntrag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlAntrag.Location = new System.Drawing.Point(0, 0);
-            this.tabControlAntrag.Name = "tabControlAntrag";
-            this.tabControlAntrag.SelectedIndex = 0;
-            this.tabControlAntrag.Size = new System.Drawing.Size(598, 639);
-            this.tabControlAntrag.TabIndex = 1;
+            tabControlAntrag.Controls.Add(alleAntrag);
+            tabControlAntrag.Dock = DockStyle.Fill;
+            tabControlAntrag.Location = new Point(0, 0);
+            tabControlAntrag.Name = "tabControlAntrag";
+            tabControlAntrag.SelectedIndex = 0;
+            tabControlAntrag.Size = new Size(598, 639);
+            tabControlAntrag.TabIndex = 1;
             // 
             // alleAntrag
             // 
-            this.alleAntrag.Controls.Add(this.dataGridViewParkingApplication);
-            this.alleAntrag.Location = new System.Drawing.Point(4, 24);
-            this.alleAntrag.Name = "alleAntrag";
-            this.alleAntrag.Padding = new System.Windows.Forms.Padding(3);
-            this.alleAntrag.Size = new System.Drawing.Size(590, 611);
-            this.alleAntrag.TabIndex = 0;
-            this.alleAntrag.Text = "Alle";
-            this.alleAntrag.UseVisualStyleBackColor = true;
+            alleAntrag.Controls.Add(dataGridViewParkingApplication);
+            alleAntrag.Location = new Point(4, 24);
+            alleAntrag.Name = "alleAntrag";
+            alleAntrag.Padding = new Padding(3);
+            alleAntrag.Size = new Size(590, 611);
+            alleAntrag.TabIndex = 0;
+            alleAntrag.Text = "Alle";
+            alleAntrag.UseVisualStyleBackColor = true;
             // 
             // dataGridViewParkingApplication
             // 
-            this.dataGridViewParkingApplication.AllowUserToOrderColumns = true;
-            this.dataGridViewParkingApplication.AutoGenerateColumns = false;
-            this.dataGridViewParkingApplication.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParkingApplication.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewParkingApplication.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewParkingApplication.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ParkplatzantragsId,
-            this.KfzKennzeichen,
-            this.EntfernungKm,
-            this.Reisezeit,
-            this.Fahrzeit,
-            this.Grund,
-            this.Moeglichkeit,
-            this.Besonderefall,
-            this.Mitfahrgelegenheit,
-            this.Antragsdatum,
-            this.Antragszeit,
-            this.Punkte,
-            this.Genehmigt});
-            this.dataGridViewParkingApplication.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridViewParkingApplication.DataSource = this.parkplatzantragBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewParkingApplication.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewParkingApplication.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewParkingApplication.GridColor = System.Drawing.SystemColors.ControlText;
-            this.dataGridViewParkingApplication.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewParkingApplication.Name = "dataGridViewParkingApplication";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewParkingApplication.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewParkingApplication.RowHeadersWidth = 51;
-            this.dataGridViewParkingApplication.RowTemplate.Height = 25;
-            this.dataGridViewParkingApplication.Size = new System.Drawing.Size(584, 605);
-            this.dataGridViewParkingApplication.TabIndex = 0;
+            dataGridViewParkingApplication.AllowUserToOrderColumns = true;
+            dataGridViewParkingApplication.AutoGenerateColumns = false;
+            dataGridViewParkingApplication.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewParkingApplication.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewParkingApplication.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewParkingApplication.Columns.AddRange(new DataGridViewColumn[] { ParkplatzantragsId, KfzKennzeichen, EntfernungKm, Reisezeit, Fahrzeit, Grund, Moeglichkeit, Besonderefall, Mitfahrgelegenheit, Antragsdatum, Antragszeit, Punkte, Genehmigt });
+            dataGridViewParkingApplication.ContextMenuStrip = contextMenuStrip1;
+            dataGridViewParkingApplication.DataSource = parkplatzantragBindingSource;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridViewParkingApplication.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewParkingApplication.Dock = DockStyle.Fill;
+            dataGridViewParkingApplication.GridColor = SystemColors.ControlText;
+            dataGridViewParkingApplication.Location = new Point(3, 3);
+            dataGridViewParkingApplication.Name = "dataGridViewParkingApplication";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridViewParkingApplication.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewParkingApplication.RowHeadersWidth = 51;
+            dataGridViewParkingApplication.RowTemplate.Height = 25;
+            dataGridViewParkingApplication.Size = new Size(584, 605);
+            dataGridViewParkingApplication.TabIndex = 0;
             // 
             // ParkplatzantragsId
             // 
-            this.ParkplatzantragsId.DataPropertyName = "ParkplatzantragsId";
-            this.ParkplatzantragsId.HeaderText = "ParkplatzantragsId";
-            this.ParkplatzantragsId.MinimumWidth = 6;
-            this.ParkplatzantragsId.Name = "ParkplatzantragsId";
-            this.ParkplatzantragsId.Width = 129;
+            ParkplatzantragsId.DataPropertyName = "ParkplatzantragsId";
+            ParkplatzantragsId.HeaderText = "ParkplatzantragsId";
+            ParkplatzantragsId.MinimumWidth = 6;
+            ParkplatzantragsId.Name = "ParkplatzantragsId";
+            ParkplatzantragsId.Width = 129;
             // 
             // KfzKennzeichen
             // 
-            this.KfzKennzeichen.DataPropertyName = "KfzKennzeichen";
-            this.KfzKennzeichen.HeaderText = "KfzKennzeichen";
-            this.KfzKennzeichen.MinimumWidth = 6;
-            this.KfzKennzeichen.Name = "KfzKennzeichen";
-            this.KfzKennzeichen.Width = 115;
+            KfzKennzeichen.DataPropertyName = "KfzKennzeichen";
+            KfzKennzeichen.HeaderText = "KfzKennzeichen";
+            KfzKennzeichen.MinimumWidth = 6;
+            KfzKennzeichen.Name = "KfzKennzeichen";
+            KfzKennzeichen.Width = 115;
             // 
             // EntfernungKm
             // 
-            this.EntfernungKm.DataPropertyName = "EntfernungKm";
+            EntfernungKm.DataPropertyName = "EntfernungKm";
             dataGridViewCellStyle2.Format = "0, km";
-            this.EntfernungKm.DefaultCellStyle = dataGridViewCellStyle2;
-            this.EntfernungKm.HeaderText = "EntfernungKm";
-            this.EntfernungKm.MinimumWidth = 6;
-            this.EntfernungKm.Name = "EntfernungKm";
-            this.EntfernungKm.Width = 109;
+            EntfernungKm.DefaultCellStyle = dataGridViewCellStyle2;
+            EntfernungKm.HeaderText = "EntfernungKm";
+            EntfernungKm.MinimumWidth = 6;
+            EntfernungKm.Name = "EntfernungKm";
+            EntfernungKm.Width = 109;
             // 
             // Reisezeit
             // 
-            this.Reisezeit.DataPropertyName = "Reisezeit";
-            this.Reisezeit.HeaderText = "Reisezeit";
-            this.Reisezeit.MinimumWidth = 6;
-            this.Reisezeit.Name = "Reisezeit";
-            this.Reisezeit.Width = 77;
+            Reisezeit.DataPropertyName = "Reisezeit";
+            Reisezeit.HeaderText = "Reisezeit";
+            Reisezeit.MinimumWidth = 6;
+            Reisezeit.Name = "Reisezeit";
+            Reisezeit.Width = 77;
             // 
             // Fahrzeit
             // 
-            this.Fahrzeit.DataPropertyName = "Fahrzeit";
-            this.Fahrzeit.HeaderText = "Fahrzeit";
-            this.Fahrzeit.MinimumWidth = 6;
-            this.Fahrzeit.Name = "Fahrzeit";
-            this.Fahrzeit.Width = 73;
+            Fahrzeit.DataPropertyName = "Fahrzeit";
+            Fahrzeit.HeaderText = "Fahrzeit";
+            Fahrzeit.MinimumWidth = 6;
+            Fahrzeit.Name = "Fahrzeit";
+            Fahrzeit.Width = 73;
             // 
             // Grund
             // 
-            this.Grund.DataPropertyName = "Grund";
-            this.Grund.HeaderText = "Grund";
-            this.Grund.MinimumWidth = 6;
-            this.Grund.Name = "Grund";
-            this.Grund.Width = 65;
+            Grund.DataPropertyName = "Grund";
+            Grund.HeaderText = "Grund";
+            Grund.MinimumWidth = 6;
+            Grund.Name = "Grund";
+            Grund.Width = 65;
             // 
             // Moeglichkeit
             // 
-            this.Moeglichkeit.DataPropertyName = "Moeglichkeit";
-            this.Moeglichkeit.HeaderText = "Moeglichkeit";
-            this.Moeglichkeit.MinimumWidth = 6;
-            this.Moeglichkeit.Name = "Moeglichkeit";
-            this.Moeglichkeit.Width = 101;
+            Moeglichkeit.DataPropertyName = "Moeglichkeit";
+            Moeglichkeit.HeaderText = "Moeglichkeit";
+            Moeglichkeit.MinimumWidth = 6;
+            Moeglichkeit.Name = "Moeglichkeit";
+            Moeglichkeit.Width = 101;
             // 
             // Besonderefall
             // 
-            this.Besonderefall.DataPropertyName = "Besonderefall";
-            this.Besonderefall.HeaderText = "Besonderefall";
-            this.Besonderefall.MinimumWidth = 6;
-            this.Besonderefall.Name = "Besonderefall";
-            this.Besonderefall.Width = 103;
+            Besonderefall.DataPropertyName = "Besonderefall";
+            Besonderefall.HeaderText = "Besonderefall";
+            Besonderefall.MinimumWidth = 6;
+            Besonderefall.Name = "Besonderefall";
+            Besonderefall.Width = 103;
             // 
             // Mitfahrgelegenheit
             // 
-            this.Mitfahrgelegenheit.DataPropertyName = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.HeaderText = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.MinimumWidth = 6;
-            this.Mitfahrgelegenheit.Name = "Mitfahrgelegenheit";
-            this.Mitfahrgelegenheit.Width = 133;
+            Mitfahrgelegenheit.DataPropertyName = "Mitfahrgelegenheit";
+            Mitfahrgelegenheit.HeaderText = "Mitfahrgelegenheit";
+            Mitfahrgelegenheit.MinimumWidth = 6;
+            Mitfahrgelegenheit.Name = "Mitfahrgelegenheit";
+            Mitfahrgelegenheit.Width = 133;
             // 
             // Antragsdatum
             // 
-            this.Antragsdatum.DataPropertyName = "Antragsdatum";
-            this.Antragsdatum.HeaderText = "Antragsdatum";
-            this.Antragsdatum.MinimumWidth = 6;
-            this.Antragsdatum.Name = "Antragsdatum";
-            this.Antragsdatum.Width = 108;
+            Antragsdatum.DataPropertyName = "Antragsdatum";
+            Antragsdatum.HeaderText = "Antragsdatum";
+            Antragsdatum.MinimumWidth = 6;
+            Antragsdatum.Name = "Antragsdatum";
+            Antragsdatum.Width = 108;
             // 
             // Antragszeit
             // 
-            this.Antragszeit.DataPropertyName = "Antragszeit";
-            this.Antragszeit.HeaderText = "Antragszeit";
-            this.Antragszeit.MinimumWidth = 6;
-            this.Antragszeit.Name = "Antragszeit";
-            this.Antragszeit.Width = 91;
+            Antragszeit.DataPropertyName = "Antragszeit";
+            Antragszeit.HeaderText = "Antragszeit";
+            Antragszeit.MinimumWidth = 6;
+            Antragszeit.Name = "Antragszeit";
+            Antragszeit.Width = 91;
             // 
             // Punkte
             // 
-            this.Punkte.DataPropertyName = "Punkte";
-            this.Punkte.HeaderText = "Punkte";
-            this.Punkte.MinimumWidth = 6;
-            this.Punkte.Name = "Punkte";
-            this.Punkte.Width = 69;
+            Punkte.DataPropertyName = "Punkte";
+            Punkte.HeaderText = "Punkte";
+            Punkte.MinimumWidth = 6;
+            Punkte.Name = "Punkte";
+            Punkte.Width = 69;
             // 
             // Genehmigt
             // 
-            this.Genehmigt.DataPropertyName = "Genehmigt";
-            this.Genehmigt.DataSource = this.genehmigtstatusBindingSource;
-            this.Genehmigt.DisplayMember = "Beschreibung";
-            this.Genehmigt.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Genehmigt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Genehmigt.HeaderText = "Genehmigt";
-            this.Genehmigt.MinimumWidth = 100;
-            this.Genehmigt.Name = "Genehmigt";
-            this.Genehmigt.ValueMember = "Wert";
+            Genehmigt.DataPropertyName = "Genehmigt";
+            Genehmigt.DataSource = genehmigtstatusBindingSource;
+            Genehmigt.DisplayMember = "Beschreibung";
+            Genehmigt.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+            Genehmigt.FlatStyle = FlatStyle.Flat;
+            Genehmigt.HeaderText = "Genehmigt";
+            Genehmigt.MinimumWidth = 100;
+            Genehmigt.Name = "Genehmigt";
+            Genehmigt.ValueMember = "Wert";
             // 
             // genehmigtstatusBindingSource
             // 
-            this.genehmigtstatusBindingSource.DataSource = typeof(Models.Models.Genehmigtstatus);
+            genehmigtstatusBindingSource.DataSource = typeof(Models.Models.Genehmigtstatus);
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cMenuGenehmigen,
-            this.cMenuAblehnen,
-            this.cMenuWarteliste});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(204, 70);
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { cMenuGenehmigen, cMenuAblehnen, cMenuImBearbeitung, cMenuWarteliste });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(204, 114);
             // 
             // cMenuGenehmigen
             // 
-            this.cMenuGenehmigen.Name = "cMenuGenehmigen";
-            this.cMenuGenehmigen.Size = new System.Drawing.Size(203, 22);
-            this.cMenuGenehmigen.Text = "Genehmigen";
+            cMenuGenehmigen.Name = "cMenuGenehmigen";
+            cMenuGenehmigen.Size = new Size(203, 22);
+            cMenuGenehmigen.Text = "Genehmigen";
             // 
             // cMenuAblehnen
             // 
-            this.cMenuAblehnen.Name = "cMenuAblehnen";
-            this.cMenuAblehnen.Size = new System.Drawing.Size(203, 22);
-            this.cMenuAblehnen.Text = "Ablehnen";
+            cMenuAblehnen.Name = "cMenuAblehnen";
+            cMenuAblehnen.Size = new Size(203, 22);
+            cMenuAblehnen.Text = "Ablehnen";
             // 
             // cMenuWarteliste
             // 
-            this.cMenuWarteliste.Name = "cMenuWarteliste";
-            this.cMenuWarteliste.Size = new System.Drawing.Size(203, 22);
-            this.cMenuWarteliste.Text = "Auf die Warteliste setzen";
+            cMenuWarteliste.Name = "cMenuWarteliste";
+            cMenuWarteliste.Size = new Size(203, 22);
+            cMenuWarteliste.Text = "Auf die Warteliste setzen";
             // 
             // parkplatzantragBindingSource
             // 
-            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
-            // 
-            // genehmigteAntrag
-            // 
-            this.genehmigteAntrag.Location = new System.Drawing.Point(4, 24);
-            this.genehmigteAntrag.Name = "genehmigteAntrag";
-            this.genehmigteAntrag.Padding = new System.Windows.Forms.Padding(3);
-            this.genehmigteAntrag.Size = new System.Drawing.Size(590, 611);
-            this.genehmigteAntrag.TabIndex = 1;
-            this.genehmigteAntrag.Text = "Genehmigt";
-            this.genehmigteAntrag.UseVisualStyleBackColor = true;
-            // 
-            // abgelehnteAntrag
-            // 
-            this.abgelehnteAntrag.Location = new System.Drawing.Point(4, 24);
-            this.abgelehnteAntrag.Name = "abgelehnteAntrag";
-            this.abgelehnteAntrag.Size = new System.Drawing.Size(590, 611);
-            this.abgelehnteAntrag.TabIndex = 2;
-            this.abgelehnteAntrag.Text = "Abgelehnt";
-            this.abgelehnteAntrag.UseVisualStyleBackColor = true;
-            // 
-            // warteliste
-            // 
-            this.warteliste.Location = new System.Drawing.Point(4, 24);
-            this.warteliste.Name = "warteliste";
-            this.warteliste.Size = new System.Drawing.Size(590, 611);
-            this.warteliste.TabIndex = 3;
-            this.warteliste.Text = "Wartelist";
-            this.warteliste.UseVisualStyleBackColor = true;
+            parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(295, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Parkplatz anträge";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(295, 12);
+            label2.Name = "label2";
+            label2.Size = new Size(159, 25);
+            label2.TabIndex = 4;
+            label2.Text = "Parkplatz anträge";
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(712, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Suchen";
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Location = new Point(712, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(46, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Suchen";
             // 
             // tbSearch
             // 
-            this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSearch.Location = new System.Drawing.Point(765, 17);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(148, 23);
-            this.tbSearch.TabIndex = 2;
+            tbSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            tbSearch.Location = new Point(765, 17);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(148, 23);
+            tbSearch.TabIndex = 2;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnLast);
-            this.panel1.Controls.Add(this.btnNext);
-            this.panel1.Controls.Add(this.btnPrevious);
-            this.panel1.Controls.Add(this.btnFirst);
-            this.panel1.Controls.Add(this.splitContainer3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 687);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(924, 42);
-            this.panel1.TabIndex = 1;
+            panel1.Controls.Add(btnLast);
+            panel1.Controls.Add(btnNext);
+            panel1.Controls.Add(btnPrevious);
+            panel1.Controls.Add(btnFirst);
+            panel1.Controls.Add(splitContainer3);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 687);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(924, 42);
+            panel1.TabIndex = 1;
             // 
             // btnLast
             // 
-            this.btnLast.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLast.Location = new System.Drawing.Point(756, 0);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(42, 42);
-            this.btnLast.TabIndex = 6;
-            this.btnLast.Text = ">>";
-            this.btnLast.UseVisualStyleBackColor = true;
+            btnLast.Dock = DockStyle.Right;
+            btnLast.Location = new Point(756, 0);
+            btnLast.Name = "btnLast";
+            btnLast.Size = new Size(42, 42);
+            btnLast.TabIndex = 6;
+            btnLast.Text = ">>";
+            btnLast.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnNext.Location = new System.Drawing.Point(798, 0);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(42, 42);
-            this.btnNext.TabIndex = 5;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
+            btnNext.Dock = DockStyle.Right;
+            btnNext.Location = new Point(798, 0);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(42, 42);
+            btnNext.TabIndex = 5;
+            btnNext.Text = ">";
+            btnNext.UseVisualStyleBackColor = true;
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPrevious.Location = new System.Drawing.Point(840, 0);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(42, 42);
-            this.btnPrevious.TabIndex = 4;
-            this.btnPrevious.Text = "<";
-            this.btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Dock = DockStyle.Right;
+            btnPrevious.Location = new Point(840, 0);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(42, 42);
+            btnPrevious.TabIndex = 4;
+            btnPrevious.Text = "<";
+            btnPrevious.UseVisualStyleBackColor = true;
             // 
             // btnFirst
             // 
-            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFirst.Location = new System.Drawing.Point(882, 0);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(42, 42);
-            this.btnFirst.TabIndex = 3;
-            this.btnFirst.Text = "<<";
-            this.btnFirst.UseVisualStyleBackColor = true;
+            btnFirst.Dock = DockStyle.Right;
+            btnFirst.Location = new Point(882, 0);
+            btnFirst.Name = "btnFirst";
+            btnFirst.Size = new Size(42, 42);
+            btnFirst.TabIndex = 3;
+            btnFirst.Text = "<<";
+            btnFirst.UseVisualStyleBackColor = true;
             // 
             // splitContainer3
             // 
-            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Panel1MinSize = 320;
+            splitContainer3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            splitContainer3.Location = new Point(0, 0);
+            splitContainer3.Name = "splitContainer3";
+            splitContainer3.Panel1MinSize = 320;
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.btnNewCalc);
-            this.splitContainer3.Panel2.Controls.Add(this.btnEmail);
-            this.splitContainer3.Panel2.Controls.Add(this.btnDelete);
-            this.splitContainer3.Panel2.Controls.Add(this.btnSave);
-            this.splitContainer3.Panel2.Controls.Add(this.btnNew);
-            this.splitContainer3.Size = new System.Drawing.Size(924, 42);
-            this.splitContainer3.SplitterDistance = 320;
-            this.splitContainer3.TabIndex = 7;
+            splitContainer3.Panel2.Controls.Add(btnNewCalc);
+            splitContainer3.Panel2.Controls.Add(btnEmail);
+            splitContainer3.Panel2.Controls.Add(btnDelete);
+            splitContainer3.Panel2.Controls.Add(btnSave);
+            splitContainer3.Panel2.Controls.Add(btnNew);
+            splitContainer3.Size = new Size(924, 42);
+            splitContainer3.SplitterDistance = 320;
+            splitContainer3.TabIndex = 7;
             // 
             // btnNewCalc
             // 
-            this.btnNewCalc.BackColor = System.Drawing.SystemColors.Menu;
-            this.btnNewCalc.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNewCalc.Location = new System.Drawing.Point(300, 0);
-            this.btnNewCalc.Name = "btnNewCalc";
-            this.btnNewCalc.Size = new System.Drawing.Size(75, 42);
-            this.btnNewCalc.TabIndex = 6;
-            this.btnNewCalc.Text = "Neu berechnen";
-            this.btnNewCalc.UseVisualStyleBackColor = false;
+            btnNewCalc.BackColor = SystemColors.Menu;
+            btnNewCalc.Dock = DockStyle.Left;
+            btnNewCalc.Location = new Point(300, 0);
+            btnNewCalc.Name = "btnNewCalc";
+            btnNewCalc.Size = new Size(75, 42);
+            btnNewCalc.TabIndex = 6;
+            btnNewCalc.Text = "Neu berechnen";
+            btnNewCalc.UseVisualStyleBackColor = false;
             // 
             // btnEmail
             // 
-            this.btnEmail.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnEmail.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEmail.Location = new System.Drawing.Point(225, 0);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(75, 42);
-            this.btnEmail.TabIndex = 5;
-            this.btnEmail.Text = "Email senden";
-            this.btnEmail.UseVisualStyleBackColor = false;
+            btnEmail.BackColor = Color.DarkOrange;
+            btnEmail.Dock = DockStyle.Left;
+            btnEmail.Location = new Point(225, 0);
+            btnEmail.Name = "btnEmail";
+            btnEmail.Size = new Size(75, 42);
+            btnEmail.TabIndex = 5;
+            btnEmail.Text = "Email senden";
+            btnEmail.UseVisualStyleBackColor = false;
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDelete.Location = new System.Drawing.Point(150, 0);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 42);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "löschen";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = Color.IndianRed;
+            btnDelete.Dock = DockStyle.Left;
+            btnDelete.Location = new Point(150, 0);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 42);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "löschen";
+            btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSave.Location = new System.Drawing.Point(75, 0);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 42);
-            this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "speichern";
-            this.btnSave.UseVisualStyleBackColor = false;
+            btnSave.BackColor = SystemColors.ActiveCaption;
+            btnSave.Dock = DockStyle.Left;
+            btnSave.Location = new Point(75, 0);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 42);
+            btnSave.TabIndex = 2;
+            btnSave.Text = "speichern";
+            btnSave.UseVisualStyleBackColor = false;
             // 
             // btnNew
             // 
-            this.btnNew.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnNew.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNew.Location = new System.Drawing.Point(0, 0);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 42);
-            this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "hinzufügen";
-            this.btnNew.UseVisualStyleBackColor = false;
+            btnNew.BackColor = Color.DarkSeaGreen;
+            btnNew.Dock = DockStyle.Left;
+            btnNew.Location = new Point(0, 0);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(75, 42);
+            btnNew.TabIndex = 0;
+            btnNew.Text = "hinzufügen";
+            btnNew.UseVisualStyleBackColor = false;
             // 
             // GenehmigtNavigation
             // 
-            this.GenehmigtNavigation.DataPropertyName = "GenehmigtNavigation";
-            this.GenehmigtNavigation.DataSource = this.parkplatzantragBindingSource;
-            this.GenehmigtNavigation.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.GenehmigtNavigation.HeaderText = "Genehmigt";
-            this.GenehmigtNavigation.MinimumWidth = 6;
-            this.GenehmigtNavigation.Name = "GenehmigtNavigation";
-            this.GenehmigtNavigation.Width = 72;
+            GenehmigtNavigation.DataPropertyName = "GenehmigtNavigation";
+            GenehmigtNavigation.DataSource = parkplatzantragBindingSource;
+            GenehmigtNavigation.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+            GenehmigtNavigation.HeaderText = "Genehmigt";
+            GenehmigtNavigation.MinimumWidth = 6;
+            GenehmigtNavigation.Name = "GenehmigtNavigation";
+            GenehmigtNavigation.Width = 72;
             // 
             // dataGridViewComboBoxColumn1
             // 
-            this.dataGridViewComboBoxColumn1.DataPropertyName = "GenehmigtNavigation";
-            this.dataGridViewComboBoxColumn1.DataSource = this.parkplatzantragBindingSource;
-            this.dataGridViewComboBoxColumn1.DisplayMember = "GenehmigtNavigation";
-            this.dataGridViewComboBoxColumn1.HeaderText = "GenehmigtNavigation";
-            this.dataGridViewComboBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewComboBoxColumn1.Width = 149;
+            dataGridViewComboBoxColumn1.DataPropertyName = "GenehmigtNavigation";
+            dataGridViewComboBoxColumn1.DataSource = parkplatzantragBindingSource;
+            dataGridViewComboBoxColumn1.DisplayMember = "GenehmigtNavigation";
+            dataGridViewComboBoxColumn1.HeaderText = "GenehmigtNavigation";
+            dataGridViewComboBoxColumn1.MinimumWidth = 6;
+            dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            dataGridViewComboBoxColumn1.Resizable = DataGridViewTriState.True;
+            dataGridViewComboBoxColumn1.SortMode = DataGridViewColumnSortMode.Automatic;
+            dataGridViewComboBoxColumn1.Width = 149;
+            // 
+            // cMenuImBearbeitung
+            // 
+            cMenuImBearbeitung.Name = "cMenuImBearbeitung";
+            cMenuImBearbeitung.Size = new Size(203, 22);
+            cMenuImBearbeitung.Text = "Im Bearbeitung";
             // 
             // Antrag
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1208, 729);
-            this.Controls.Add(this.splitContainer1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Antrag";
-            this.Text = "Parkplatzantragverwaltung";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.groupBoxStudentAddress.ResumeLayout(false);
-            this.groupBoxStudentAddress.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).EndInit();
-            this.groupBoxStudentInfo.ResumeLayout(false);
-            this.groupBoxStudentInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.wViewGoogleMap)).EndInit();
-            this.tabControlAntrag.ResumeLayout(false);
-            this.alleAntrag.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParkingApplication)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genehmigtstatusBindingSource)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(1208, 729);
+            Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            Name = "Antrag";
+            Text = "Parkplatzantragverwaltung";
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            tabControl.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            groupBoxStudentAddress.ResumeLayout(false);
+            groupBoxStudentAddress.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)adressenBindingSource).EndInit();
+            groupBoxStudentInfo.ResumeLayout(false);
+            groupBoxStudentInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)schuelerBindingSource).EndInit();
+            splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)wViewGoogleMap).EndInit();
+            tabControlAntrag.ResumeLayout(false);
+            alleAntrag.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewParkingApplication).EndInit();
+            ((System.ComponentModel.ISupportInitialize)genehmigtstatusBindingSource).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)parkplatzantragBindingSource).EndInit();
+            panel1.ResumeLayout(false);
+            splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
+            splitContainer3.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -1018,9 +986,6 @@ namespace App
         private ToolStripMenuItem cMenuWarteliste;
         private TabControl tabControlAntrag;
         private TabPage alleAntrag;
-        private TabPage genehmigteAntrag;
-        private TabPage abgelehnteAntrag;
-        private TabPage warteliste;
         private BindingSource genehmigtstatusBindingSource;
         private DataGridViewComboBoxColumn GenehmigtNavigation;
         private DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
@@ -1042,7 +1007,7 @@ namespace App
         private TabControl tabControl;
         private TabPage tabPage1;
         private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox tbApprovedCount;
         private Label label4;
         private Button button1;
         private Label label3;
@@ -1064,5 +1029,12 @@ namespace App
         private TextBox tbLastname;
         private Label lblFirstname;
         private TextBox tbFirstname;
+        private TextBox tbProcessingCount;
+        private Label label7;
+        private TextBox tbWaitlistedCount;
+        private Label label6;
+        private TextBox tbRejectedCount;
+        private Label label5;
+        private ToolStripMenuItem cMenuImBearbeitung;
     }
 }

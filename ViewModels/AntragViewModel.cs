@@ -31,6 +31,7 @@ namespace ViewModels
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
+        public event EventHandler CountsUpdated;
 
         private string _navUrl { get; set; }
 
@@ -43,6 +44,63 @@ namespace ViewModels
         public BindingSource AdresseBindingSource { get; set; }
         public BindingSource GenehmigtStatus { get; set; }
         public ContextMenuStrip contextMenuStrip { get; set; }
+
+        private int _inProgressCount;
+        public int inProgressCount
+        {
+            get
+            {
+                return _context.Parkplatzantrags.Count(a => a.Genehmigt == 0);
+            }
+            set
+            {
+                _inProgressCount = value;
+                CountsUpdated?.Invoke(this, EventArgs.Empty);
+            }
+
+        }
+
+        private int _approvedCount;
+        public int approvedCount
+        {
+            get
+            {
+                return _context.Parkplatzantrags.Count(a => a.Genehmigt == 1);
+            }
+            set
+            {
+                _approvedCount = value;
+                CountsUpdated?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        private int _rejectedCount;
+        public int rejectedCount
+        {
+            get
+            {
+                return _context.Parkplatzantrags.Count(a => a.Genehmigt == 2);
+            }
+            set
+            {
+                _rejectedCount = value;
+                CountsUpdated?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        private int _waitListCount;
+        public int waitListCount
+        {
+            get
+            {
+                return _context.Parkplatzantrags.Count(a => a.Genehmigt == 3);
+            }
+            set
+            {
+                _waitListCount = value;
+                CountsUpdated?.Invoke(this, EventArgs.Empty);
+            }
+        }
 
         private Schueler selectedSchueler;
         private Parkplatzantrag selectedParkplatzantrag;
@@ -95,6 +153,7 @@ namespace ViewModels
             {
                 parkPlatzAntragView.Refresh();
                 NavWebView();
+                CountsUpdated?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show("Erfolgreich gespeichert");
             }
             else
@@ -289,14 +348,14 @@ namespace ViewModels
             }
         }
 
-        public void ShowDetail(IDetailView detailView)
+        public void ShowDetail(IDetailView detailView, EventHandler CountsUpdated)
         {
             detailView.SchuelerBindingSource.DataSource = SchuelerBindingSource.Current;
             detailView.AdresseBindingSource.DataSource = AdresseBindingSource.Current;
             detailView.AntragBinDingSource.DataSource = AntragBindingSource.Current;
             detailView.GenehmigtStatus.DataSource = GenehmigtStatus.DataSource;
+            detailView.CountsUpdated += this.CountsUpdated; // subscribe to the event in the detailView
             detailView.ShowDetail();
-
         }
 
         public void ShowMailSender(IMailSender mailSender)
@@ -401,13 +460,25 @@ namespace ViewModels
 
             switch (clickedItem.Name)
             {
+                case "cMenuImBearbeitung":
+                    foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
+                    {
+                        CountsUpdated?.Invoke(this, EventArgs.Empty);
+                        Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
+                        parkplatzantrag.Genehmigt = 0;
+                        parkPlatzAntragView.Refresh();
+                    }
+
+                    break;
                 case "cMenuGenehmigen":
                     foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
                     {
+                        CountsUpdated?.Invoke(this, EventArgs.Empty);
                         Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
                         parkplatzantrag.Genehmigt = 1;
+                        parkPlatzAntragView.Refresh();
                     }
-                    parkPlatzAntragView.Refresh();                 
+                                     
                     break;
                 case "cMenuAblehnen":
                     foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
@@ -431,6 +502,7 @@ namespace ViewModels
 
             // Save changes to the database
             _context.SaveChanges();
+            CountsUpdated?.Invoke(this, EventArgs.Empty);
         }
 
 

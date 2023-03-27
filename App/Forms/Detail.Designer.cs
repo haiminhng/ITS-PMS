@@ -28,608 +28,595 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail));
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBoxStudentAddress = new System.Windows.Forms.GroupBox();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.tbLocation = new System.Windows.Forms.TextBox();
-            this.adressenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblPostcode = new System.Windows.Forms.Label();
-            this.tbPostcode = new System.Windows.Forms.TextBox();
-            this.lblHnr = new System.Windows.Forms.Label();
-            this.tbHnr = new System.Windows.Forms.TextBox();
-            this.lblStreet = new System.Windows.Forms.Label();
-            this.tbStreet = new System.Windows.Forms.TextBox();
-            this.groupBoxStudentInfo = new System.Windows.Forms.GroupBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.schuelerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblClass = new System.Windows.Forms.Label();
-            this.tbClass = new System.Windows.Forms.TextBox();
-            this.lblLastname = new System.Windows.Forms.Label();
-            this.tbLastname = new System.Windows.Forms.TextBox();
-            this.lblFirstname = new System.Windows.Forms.Label();
-            this.tbFirstname = new System.Windows.Forms.TextBox();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.btnCancle = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.parkplatzantragBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.genehmigtstatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.groupBoxStudentAddress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).BeginInit();
-            this.groupBoxStudentInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genehmigtstatusBindingSource)).BeginInit();
-            this.SuspendLayout();
+            splitContainer1 = new SplitContainer();
+            groupBoxStudentAddress = new GroupBox();
+            lblLocation = new Label();
+            tbLocation = new TextBox();
+            adressenBindingSource = new BindingSource(components);
+            lblPostcode = new Label();
+            tbPostcode = new TextBox();
+            lblHnr = new Label();
+            tbHnr = new TextBox();
+            lblStreet = new Label();
+            tbStreet = new TextBox();
+            groupBoxStudentInfo = new GroupBox();
+            lblEmail = new Label();
+            tbEmail = new TextBox();
+            schuelerBindingSource = new BindingSource(components);
+            lblClass = new Label();
+            tbClass = new TextBox();
+            lblLastname = new Label();
+            tbLastname = new TextBox();
+            lblFirstname = new Label();
+            tbFirstname = new TextBox();
+            btnEmail = new Button();
+            btnCancle = new Button();
+            btnSave = new Button();
+            groupBox1 = new GroupBox();
+            textBox7 = new TextBox();
+            parkplatzantragBindingSource = new BindingSource(components);
+            label12 = new Label();
+            label11 = new Label();
+            textBox6 = new TextBox();
+            label10 = new Label();
+            textBox1 = new TextBox();
+            richTextBox2 = new RichTextBox();
+            richTextBox1 = new RichTextBox();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
+            label9 = new Label();
+            comboBox1 = new ComboBox();
+            label5 = new Label();
+            textBox5 = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            textBox2 = new TextBox();
+            label3 = new Label();
+            textBox3 = new TextBox();
+            label4 = new Label();
+            textBox4 = new TextBox();
+            genehmigtstatusBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            groupBoxStudentAddress.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)adressenBindingSource).BeginInit();
+            groupBoxStudentInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)schuelerBindingSource).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)parkplatzantragBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)genehmigtstatusBindingSource).BeginInit();
+            SuspendLayout();
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBoxStudentAddress);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBoxStudentInfo);
+            splitContainer1.Panel1.Controls.Add(groupBoxStudentAddress);
+            splitContainer1.Panel1.Controls.Add(groupBoxStudentInfo);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnEmail);
-            this.splitContainer1.Panel2.Controls.Add(this.btnCancle);
-            this.splitContainer1.Panel2.Controls.Add(this.btnSave);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 346);
-            this.splitContainer1.SplitterDistance = 291;
-            this.splitContainer1.TabIndex = 0;
+            splitContainer1.Panel2.Controls.Add(btnEmail);
+            splitContainer1.Panel2.Controls.Add(btnCancle);
+            splitContainer1.Panel2.Controls.Add(btnSave);
+            splitContainer1.Panel2.Controls.Add(groupBox1);
+            splitContainer1.Size = new Size(800, 346);
+            splitContainer1.SplitterDistance = 291;
+            splitContainer1.TabIndex = 0;
             // 
             // groupBoxStudentAddress
             // 
-            this.groupBoxStudentAddress.Controls.Add(this.lblLocation);
-            this.groupBoxStudentAddress.Controls.Add(this.tbLocation);
-            this.groupBoxStudentAddress.Controls.Add(this.lblPostcode);
-            this.groupBoxStudentAddress.Controls.Add(this.tbPostcode);
-            this.groupBoxStudentAddress.Controls.Add(this.lblHnr);
-            this.groupBoxStudentAddress.Controls.Add(this.tbHnr);
-            this.groupBoxStudentAddress.Controls.Add(this.lblStreet);
-            this.groupBoxStudentAddress.Controls.Add(this.tbStreet);
-            this.groupBoxStudentAddress.Location = new System.Drawing.Point(14, 164);
-            this.groupBoxStudentAddress.Name = "groupBoxStudentAddress";
-            this.groupBoxStudentAddress.Size = new System.Drawing.Size(267, 145);
-            this.groupBoxStudentAddress.TabIndex = 16;
-            this.groupBoxStudentAddress.TabStop = false;
-            this.groupBoxStudentAddress.Text = "Adresse";
+            groupBoxStudentAddress.Controls.Add(lblLocation);
+            groupBoxStudentAddress.Controls.Add(tbLocation);
+            groupBoxStudentAddress.Controls.Add(lblPostcode);
+            groupBoxStudentAddress.Controls.Add(tbPostcode);
+            groupBoxStudentAddress.Controls.Add(lblHnr);
+            groupBoxStudentAddress.Controls.Add(tbHnr);
+            groupBoxStudentAddress.Controls.Add(lblStreet);
+            groupBoxStudentAddress.Controls.Add(tbStreet);
+            groupBoxStudentAddress.Location = new Point(14, 164);
+            groupBoxStudentAddress.Name = "groupBoxStudentAddress";
+            groupBoxStudentAddress.Size = new Size(267, 145);
+            groupBoxStudentAddress.TabIndex = 16;
+            groupBoxStudentAddress.TabStop = false;
+            groupBoxStudentAddress.Text = "Adresse";
             // 
             // lblLocation
             // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(9, 113);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(24, 15);
-            this.lblLocation.TabIndex = 15;
-            this.lblLocation.Text = "Ort";
+            lblLocation.AutoSize = true;
+            lblLocation.Location = new Point(9, 113);
+            lblLocation.Name = "lblLocation";
+            lblLocation.Size = new Size(24, 15);
+            lblLocation.TabIndex = 15;
+            lblLocation.Text = "Ort";
             // 
             // tbLocation
             // 
-            this.tbLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Ort", true));
-            this.tbLocation.Location = new System.Drawing.Point(83, 110);
-            this.tbLocation.Name = "tbLocation";
-            this.tbLocation.Size = new System.Drawing.Size(171, 23);
-            this.tbLocation.TabIndex = 14;
+            tbLocation.DataBindings.Add(new Binding("Text", adressenBindingSource, "Ort", true));
+            tbLocation.Location = new Point(83, 110);
+            tbLocation.Name = "tbLocation";
+            tbLocation.Size = new Size(171, 23);
+            tbLocation.TabIndex = 14;
             // 
             // adressenBindingSource
             // 
-            this.adressenBindingSource.DataSource = typeof(Models.Models.Adressen);
+            adressenBindingSource.DataSource = typeof(Models.Models.Adressen);
             // 
             // lblPostcode
             // 
-            this.lblPostcode.AutoSize = true;
-            this.lblPostcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPostcode.Location = new System.Drawing.Point(9, 84);
-            this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(27, 15);
-            this.lblPostcode.TabIndex = 13;
-            this.lblPostcode.Text = "PLZ";
+            lblPostcode.AutoSize = true;
+            lblPostcode.FlatStyle = FlatStyle.Flat;
+            lblPostcode.Location = new Point(9, 84);
+            lblPostcode.Name = "lblPostcode";
+            lblPostcode.Size = new Size(27, 15);
+            lblPostcode.TabIndex = 13;
+            lblPostcode.Text = "PLZ";
             // 
             // tbPostcode
             // 
-            this.tbPostcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Plz", true));
-            this.tbPostcode.Location = new System.Drawing.Point(83, 81);
-            this.tbPostcode.Name = "tbPostcode";
-            this.tbPostcode.Size = new System.Drawing.Size(171, 23);
-            this.tbPostcode.TabIndex = 12;
+            tbPostcode.DataBindings.Add(new Binding("Text", adressenBindingSource, "Plz", true));
+            tbPostcode.Location = new Point(83, 81);
+            tbPostcode.Name = "tbPostcode";
+            tbPostcode.Size = new Size(171, 23);
+            tbPostcode.TabIndex = 12;
             // 
             // lblHnr
             // 
-            this.lblHnr.AutoSize = true;
-            this.lblHnr.Location = new System.Drawing.Point(9, 55);
-            this.lblHnr.Name = "lblHnr";
-            this.lblHnr.Size = new System.Drawing.Size(47, 15);
-            this.lblHnr.TabIndex = 11;
-            this.lblHnr.Text = "HausNr";
+            lblHnr.AutoSize = true;
+            lblHnr.Location = new Point(9, 55);
+            lblHnr.Name = "lblHnr";
+            lblHnr.Size = new Size(47, 15);
+            lblHnr.TabIndex = 11;
+            lblHnr.Text = "HausNr";
             // 
             // tbHnr
             // 
-            this.tbHnr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Hausnr", true));
-            this.tbHnr.Location = new System.Drawing.Point(83, 52);
-            this.tbHnr.Name = "tbHnr";
-            this.tbHnr.Size = new System.Drawing.Size(171, 23);
-            this.tbHnr.TabIndex = 10;
+            tbHnr.DataBindings.Add(new Binding("Text", adressenBindingSource, "Hausnr", true));
+            tbHnr.Location = new Point(83, 52);
+            tbHnr.Name = "tbHnr";
+            tbHnr.Size = new Size(171, 23);
+            tbHnr.TabIndex = 10;
             // 
             // lblStreet
             // 
-            this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(9, 26);
-            this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(40, 15);
-            this.lblStreet.TabIndex = 9;
-            this.lblStreet.Text = "Straße";
+            lblStreet.AutoSize = true;
+            lblStreet.Location = new Point(9, 26);
+            lblStreet.Name = "lblStreet";
+            lblStreet.Size = new Size(40, 15);
+            lblStreet.TabIndex = 9;
+            lblStreet.Text = "Straße";
             // 
             // tbStreet
             // 
-            this.tbStreet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adressenBindingSource, "Strasse", true));
-            this.tbStreet.Location = new System.Drawing.Point(83, 23);
-            this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(171, 23);
-            this.tbStreet.TabIndex = 8;
+            tbStreet.DataBindings.Add(new Binding("Text", adressenBindingSource, "Strasse", true));
+            tbStreet.Location = new Point(83, 23);
+            tbStreet.Name = "tbStreet";
+            tbStreet.Size = new Size(171, 23);
+            tbStreet.TabIndex = 8;
             // 
             // groupBoxStudentInfo
             // 
-            this.groupBoxStudentInfo.Controls.Add(this.lblEmail);
-            this.groupBoxStudentInfo.Controls.Add(this.tbEmail);
-            this.groupBoxStudentInfo.Controls.Add(this.lblClass);
-            this.groupBoxStudentInfo.Controls.Add(this.tbClass);
-            this.groupBoxStudentInfo.Controls.Add(this.lblLastname);
-            this.groupBoxStudentInfo.Controls.Add(this.tbLastname);
-            this.groupBoxStudentInfo.Controls.Add(this.lblFirstname);
-            this.groupBoxStudentInfo.Controls.Add(this.tbFirstname);
-            this.groupBoxStudentInfo.Location = new System.Drawing.Point(12, 12);
-            this.groupBoxStudentInfo.Name = "groupBoxStudentInfo";
-            this.groupBoxStudentInfo.Size = new System.Drawing.Size(269, 146);
-            this.groupBoxStudentInfo.TabIndex = 17;
-            this.groupBoxStudentInfo.TabStop = false;
-            this.groupBoxStudentInfo.Text = "Schueler";
+            groupBoxStudentInfo.Controls.Add(lblEmail);
+            groupBoxStudentInfo.Controls.Add(tbEmail);
+            groupBoxStudentInfo.Controls.Add(lblClass);
+            groupBoxStudentInfo.Controls.Add(tbClass);
+            groupBoxStudentInfo.Controls.Add(lblLastname);
+            groupBoxStudentInfo.Controls.Add(tbLastname);
+            groupBoxStudentInfo.Controls.Add(lblFirstname);
+            groupBoxStudentInfo.Controls.Add(tbFirstname);
+            groupBoxStudentInfo.Location = new Point(12, 12);
+            groupBoxStudentInfo.Name = "groupBoxStudentInfo";
+            groupBoxStudentInfo.Size = new Size(269, 146);
+            groupBoxStudentInfo.TabIndex = 17;
+            groupBoxStudentInfo.TabStop = false;
+            groupBoxStudentInfo.Text = "Schueler";
             // 
             // lblEmail
             // 
-            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(9, 118);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(36, 15);
-            this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "Email";
+            lblEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(9, 118);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(36, 15);
+            lblEmail.TabIndex = 7;
+            lblEmail.Text = "Email";
             // 
             // tbEmail
             // 
-            this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Email", true));
-            this.tbEmail.Location = new System.Drawing.Point(83, 115);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(173, 23);
-            this.tbEmail.TabIndex = 6;
+            tbEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbEmail.DataBindings.Add(new Binding("Text", schuelerBindingSource, "Email", true));
+            tbEmail.Location = new Point(83, 115);
+            tbEmail.Name = "tbEmail";
+            tbEmail.Size = new Size(173, 23);
+            tbEmail.TabIndex = 6;
             // 
             // schuelerBindingSource
             // 
-            this.schuelerBindingSource.DataSource = typeof(Models.Models.Schueler);
+            schuelerBindingSource.DataSource = typeof(Models.Models.Schueler);
             // 
             // lblClass
             // 
-            this.lblClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(9, 89);
-            this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(39, 15);
-            this.lblClass.TabIndex = 5;
-            this.lblClass.Text = "Klasse";
+            lblClass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblClass.AutoSize = true;
+            lblClass.Location = new Point(9, 89);
+            lblClass.Name = "lblClass";
+            lblClass.Size = new Size(39, 15);
+            lblClass.TabIndex = 5;
+            lblClass.Text = "Klasse";
             // 
             // tbClass
             // 
-            this.tbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbClass.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "KlassenName", true));
-            this.tbClass.Location = new System.Drawing.Point(83, 86);
-            this.tbClass.Name = "tbClass";
-            this.tbClass.Size = new System.Drawing.Size(173, 23);
-            this.tbClass.TabIndex = 4;
+            tbClass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbClass.DataBindings.Add(new Binding("Text", schuelerBindingSource, "KlassenName", true));
+            tbClass.Location = new Point(83, 86);
+            tbClass.Name = "tbClass";
+            tbClass.Size = new Size(173, 23);
+            tbClass.TabIndex = 4;
             // 
             // lblLastname
             // 
-            this.lblLastname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(8, 60);
-            this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(65, 15);
-            this.lblLastname.TabIndex = 3;
-            this.lblLastname.Text = "Nachname";
+            lblLastname.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblLastname.AutoSize = true;
+            lblLastname.Location = new Point(8, 60);
+            lblLastname.Name = "lblLastname";
+            lblLastname.Size = new Size(65, 15);
+            lblLastname.TabIndex = 3;
+            lblLastname.Text = "Nachname";
             // 
             // tbLastname
             // 
-            this.tbLastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Nachname", true));
-            this.tbLastname.Location = new System.Drawing.Point(83, 57);
-            this.tbLastname.Name = "tbLastname";
-            this.tbLastname.Size = new System.Drawing.Size(173, 23);
-            this.tbLastname.TabIndex = 2;
+            tbLastname.DataBindings.Add(new Binding("Text", schuelerBindingSource, "Nachname", true));
+            tbLastname.Location = new Point(83, 57);
+            tbLastname.Name = "tbLastname";
+            tbLastname.Size = new Size(173, 23);
+            tbLastname.TabIndex = 2;
             // 
             // lblFirstname
             // 
-            this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(9, 31);
-            this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(54, 15);
-            this.lblFirstname.TabIndex = 1;
-            this.lblFirstname.Text = "Vorname";
+            lblFirstname.AutoSize = true;
+            lblFirstname.Location = new Point(9, 31);
+            lblFirstname.Name = "lblFirstname";
+            lblFirstname.Size = new Size(54, 15);
+            lblFirstname.TabIndex = 1;
+            lblFirstname.Text = "Vorname";
             // 
             // tbFirstname
             // 
-            this.tbFirstname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFirstname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schuelerBindingSource, "Vorname", true));
-            this.tbFirstname.Location = new System.Drawing.Point(83, 28);
-            this.tbFirstname.Name = "tbFirstname";
-            this.tbFirstname.Size = new System.Drawing.Size(173, 23);
-            this.tbFirstname.TabIndex = 0;
+            tbFirstname.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbFirstname.DataBindings.Add(new Binding("Text", schuelerBindingSource, "Vorname", true));
+            tbFirstname.Location = new Point(83, 28);
+            tbFirstname.Name = "tbFirstname";
+            tbFirstname.Size = new Size(173, 23);
+            tbFirstname.TabIndex = 0;
             // 
             // btnEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(248, 313);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(75, 23);
-            this.btnEmail.TabIndex = 20;
-            this.btnEmail.Text = "Email";
-            this.btnEmail.UseVisualStyleBackColor = true;
+            btnEmail.Location = new Point(248, 313);
+            btnEmail.Name = "btnEmail";
+            btnEmail.Size = new Size(75, 23);
+            btnEmail.TabIndex = 20;
+            btnEmail.Text = "Email";
+            btnEmail.UseVisualStyleBackColor = true;
             // 
             // btnCancle
             // 
-            this.btnCancle.Location = new System.Drawing.Point(410, 313);
-            this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(83, 23);
-            this.btnCancle.TabIndex = 19;
-            this.btnCancle.Text = "Abbrechen";
-            this.btnCancle.UseVisualStyleBackColor = true;
+            btnCancle.Location = new Point(410, 313);
+            btnCancle.Name = "btnCancle";
+            btnCancle.Size = new Size(83, 23);
+            btnCancle.TabIndex = 19;
+            btnCancle.Text = "Abbrechen";
+            btnCancle.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(329, 313);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "Speichern";
-            this.btnSave.UseVisualStyleBackColor = true;
+            btnSave.Location = new Point(329, 313);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 18;
+            btnSave.Text = "Speichern";
+            btnSave.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.richTextBox2);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 296);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = " Parkplatzantrag";
+            groupBox1.Controls.Add(textBox7);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(textBox6);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(richTextBox2);
+            groupBox1.Controls.Add(richTextBox1);
+            groupBox1.Controls.Add(checkBox2);
+            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Location = new Point(12, 13);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(481, 296);
+            groupBox1.TabIndex = 17;
+            groupBox1.TabStop = false;
+            groupBox1.Text = " Parkplatzantrag";
             // 
             // textBox7
             // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Punkte", true));
-            this.textBox7.Location = new System.Drawing.Point(104, 259);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(123, 23);
-            this.textBox7.TabIndex = 40;
+            textBox7.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "Punkte", true));
+            textBox7.Location = new Point(104, 259);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(123, 23);
+            textBox7.TabIndex = 40;
             // 
             // parkplatzantragBindingSource
             // 
-            this.parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
+            parkplatzantragBindingSource.DataSource = typeof(Models.Models.Parkplatzantrag);
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 264);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 15);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Antragpunkte";
+            label12.AutoSize = true;
+            label12.Location = new Point(9, 264);
+            label12.Name = "label12";
+            label12.Size = new Size(80, 15);
+            label12.TabIndex = 39;
+            label12.Text = "Antragpunkte";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(253, 82);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 15);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Fahrzeit";
+            label11.AutoSize = true;
+            label11.Location = new Point(253, 82);
+            label11.Name = "label11";
+            label11.Size = new Size(48, 15);
+            label11.TabIndex = 38;
+            label11.Text = "Fahrzeit";
             // 
             // textBox6
             // 
-            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Fahrzeit", true));
-            this.textBox6.Location = new System.Drawing.Point(348, 79);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(123, 23);
-            this.textBox6.TabIndex = 37;
+            textBox6.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "Fahrzeit", true));
+            textBox6.Location = new Point(348, 79);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(123, 23);
+            textBox6.TabIndex = 37;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(253, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 15);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "Reisezeit";
+            label10.AutoSize = true;
+            label10.Location = new Point(253, 56);
+            label10.Name = "label10";
+            label10.Size = new Size(52, 15);
+            label10.TabIndex = 36;
+            label10.Text = "Reisezeit";
             // 
             // textBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Reisezeit", true));
-            this.textBox1.Location = new System.Drawing.Point(348, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 23);
-            this.textBox1.TabIndex = 35;
+            textBox1.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "Reisezeit", true));
+            textBox1.Location = new Point(348, 52);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(123, 23);
+            textBox1.TabIndex = 35;
             // 
             // richTextBox2
             // 
-            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Moeglichkeit", true));
-            this.richTextBox2.Location = new System.Drawing.Point(253, 163);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(218, 91);
-            this.richTextBox2.TabIndex = 34;
-            this.richTextBox2.Text = "";
+            richTextBox2.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "Moeglichkeit", true));
+            richTextBox2.Location = new Point(253, 163);
+            richTextBox2.Margin = new Padding(3, 2, 3, 2);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(218, 91);
+            richTextBox2.TabIndex = 34;
+            richTextBox2.Text = "";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Grund", true));
-            this.richTextBox1.Location = new System.Drawing.Point(9, 163);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(218, 91);
-            this.richTextBox1.TabIndex = 33;
-            this.richTextBox1.Text = "";
+            richTextBox1.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "Grund", true));
+            richTextBox1.Location = new Point(9, 163);
+            richTextBox1.Margin = new Padding(3, 2, 3, 2);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(218, 91);
+            richTextBox1.TabIndex = 33;
+            richTextBox1.Text = "";
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.parkplatzantragBindingSource, "Mitfahrgelegenheit", true));
-            this.checkBox2.Location = new System.Drawing.Point(378, 112);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(36, 19);
-            this.checkBox2.TabIndex = 32;
-            this.checkBox2.Text = "Ja";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.AutoSize = true;
+            checkBox2.DataBindings.Add(new Binding("CheckState", parkplatzantragBindingSource, "Mitfahrgelegenheit", true));
+            checkBox2.Location = new Point(378, 112);
+            checkBox2.Margin = new Padding(3, 2, 3, 2);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(36, 19);
+            checkBox2.TabIndex = 32;
+            checkBox2.Text = "Ja";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.parkplatzantragBindingSource, "Besonderefall", true));
-            this.checkBox1.Location = new System.Drawing.Point(134, 112);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(36, 19);
-            this.checkBox1.TabIndex = 31;
-            this.checkBox1.Text = "Ja";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.DataBindings.Add(new Binding("CheckState", parkplatzantragBindingSource, "Besonderefall", true));
+            checkBox1.Location = new Point(134, 112);
+            checkBox1.Margin = new Padding(3, 2, 3, 2);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(36, 19);
+            checkBox1.TabIndex = 31;
+            checkBox1.Text = "Ja";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(253, 264);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 15);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Antragstatus";
+            label9.AutoSize = true;
+            label9.Location = new Point(253, 264);
+            label9.Name = "label9";
+            label9.Size = new Size(74, 15);
+            label9.TabIndex = 29;
+            label9.Text = "Antragstatus";
             // 
             // comboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.parkplatzantragBindingSource, "Genehmigt", true));
-            this.comboBox1.DataSource = this.genehmigtstatusBindingSource;
-            this.comboBox1.DisplayMember = "Beschreibung";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(348, 261);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(123, 23);
-            this.comboBox1.TabIndex = 30;
-            this.comboBox1.ValueMember = "Wert";
-            // 
-            // genehmigtstatusBindingSource
-            // 
-            this.genehmigtstatusBindingSource.DataSource = typeof(Models.Models.Genehmigtstatus);
+            comboBox1.DataBindings.Add(new Binding("SelectedValue", parkplatzantragBindingSource, "Genehmigt", true));
+            comboBox1.DataSource = genehmigtstatusBindingSource;
+            comboBox1.DisplayMember = "Beschreibung";
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(348, 261);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(123, 23);
+            comboBox1.TabIndex = 30;
+            comboBox1.ValueMember = "Wert";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 15);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Antragsdatum";
+            label5.AutoSize = true;
+            label5.Location = new Point(253, 28);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 15);
+            label5.TabIndex = 23;
+            label5.Text = "Antragsdatum";
             // 
             // textBox5
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "Antragsdatum", true));
-            this.textBox5.Location = new System.Drawing.Point(348, 24);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(123, 23);
-            this.textBox5.TabIndex = 22;
+            textBox5.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "Antragsdatum", true));
+            textBox5.Location = new Point(348, 24);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(123, 23);
+            textBox5.TabIndex = 22;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Location = new System.Drawing.Point(252, 144);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 15);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Möglichkeit";
+            label6.AutoSize = true;
+            label6.FlatStyle = FlatStyle.Flat;
+            label6.Location = new Point(252, 144);
+            label6.Name = "label6";
+            label6.Size = new Size(70, 15);
+            label6.TabIndex = 21;
+            label6.Text = "Möglichkeit";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(253, 112);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 15);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Mitfahrgelegenheit";
+            label7.AutoSize = true;
+            label7.Location = new Point(253, 112);
+            label7.Name = "label7";
+            label7.Size = new Size(108, 15);
+            label7.TabIndex = 19;
+            label7.Text = "Mitfahrgelegenheit";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 142);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 15);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Grund";
+            label8.AutoSize = true;
+            label8.Location = new Point(9, 142);
+            label8.Name = "label8";
+            label8.Size = new Size(40, 15);
+            label8.TabIndex = 17;
+            label8.Text = "Grund";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 15);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Besonderefall";
+            label1.AutoSize = true;
+            label1.Location = new Point(9, 113);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 15);
+            label1.TabIndex = 15;
+            label1.Text = "Besonderefall";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(9, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 15);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Entfernung";
+            label2.AutoSize = true;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Location = new Point(9, 84);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 15);
+            label2.TabIndex = 13;
+            label2.Text = "Entfernung";
             // 
             // textBox2
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "EntfernungKm", true));
-            this.textBox2.Location = new System.Drawing.Point(104, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(123, 23);
-            this.textBox2.TabIndex = 12;
+            textBox2.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "EntfernungKm", true));
+            textBox2.Location = new Point(104, 82);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(123, 23);
+            textBox2.TabIndex = 12;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 15);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Kennzeichen";
+            label3.AutoSize = true;
+            label3.Location = new Point(9, 55);
+            label3.Name = "label3";
+            label3.Size = new Size(74, 15);
+            label3.TabIndex = 11;
+            label3.Text = "Kennzeichen";
             // 
             // textBox3
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "KfzKennzeichen", true));
-            this.textBox3.Location = new System.Drawing.Point(104, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(123, 23);
-            this.textBox3.TabIndex = 10;
+            textBox3.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "KfzKennzeichen", true));
+            textBox3.Location = new Point(104, 52);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(123, 23);
+            textBox3.TabIndex = 10;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Id";
+            label4.AutoSize = true;
+            label4.Location = new Point(9, 26);
+            label4.Name = "label4";
+            label4.Size = new Size(17, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Id";
             // 
             // textBox4
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parkplatzantragBindingSource, "ParkplatzantragsId", true));
-            this.textBox4.Location = new System.Drawing.Point(104, 24);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(123, 23);
-            this.textBox4.TabIndex = 8;
+            textBox4.DataBindings.Add(new Binding("Text", parkplatzantragBindingSource, "ParkplatzantragsId", true));
+            textBox4.Location = new Point(104, 24);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(123, 23);
+            textBox4.TabIndex = 8;
+            // 
+            // genehmigtstatusBindingSource
+            // 
+            genehmigtstatusBindingSource.DataSource = typeof(Models.Models.Genehmigtstatus);
             // 
             // Detail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 346);
-            this.Controls.Add(this.splitContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Detail";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Detail";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.groupBoxStudentAddress.ResumeLayout(false);
-            this.groupBoxStudentAddress.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adressenBindingSource)).EndInit();
-            this.groupBoxStudentInfo.ResumeLayout(false);
-            this.groupBoxStudentInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schuelerBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.parkplatzantragBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genehmigtstatusBindingSource)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 346);
+            Controls.Add(splitContainer1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Detail";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Detail";
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            groupBoxStudentAddress.ResumeLayout(false);
+            groupBoxStudentAddress.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)adressenBindingSource).EndInit();
+            groupBoxStudentInfo.ResumeLayout(false);
+            groupBoxStudentInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)schuelerBindingSource).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)parkplatzantragBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)genehmigtstatusBindingSource).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

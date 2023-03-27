@@ -16,6 +16,12 @@ namespace Interface
         public BindingSource AdresseBindingSource { get; set; }
         public BindingSource GenehmigtStatus { get; set; }
 
+        public event EventHandler CountsUpdated;
+        public int approvedCount { get; }
+        public int rejectedCount { get; }
+        public int inProgressCount { get; }
+        public int waitListCount { get; }
+
 
         Task LoadAsync();
         Task CalcNewRouteData();
@@ -27,7 +33,7 @@ namespace Interface
         void Next();
         void Previous();
         Task SaveAsync();
-        void ShowDetail(IDetailView detailView);
+        void ShowDetail(IDetailView detailView, EventHandler CountsUpdated);
         void ShowParkingStatistics(IParkingStatisticsView parkingStatisticsView);
         void ShowMailSender(IMailSender mailSender);
         void ShowEmailSetting(IEmailSetting emailSetting);

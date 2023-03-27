@@ -18,8 +18,19 @@ namespace App
             _vm.AdresseBindingSource = adressenBindingSource;
             _vm.GenehmigtStatus = genehmigtstatusBindingSource;
             _vm.contextMenuStrip = contextMenuStrip1;
-
             Load += delegate { _vm.LoadAsync(); };
+
+            //Init Count
+            tbApprovedCount.Text = _vm.approvedCount.ToString();
+            tbRejectedCount.Text = _vm.rejectedCount.ToString();
+            tbWaitlistedCount.Text = _vm.waitListCount.ToString();
+            tbProcessingCount.Text = _vm.inProgressCount.ToString();
+
+            _vm.CountsUpdated += (sender, e) =>
+            {
+                UpdateCounts();
+            };
+
 
             //Button Control
             btnEmail.Click += delegate { _vm.ShowMailSender(UnityConfig.container.Resolve<IMailSender>()); ; };
@@ -37,13 +48,31 @@ namespace App
 
             //DataGridView Control
             dataGridViewParkingApplication.CellClick += delegate { _vm.DataGridView_CellClick(); };
-            dataGridViewParkingApplication.CellDoubleClick += delegate { _vm.ShowDetail(UnityConfig.container.Resolve<IDetailView>()); };
+            dataGridViewParkingApplication.CellDoubleClick += delegate {
+                _vm.ShowDetail(
+                    UnityConfig.container.Resolve<IDetailView>(),
+                    (sender, e) => UpdateCounts()
+                );
+            };
 
             //ToolStripMenu Control
             mailServerToolStripMenuItem.Click += delegate { _vm.ShowEmailSetting(UnityConfig.container.Resolve<IEmailSetting>()); ; };
             parkstatistikToolStripMenuItem.Click += delegate { _vm.ShowParkingStatistics(UnityConfig.container.Resolve<IParkingStatisticsView>()); ; };
 
             contextMenuStrip1.ItemClicked += delegate { _vm.contextMenuStripItemClicked(); };
+        }
+
+
+        private void UpdateCounts()
+        {
+            tbApprovedCount.Text = _vm.approvedCount.ToString();
+            tbRejectedCount.Text = _vm.rejectedCount.ToString();
+            tbWaitlistedCount.Text = _vm.waitListCount.ToString();
+            tbProcessingCount.Text = _vm.inProgressCount.ToString();
+            tbApprovedCount.Refresh();
+            tbRejectedCount.Refresh();
+            tbWaitlistedCount.Refresh();
+            tbProcessingCount.Refresh();
         }
     }
 }

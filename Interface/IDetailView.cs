@@ -10,5 +10,6 @@ namespace Interface
         public BindingSource GenehmigtStatus { get; set; }
 
         public void ShowDetail();
+
     }
 }

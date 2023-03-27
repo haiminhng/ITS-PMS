@@ -6,14 +6,29 @@ using Models.Data;
 using Models.Models;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Unity;
 
 namespace ViewModels
 {
     public class AntragViewModel : IAntragViewModel, INotifyPropertyChanged
     {
+        /*
         private readonly IGoogleService _googleService = new GoogleService();
         private readonly IAntragService _antragService = new WeightedScoring();
         private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
+        */
+
+        private readonly IGoogleService _googleService;
+        private readonly IAntragService _antragService;
+        private readonly ParkplatzverwaltungContext _context;
+
+        public AntragViewModel(UnityContainer container)
+        {
+            _googleService = container.Resolve<IGoogleService>();
+            _antragService = container.Resolve<IAntragService>();
+            _context = container.Resolve<ParkplatzverwaltungContext>();
+        }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -29,7 +44,6 @@ namespace ViewModels
         public BindingSource GenehmigtStatus { get; set; }
         public ContextMenuStrip contextMenuStrip { get; set; }
 
-        // Use to Calculate and get Notified everytime Atribute of Adresse changed
         private Schueler selectedSchueler;
         private Parkplatzantrag selectedParkplatzantrag;
 
@@ -224,18 +238,15 @@ namespace ViewModels
                     parkplatzantrag.Reisezeit = await _googleService.GetTravelTime(parkplatzantrag.Schueler.Adressen);
                     parkplatzantrag.Punkte = _antragService.AntragBewerten(parkplatzantrag);
                     parkPlatzAntragView.Refresh();
-
-                    /*
-                    // Prüft ob erfolgtreich gespeichert wird 
-                    if (_context.SaveChanges() != 0)
-                    {
-                        parkPlatzAntragView.Refresh();
-                        MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    */
                 }
+                // Prüft ob erfolgtreich gespeichert wird 
+         
             }
-
+            if (_context.SaveChanges() != 0)
+            {
+                parkPlatzAntragView.Refresh();
+                MessageBox.Show("Erfolgreich ausgerechnet!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
 
             /*

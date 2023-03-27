@@ -13,7 +13,7 @@ namespace App.Forms
         private Email _email;
         private IEmailService _emailService = UnityConfig.container.Resolve<IEmailService>();
         private IMailServerConfiguration _mailServer = UnityConfig.container.Resolve<IMailServerConfiguration>();
-        private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
+        //private readonly ParkplatzverwaltungContext _context = new ParkplatzverwaltungContext();
 
         public List<Parkplatzantrag> emailsReceiverList { get; set; }
 

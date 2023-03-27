@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Azure;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Models.Models.utilities
 {
@@ -95,6 +96,29 @@ namespace Models.Models.utilities
     * Dauer (in Minuten) der Unterrichtsstunde
 */
         private int _dauer;
+        public DateTime StundeBegin
+        {
+            get
+            {
+                return new DateTime(_jahr, _monat, _tag, _stunde, _minute, 0);
+            }
+        }
+
+        public DateTime StundeEnde
+        {
+            get
+            {
+                return StundeBegin.AddMinutes(_dauer);
+            }
+        }
+
+        public string KlassenNames
+        {
+            get
+            {
+                return _klasse;
+            }
+        }
 
         public UntisStunde(string zeile, string trennzeichen)
         {

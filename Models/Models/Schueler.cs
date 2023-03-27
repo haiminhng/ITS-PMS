@@ -5,6 +5,7 @@ namespace Models.Models;
 
 public partial class Schueler : INotifyPropertyChanged
 {
+
     public int SchuelerId { get; set; }
 
     public string? Vorname { get; set; }

@@ -7,6 +7,9 @@ namespace Interface
     {
         public TextBox searchBox { get; set; }
         public WebView2 webView { get; set; }
+
+        public ContextMenuStrip contextMenuStrip { get; set; }
+
         public DataGridView parkPlatzAntragView { get; set; }
         public BindingSource AntragBindingSource { get; set; }
         public BindingSource SchuelerBindingSource { get; set; }
@@ -30,5 +33,7 @@ namespace Interface
         void ShowEmailSetting(IEmailSetting emailSetting);
         void DataGridView_CellClick();
         void DataGridView_CellFormatting();
+
+        void contextMenuStripItemClicked();
     }
 }

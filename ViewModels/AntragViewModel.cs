@@ -27,6 +27,7 @@ namespace ViewModels
         public BindingSource SchuelerBindingSource { get; set; }
         public BindingSource AdresseBindingSource { get; set; }
         public BindingSource GenehmigtStatus { get; set; }
+        public ContextMenuStrip contextMenuStrip { get; set; }
 
         // Use to Calculate and get Notified everytime Atribute of Adresse changed
         private Schueler selectedSchueler;
@@ -76,21 +77,16 @@ namespace ViewModels
             Int32 record;
             record = _context.SaveChanges();
 
-
-
-
             if (record != 0)
             {
                 parkPlatzAntragView.Refresh();
-                MessageBox.Show("Erfolgreich gespeichert");
                 NavWebView();
+                MessageBox.Show("Erfolgreich gespeichert");
             }
             else
             {
                 MessageBox.Show("Fehler");
             }
-
-
         }
 
         public void Delete() => AntragBindingSource.RemoveCurrent();
@@ -368,14 +364,62 @@ namespace ViewModels
                 }
             }
             parkingStatisticsView.showParkingStatistics();
-           
-
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public void contextMenuStripItemClicked()
+        {
+            if (contextMenuStrip == null)
+            {
+                return;
+            }
+
+            var clickedItem = contextMenuStrip.GetItemAt(contextMenuStrip.PointToClient(Control.MousePosition));
+
+            if (clickedItem == null)
+            {
+                return;
+            }
+
+            switch (clickedItem.Name)
+            {
+                case "cMenuGenehmigen":
+                    foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
+                    {
+                        Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
+                        parkplatzantrag.Genehmigt = 1;
+                    }
+                    parkPlatzAntragView.Refresh();                 
+                    break;
+                case "cMenuAblehnen":
+                    foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
+                    {
+                        Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
+                        parkplatzantrag.Genehmigt = 2;
+                        parkPlatzAntragView.Refresh();
+                    }
+                    break;
+                case "cMenuWarteliste":
+                    foreach (DataGridViewRow row in parkPlatzAntragView.SelectedRows)
+                    {
+                        Parkplatzantrag parkplatzantrag = (Parkplatzantrag)row.DataBoundItem;
+                        parkplatzantrag.Genehmigt = 3;
+                        parkPlatzAntragView.Refresh();
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            // Save changes to the database
+            _context.SaveChanges();
+        }
+
+
     }
 
 }

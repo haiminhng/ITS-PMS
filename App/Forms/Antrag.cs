@@ -17,6 +17,7 @@ namespace App
             _vm.SchuelerBindingSource = schuelerBindingSource;
             _vm.AdresseBindingSource = adressenBindingSource;
             _vm.GenehmigtStatus = genehmigtstatusBindingSource;
+            _vm.contextMenuStrip = contextMenuStrip1;
 
             Load += delegate { _vm.LoadAsync(); };
 
@@ -41,6 +42,8 @@ namespace App
             //ToolStripMenu Control
             mailServerToolStripMenuItem.Click += delegate { _vm.ShowEmailSetting(UnityConfig.container.Resolve<IEmailSetting>()); ; };
             parkstatistikToolStripMenuItem.Click += delegate { _vm.ShowParkingStatistics(UnityConfig.container.Resolve<IParkingStatisticsView>()); ; };
+
+            contextMenuStrip1.ItemClicked += delegate { _vm.contextMenuStripItemClicked(); };
         }
     }
 }

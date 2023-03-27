@@ -28,74 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblPfadUntis = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnLoadFileUntis = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.plotView1 = new OxyPlot.WindowsForms.PlotView();
-            this.SuspendLayout();
+            lblPfadUntis = new Label();
+            textBox1 = new TextBox();
+            btnLoadFileUntis = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            plotView1 = new OxyPlot.WindowsForms.PlotView();
+            progressBar1 = new ProgressBar();
+            btnStatCalc = new Button();
+            SuspendLayout();
             // 
             // lblPfadUntis
             // 
-            this.lblPfadUntis.AutoSize = true;
-            this.lblPfadUntis.Location = new System.Drawing.Point(12, 9);
-            this.lblPfadUntis.Name = "lblPfadUntis";
-            this.lblPfadUntis.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPfadUntis.Size = new System.Drawing.Size(34, 15);
-            this.lblPfadUntis.TabIndex = 0;
-            this.lblPfadUntis.Text = "Untis";
+            lblPfadUntis.AutoSize = true;
+            lblPfadUntis.Location = new Point(12, 9);
+            lblPfadUntis.Name = "lblPfadUntis";
+            lblPfadUntis.RightToLeft = RightToLeft.No;
+            lblPfadUntis.Size = new Size(34, 15);
+            lblPfadUntis.TabIndex = 0;
+            lblPfadUntis.Text = "Untis";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 1;
+            textBox1.Location = new Point(56, 6);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 1;
             // 
             // btnLoadFileUntis
             // 
-            this.btnLoadFileUntis.Location = new System.Drawing.Point(162, 6);
-            this.btnLoadFileUntis.Name = "btnLoadFileUntis";
-            this.btnLoadFileUntis.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadFileUntis.TabIndex = 2;
-            this.btnLoadFileUntis.Text = "Load";
-            this.btnLoadFileUntis.UseVisualStyleBackColor = true;
-            this.btnLoadFileUntis.Click += new System.EventHandler(this.btnLoadFileUntis_Click);
+            btnLoadFileUntis.Location = new Point(162, 6);
+            btnLoadFileUntis.Name = "btnLoadFileUntis";
+            btnLoadFileUntis.Size = new Size(75, 23);
+            btnLoadFileUntis.TabIndex = 2;
+            btnLoadFileUntis.Text = "Load";
+            btnLoadFileUntis.UseVisualStyleBackColor = true;
+            btnLoadFileUntis.Click += btnLoadFileUntis_Click;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePicker1.TabIndex = 3;
+            dateTimePicker1.Location = new Point(12, 35);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(225, 23);
+            dateTimePicker1.TabIndex = 3;
             // 
             // plotView1
             // 
-            this.plotView1.Location = new System.Drawing.Point(12, 64);
-            this.plotView1.Name = "plotView1";
-            this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotView1.Size = new System.Drawing.Size(776, 374);
-            this.plotView1.TabIndex = 4;
-            this.plotView1.Text = "plotView1";
-            this.plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            this.plotView1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.plotView1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            plotView1.Location = new Point(12, 64);
+            plotView1.Name = "plotView1";
+            plotView1.PanCursor = Cursors.Hand;
+            plotView1.Size = new Size(776, 374);
+            plotView1.TabIndex = 4;
+            plotView1.Text = "plotView1";
+            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
+            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
+            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(243, 6);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(100, 23);
+            progressBar1.TabIndex = 5;
+            // 
+            // btnStatCalc
+            // 
+            btnStatCalc.Location = new Point(349, 6);
+            btnStatCalc.Name = "btnStatCalc";
+            btnStatCalc.Size = new Size(75, 23);
+            btnStatCalc.TabIndex = 6;
+            btnStatCalc.Text = "Berechnen";
+            btnStatCalc.UseVisualStyleBackColor = true;
+            btnStatCalc.Click += btnStatCalc_Click;
             // 
             // ParkingStatistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.plotView1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnLoadFileUntis);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblPfadUntis);
-            this.Name = "ParkingStatistics";
-            this.Text = "ParkingStatistics";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnStatCalc);
+            Controls.Add(progressBar1);
+            Controls.Add(plotView1);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(btnLoadFileUntis);
+            Controls.Add(textBox1);
+            Controls.Add(lblPfadUntis);
+            Name = "ParkingStatistics";
+            Text = "ParkingStatistics";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -105,5 +125,7 @@
         private Button btnLoadFileUntis;
         private DateTimePicker dateTimePicker1;
         private OxyPlot.WindowsForms.PlotView plotView1;
+        private ProgressBar progressBar1;
+        private Button btnStatCalc;
     }
 }

@@ -1,8 +1,11 @@
 ﻿using Interface;
 using Microsoft.VisualBasic;
+using Models.Data;
 using Models.Models;
 using Models.Models.utilities;
 using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Series;
 using OxyPlot.WindowsForms;
 using System.Text;
 using Unity;
@@ -22,29 +25,7 @@ namespace App.Forms
         {
             InitializeComponent();
             genehmigteAntraege = new List<Parkplatzantrag>();
-
-
-            /*
-            //Schülerlist von genehmigte anträge raus holen
-            //alle schüler die heute da sind mit hilfe von untisStundeList ausrechnen
-            // anzahl von alle schüler die heute da sind
-            // belegung von parkplatz anhand von alle schüler die heute da sind und mit hilfe von untis stunde list
-            myModel = new PlotModel();
-            myModel.Title = "Parkplatzstatistik";
-            var xAxis = new OxyPlot.Axes.LinearAxis();
-            xAxis.Position = OxyPlot.Axes.AxisPosition.Bottom;
-            myModel.Axes.Add(xAxis);
-            var yAxis = new OxyPlot.Axes.LinearAxis();
-            yAxis.Position = OxyPlot.Axes.AxisPosition.Left;
-            myModel.Axes.Add(yAxis);
-            var series = new OxyPlot.Series.LineSeries();
-            series.Points.Add(new DataPoint(0, 0));
-            series.Points.Add(new DataPoint(10, 5));
-            series.Points.Add(new DataPoint(20, 8));
-            myModel.Series.Add(series);
-            plotView1.Model = myModel;
-            */
-            //GenerateAndPlotStatistics(untisStundeList, genehmigteAntraege);
+            //ZeigeParkplatzStatistik(dateTimePicker1.Value);
         }
 
 
@@ -59,6 +40,7 @@ namespace App.Forms
             openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string filename = openFileDialog1.FileName;
@@ -68,29 +50,33 @@ namespace App.Forms
                 // Get file size in bytes
                 long fileSize = new FileInfo(filename).Length;
 
-                // Create a Progress object to report progress
-                var progress = new Progress<double>(value =>
-                {
-                    double percentage = (value / fileSize) * 100.0;
-                    progressBar1.Value = (int)percentage;
-                });
+                // Create a new instance of the FileLoadingForm
+                IFileLoadingForm loadingForm = UnityConfig.container.Resolve<IFileLoadingForm>();
+
+                // Show the loading form
+                loadingForm.Show();
 
                 // Load the file asynchronously and report progress
-                await Task.Run(() =>
+                var fileStream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                var streamReader = new StreamReader(fileStream, Encoding.UTF8);
+                string line;
+                long bytesRead = 0;
+                while ((line = await streamReader.ReadLineAsync()) != null)
                 {
-                    using (var fileStream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
-                    {
-                        string line;
-                        long bytesRead = 0;
-                        while ((line = streamReader.ReadLine()) != null)
-                        {
-                            untisStundeList.Add(new UntisStunde(line, ","));
-                            bytesRead += Encoding.UTF8.GetByteCount(line);
-                            ((IProgress<double>)progress).Report(bytesRead);
-                        }
-                    }
-                });
+                    untisStundeList.Add(new UntisStunde(line, ","));
+                    bytesRead += Encoding.UTF8.GetByteCount(line);
+                    double progress = (double)bytesRead / fileSize * 100.0;
+
+                    // Update progress and status in the loading form
+                    loadingForm.SetProgress((int)progress);
+                    loadingForm.SetStatus($"Loading... {progress:F2}%");
+                }
+
+                streamReader.Close();
+                fileStream.Close();
+
+                // Hide the loading form
+                loadingForm.Close();
 
                 if (untisStundeList.Count > 0)
                     MessageBox.Show($"{untisStundeList.Count} Untis Stunde von {DateTime.Now} geladen");
@@ -98,12 +84,10 @@ namespace App.Forms
                     MessageBox.Show("List is empty");
             }
         }
-      
 
 
-        private List<Schueler> GetAnwesendeSchueler(List<UntisStunde> untisStundeList, List<Parkplatzantrag> genehmigteAntraege, TimeSpan timeSpan, TimeSpan timeSpan1)
+        private List<Schueler> GetGenehmigteSchueler(List<Parkplatzantrag> genehmigteAntraege)
         {
-            // Schülerliste für den zugewiesenen Parkplatz erstellen
             List<Schueler> schuelerListe = new List<Schueler>();
             foreach (var antrag in genehmigteAntraege)
             {
@@ -115,23 +99,52 @@ namespace App.Forms
                     }
                 }
             }
+            return schuelerListe;
+        }
 
-            // Anwesende Schüler ermitteln
+        private List<UntisStunde> GetHeutigeUntisStunden(DateTime ausgewaehltesDatum)
+        {
+            List<UntisStunde> heutigeUntisStunden = new List<UntisStunde>();
+            foreach (var stunde in untisStundeList)
+            {
+                if (stunde.StundeBegin.Date == ausgewaehltesDatum.Date)
+                {
+                    heutigeUntisStunden.Add(stunde);
+                }
+            }
+            return heutigeUntisStunden;
+        }
+
+        private List<UntisStunde> GetUntisStundenFuerGenehmigteSchueler(List<UntisStunde> heutigeUntisStunden, List<Schueler> genehmigteSchuelerListe)
+        {
+            List<UntisStunde> stundenFuerGenehmigteSchueler = new List<UntisStunde>();
+            foreach (var stunde in heutigeUntisStunden)
+            {
+                foreach (var schueler in genehmigteSchuelerListe)
+                {
+                    if (stunde.KlassenNames.Equals(schueler.KlassenName))
+                    {
+                        stundenFuerGenehmigteSchueler.Add(stunde);
+                        break; // Schüler für diese Stunde gefunden, Schleife für diesen Stunde beenden
+                    }
+                }
+            }
+            return stundenFuerGenehmigteSchueler;
+        }
+
+
+
+        private List<Schueler> GetAnwesendeSchueler(List<UntisStunde> untisStundeList, List<Schueler> schuelerListe)
+        {
             List<Schueler> anwesendeSchueler = new List<Schueler>();
             foreach (var schueler in schuelerListe)
             {
                 bool schuelerAnwesend = false;
                 foreach (var stunde in untisStundeList)
                 {
-                    if (stunde.KlassenNames == schueler.KlassenName)
+                    if (stunde.Klasse == schueler.KlassenName)
                     {
-                        DateTime stundeBeginn = stunde.StundeBegin;
-                        DateTime stundeEnde = stunde.StundeEnde;
-                        if (stundeBeginn.TimeOfDay <= DateTime.Now.TimeOfDay && DateTime.Now.TimeOfDay <= stundeEnde.TimeOfDay)
-                        {
-                            schuelerAnwesend = true;
-                            break;
-                        }
+                        schuelerAnwesend = true;
                     }
                 }
                 if (schuelerAnwesend)
@@ -139,9 +152,10 @@ namespace App.Forms
                     anwesendeSchueler.Add(schueler);
                 }
             }
-
             return anwesendeSchueler;
         }
+
+
 
         private List<UntisStunde> GetAnwesendeStunden(List<UntisStunde> untisStundeListe, List<Schueler> anwesendeSchueler)
         {
@@ -150,7 +164,7 @@ namespace App.Forms
             {
                 foreach (var schueler in anwesendeSchueler)
                 {
-                    if (stunde.KlassenNames == schueler.KlassenName)
+                    if (string.Equals(stunde.Kurzzeichen, schueler.KlassenName, StringComparison.OrdinalIgnoreCase))
                     {
                         DateTime stundeBeginn = stunde.StundeBegin;
                         DateTime stundeEnde = stunde.StundeEnde;
@@ -164,58 +178,55 @@ namespace App.Forms
             }
             return anwesendeStunden;
         }
-        
-        private void GenerateAndPlotStatistics(List<UntisStunde> untisStundeList, List<Parkplatzantrag> genehmigteAntraege)
+
+
+        public void ZeigeParkplatzStatistik(DateTime ausgewaehltesDatum)
         {
-            // Get a list of all students present during each hour of the day
-            var studentCountsByHour = new Dictionary<int, int>();
+            // Anwesende Schüler und Stunden ermitteln
+            List<Schueler> genehmigteSchueler = GetGenehmigteSchueler(genehmigteAntraege);
+            List<UntisStunde> untisStundes = GetHeutigeUntisStunden(dateTimePicker1.Value);
+            List<UntisStunde> untisHeute = GetUntisStundenFuerGenehmigteSchueler(untisStundes, genehmigteSchueler);
+            ZeigeUntisStundenStatistik(untisHeute);
+        }
+
+        public void ZeigeUntisStundenStatistik(List<UntisStunde> untisStunden)
+        {
+            // Create dictionary to store count of UntisStunden for each hour of the day
+            Dictionary<int, int> hourCount = new Dictionary<int, int>();
             for (int i = 0; i < 24; i++)
             {
-                var studentsPresent = GetAnwesendeSchueler(untisStundeList, genehmigteAntraege, new TimeSpan(i, 0, 0), new TimeSpan(i, 59, 59));
-                studentCountsByHour[i] = studentsPresent.Count;
+                hourCount.Add(i, 0);
             }
 
-            // Calculate the number of occupied parking spaces for each hour of the day
-            var occupiedSpacesByHour = new Dictionary<int, int>();
-            foreach (var hour in studentCountsByHour.Keys)
+            // Count UntisStunden for each hour of the day
+            foreach (var stunde in untisStunden)
             {
-                var occupiedSpaces = Math.Min(studentCountsByHour[hour], genehmigteAntraege.Count);
-                occupiedSpacesByHour[hour] = occupiedSpaces;
+                int hour = stunde.StundeBegin.Hour;
+                hourCount[hour]++;
             }
 
-            // Create a new plot model
-            myModel = new PlotModel();
-            myModel.Title = "Parkplatzstatistik";
-
-            // Add a linear axis for the x-axis (hours of the day)
-            var xAxis = new OxyPlot.Axes.LinearAxis();
-            xAxis.Position = OxyPlot.Axes.AxisPosition.Bottom;
-            xAxis.Title = "Stunde des Tages";
-            myModel.Axes.Add(xAxis);
-
-            // Add a linear axis for the y-axis (number of occupied parking spaces)
-            var yAxis = new OxyPlot.Axes.LinearAxis();
-            yAxis.Position = OxyPlot.Axes.AxisPosition.Left;
-            yAxis.Title = "Belegte Parkplätze";
-            myModel.Axes.Add(yAxis);
-
-            // Create a line series to plot the data
-            var series = new OxyPlot.Series.LineSeries();
-            foreach (var hour in occupiedSpacesByHour.Keys)
-            {
-                series.Points.Add(new DataPoint(hour, occupiedSpacesByHour[hour]));
-            }
-            myModel.Series.Add(series);
-
-            // Display the plot
-            plotView1.Model = myModel;
+            // Set up plot view to display statistics
+            plotView1.Model = new PlotModel { Title = "Parkplatz Statistik " + dateTimePicker1.Value.Date };
+            var columnSeries = new BarSeries();
+            columnSeries.ItemsSource = hourCount;
+            columnSeries.ValueField = "Value";
+            columnSeries.Title = "Anzahl Autos";
+            columnSeries.FillColor = OxyColor.Parse("#2196F3");
+            columnSeries.StrokeColor = OxyColor.Parse("#2196F3");
+            columnSeries.StrokeThickness = 1;
+            columnSeries.LabelPlacement = LabelPlacement.Outside;
+            columnSeries.LabelFormatString = "{0}";
+            plotView1.Model.Series.Add(columnSeries);
+            plotView1.Model.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "Anzahl der im Park abgestellten Autos\r\n\r\n\r\n\r\n", Minimum = 0, Maximum = hourCount.Values.Max() + 1 });
+            plotView1.Model.Axes.Add(new CategoryAxis { Position = AxisPosition.Left, Title = "Uhrzeit", ItemsSource = hourCount.Keys.Reverse() });
         }
-        
+
+
 
 
         private void btnStatCalc_Click(object sender, EventArgs e)
         {
-            GenerateAndPlotStatistics(untisStundeList, genehmigteAntraege);
+            ZeigeParkplatzStatistik(dateTimePicker1.Value);
         }
     }
 }

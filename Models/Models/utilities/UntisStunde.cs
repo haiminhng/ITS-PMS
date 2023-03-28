@@ -40,16 +40,31 @@ namespace Models.Models.utilities
     * Jahr der Unterrichtsstunde
 */
         private int _jahr;
+        public int Jahr
+        {
+            get { return _jahr; }
+        }
+
 
         /**
     * Monat der Unterrichtsstunde
 */
         private int _monat;
+        public int Monat
+        {
+            get { return _monat; }
+        }
+
 
         /**
     * Tag der Unterrichtsstunde
 */
         private int _tag;
+        public int Tag
+        {
+            get { return _tag; }
+        }
+
 
         /**
     * Nummer der Unterrichtsstunde
@@ -66,6 +81,10 @@ namespace Models.Models.utilities
     * Unterrichtsstunde abgehalten wird
 */
         private string _klasse;
+        public String Klasse
+        {
+            get { return _klasse; }
+        }
 
         /**
     * Kurzname des Raums, in dem die Unterrichtsstunde gehalten wird
@@ -96,6 +115,10 @@ namespace Models.Models.utilities
     * Dauer (in Minuten) der Unterrichtsstunde
 */
         private int _dauer;
+        public int Dauer
+        {
+            get { return _dauer; }
+        }
         public DateTime StundeBegin
         {
             get
@@ -140,7 +163,13 @@ namespace Models.Models.utilities
                 // tmpDaten[9] ist leer
                 this._fachgruppe = tmpDaten[10];
                 this._stunde = Int32.Parse(tmpDaten[11].Substring(0, tmpDaten[11].Length - 2));
-                this._minute = Int32.Parse(tmpDaten[11].Substring(tmpDaten[11].Length - 2, tmpDaten[11].Length));
+                this._minute = Int32.Parse(tmpDaten[11].Substring(tmpDaten[11].Length - 2, 2));
+
+                /* Exception caught: 'System.ArgumentOutOfRangeException' in Models.dll ("Index and length must refer to a location within the string.")	System.ArgumentOutOfRangeException 
+                 * this._minute = Int32.Parse(tmpDaten[11].Substring(tmpDaten[11].Length - 2, tmpDaten[11].Length));
+                 * tmpDaten[11].Length lange von ganze String
+                 * tmpDaten[11].Length - 2 bis zum Ende des Strings, index out of bound!!!!!!
+                */
                 this._dauer = Int32.Parse(tmpDaten[12]);
             }
             catch (Exception e)

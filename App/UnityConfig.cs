@@ -24,10 +24,13 @@ namespace App
             container.RegisterType<IParkingStatisticsView, ParkingStatistics>();
             container.RegisterType<IEmailSetting, EmailSetting>();
 
+
             //Tools
+            container.RegisterType<IAntragService, WeightedScoring>();
             container.RegisterType<IEncryptionTool, EncryptionTool>();
             container.RegisterType<IGoogleService, GoogleService>();
-            container.RegisterType<IAntragService, WeightedScoring>();
+            container.RegisterType<IFileLoadingForm, FileLoadingForm>();
+
             container.RegisterType<DbContext, ParkplatzverwaltungContext>();
 
 

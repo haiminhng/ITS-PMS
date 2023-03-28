@@ -33,7 +33,6 @@
             btnLoadFileUntis = new Button();
             dateTimePicker1 = new DateTimePicker();
             plotView1 = new OxyPlot.WindowsForms.PlotView();
-            progressBar1 = new ProgressBar();
             btnStatCalc = new Button();
             SuspendLayout();
             // 
@@ -51,12 +50,12 @@
             // 
             textBox1.Location = new Point(56, 6);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(181, 23);
             textBox1.TabIndex = 1;
             // 
             // btnLoadFileUntis
             // 
-            btnLoadFileUntis.Location = new Point(162, 6);
+            btnLoadFileUntis.Location = new Point(243, 6);
             btnLoadFileUntis.Name = "btnLoadFileUntis";
             btnLoadFileUntis.Size = new Size(75, 23);
             btnLoadFileUntis.TabIndex = 2;
@@ -83,16 +82,9 @@
             plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
             plotView1.ZoomVerticalCursor = Cursors.SizeNS;
             // 
-            // progressBar1
-            // 
-            progressBar1.Location = new Point(243, 6);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(100, 23);
-            progressBar1.TabIndex = 5;
-            // 
             // btnStatCalc
             // 
-            btnStatCalc.Location = new Point(349, 6);
+            btnStatCalc.Location = new Point(243, 35);
             btnStatCalc.Name = "btnStatCalc";
             btnStatCalc.Size = new Size(75, 23);
             btnStatCalc.TabIndex = 6;
@@ -106,7 +98,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnStatCalc);
-            Controls.Add(progressBar1);
             Controls.Add(plotView1);
             Controls.Add(dateTimePicker1);
             Controls.Add(btnLoadFileUntis);

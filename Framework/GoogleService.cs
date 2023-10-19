@@ -23,7 +23,7 @@ namespace Framework
         private string _units = "metric";
         private string _region = "de";
         private string _languague = "de";
-        private string _apiKey = "AIzaSyBkAR1XJQ0myJZ-mG2tiOKZfZ8J46kJiSg";
+        private string _apiKey = "GOOGLE DISTANCE MATRIX API";
 
         public async Task<double> GetDistance(Adressen adresse)
         {
